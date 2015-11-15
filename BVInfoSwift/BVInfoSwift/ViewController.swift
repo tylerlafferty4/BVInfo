@@ -35,7 +35,34 @@ extension ViewController : UITableViewDelegate {
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
+        if indexPath.row == 0 {
+            // Sodexo Menu
+
+        }else if indexPath.row == 1 {
+            // ACES
+
+        }else if indexPath.row == 2 {
+            // News
+
+        }else if indexPath.row == 3 {
+            // Athletics
+
+        }else if indexPath.row == 4 {
+            // The Tack
+
+        }else if indexPath.row == 5 {
+            // CAE
+
+        }else if indexPath.row == 6 {
+            // Laundry
+
+        }else if indexPath.row == 7 {
+            // Academics
+
+        }else if indexPath.row == 8 {
+            // KBVU
+
+        }
     }
 }
 
