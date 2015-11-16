@@ -11,6 +11,7 @@ import UIKit
 class WebsiteViewController: UIViewController {
 
     @IBOutlet var webView : UIWebView!
+    @IBOutlet var activity : UIActivityIndicatorView!
 
     var webUrl : String!
     
@@ -24,6 +25,19 @@ class WebsiteViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+}
+
+// MARK : Web View Delegate
+extension WebsiteViewController : UIWebViewDelegate {
+    func webViewDidStartLoad(webView: UIWebView) {
+        activity.hidden = false
+        activity.startAnimating()
+    }
+    
+    func webViewDidFinishLoad(webView: UIWebView) {
+        activity.hidden = true
+        activity.stopAnimating()
     }
 }
 

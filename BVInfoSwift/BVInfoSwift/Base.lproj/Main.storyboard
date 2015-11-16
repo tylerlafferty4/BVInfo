@@ -35,8 +35,8 @@
                                                         <constraint firstAttribute="width" constant="50" id="a4w-Ep-8py"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sodexo Menu" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wlq-h1-tf0">
-                                                    <rect key="frame" x="97" y="23" width="156" height="29"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sodexo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wlq-h1-tf0">
+                                                    <rect key="frame" x="97" y="23" width="87" height="29"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -363,6 +363,9 @@
                                 <rect key="frame" x="0.0" y="70" width="600" height="530"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Uvl-wY-i4B" id="FB2-0b-AN5"/>
+                                </connections>
                             </webView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lKd-Pt-Gq5">
                                 <rect key="frame" x="0.0" y="20" width="600" height="50"/>
@@ -392,6 +395,11 @@
                                             <action selector="goForward:" destination="Uvl-wY-i4B" eventType="touchUpInside" id="hwr-cl-ahW"/>
                                         </connections>
                                     </button>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Pte-LO-KP7">
+                                        <rect key="frame" x="548" y="7" width="37" height="37"/>
+                                        <animations/>
+                                        <color key="color" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </activityIndicatorView>
                                 </subviews>
                                 <animations/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -403,6 +411,8 @@
                                     <constraint firstItem="VQl-Ss-RWX" firstAttribute="leading" secondItem="lKd-Pt-Gq5" secondAttribute="leading" constant="15" id="ZRB-q3-UET"/>
                                     <constraint firstItem="f9Z-6X-wEV" firstAttribute="centerY" secondItem="lKd-Pt-Gq5" secondAttribute="centerY" id="doI-tt-EOD"/>
                                     <constraint firstItem="f9Z-6X-wEV" firstAttribute="leading" secondItem="zUR-Wz-RuP" secondAttribute="trailing" constant="38" id="i0k-ir-1gD"/>
+                                    <constraint firstAttribute="trailing" secondItem="Pte-LO-KP7" secondAttribute="trailing" constant="15" id="m3E-2q-F2n"/>
+                                    <constraint firstItem="Pte-LO-KP7" firstAttribute="centerY" secondItem="lKd-Pt-Gq5" secondAttribute="centerY" id="yJJ-Hu-jwj"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -425,6 +435,7 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="activity" destination="Pte-LO-KP7" id="nKe-rf-Nmn"/>
                         <outlet property="webView" destination="vQ6-3H-eEw" id="ia9-Vc-4vG"/>
                     </connections>
                 </viewController>
