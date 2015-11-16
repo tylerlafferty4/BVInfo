@@ -340,11 +340,97 @@
                     <size key="freeformSize" width="600" height="800"/>
                     <connections>
                         <outlet property="tableView" destination="bH6-Oe-Uk7" id="Tc5-DU-baB"/>
+                        <segue destination="Uvl-wY-i4B" kind="presentation" identifier="showSodexo" id="5IF-QJ-OK6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1034" y="1025"/>
+        </scene>
+        <!--Website View Controller-->
+        <scene sceneID="Ipl-qe-jMD">
+            <objects>
+                <viewController id="Uvl-wY-i4B" customClass="WebsiteViewController" customModule="BVInfoSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ZHg-SG-bcc"/>
+                        <viewControllerLayoutGuide type="bottom" id="IGB-Yp-dpN"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Twz-Sb-7GD">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vQ6-3H-eEw">
+                                <rect key="frame" x="0.0" y="70" width="600" height="530"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </webView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lKd-Pt-Gq5">
+                                <rect key="frame" x="0.0" y="20" width="600" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VQl-Ss-RWX">
+                                        <rect key="frame" x="15" y="1" width="30" height="49"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="31"/>
+                                        <state key="normal" title="X"/>
+                                        <connections>
+                                            <action selector="closeWebView:" destination="Uvl-wY-i4B" eventType="touchUpInside" id="ZMa-t7-bi8"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zUR-Wz-RuP">
+                                        <rect key="frame" x="85" y="10" width="34" height="30"/>
+                                        <animations/>
+                                        <state key="normal" title="Back"/>
+                                        <connections>
+                                            <action selector="goBack:" destination="Uvl-wY-i4B" eventType="touchUpInside" id="WXb-3Y-iEg"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f9Z-6X-wEV">
+                                        <rect key="frame" x="157" y="10" width="56" height="30"/>
+                                        <animations/>
+                                        <state key="normal" title="Forward"/>
+                                        <connections>
+                                            <action selector="goForward:" destination="Uvl-wY-i4B" eventType="touchUpInside" id="hwr-cl-ahW"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <animations/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="VQl-Ss-RWX" firstAttribute="centerY" secondItem="lKd-Pt-Gq5" secondAttribute="centerY" id="1ce-9t-6lr"/>
+                                    <constraint firstAttribute="height" constant="50" id="KFY-EA-jDA"/>
+                                    <constraint firstItem="zUR-Wz-RuP" firstAttribute="leading" secondItem="VQl-Ss-RWX" secondAttribute="trailing" constant="40" id="LLC-OQ-xfB"/>
+                                    <constraint firstItem="zUR-Wz-RuP" firstAttribute="centerY" secondItem="lKd-Pt-Gq5" secondAttribute="centerY" id="LPL-wb-RGQ"/>
+                                    <constraint firstItem="VQl-Ss-RWX" firstAttribute="leading" secondItem="lKd-Pt-Gq5" secondAttribute="leading" constant="15" id="ZRB-q3-UET"/>
+                                    <constraint firstItem="f9Z-6X-wEV" firstAttribute="centerY" secondItem="lKd-Pt-Gq5" secondAttribute="centerY" id="doI-tt-EOD"/>
+                                    <constraint firstItem="f9Z-6X-wEV" firstAttribute="leading" secondItem="zUR-Wz-RuP" secondAttribute="trailing" constant="38" id="i0k-ir-1gD"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="vQ6-3H-eEw" secondAttribute="trailing" id="1By-yK-WAI"/>
+                            <constraint firstItem="vQ6-3H-eEw" firstAttribute="leading" secondItem="Twz-Sb-7GD" secondAttribute="leading" id="3cJ-UR-9vL"/>
+                            <constraint firstItem="vQ6-3H-eEw" firstAttribute="top" secondItem="ZHg-SG-bcc" secondAttribute="bottom" id="9bg-Za-AcS"/>
+                            <constraint firstAttribute="trailing" secondItem="lKd-Pt-Gq5" secondAttribute="trailing" id="BtZ-2O-zR3"/>
+                            <constraint firstItem="vQ6-3H-eEw" firstAttribute="top" secondItem="lKd-Pt-Gq5" secondAttribute="bottom" id="ji6-TI-0O9"/>
+                            <constraint firstItem="IGB-Yp-dpN" firstAttribute="top" secondItem="vQ6-3H-eEw" secondAttribute="bottom" id="jil-W5-fD8"/>
+                            <constraint firstItem="lKd-Pt-Gq5" firstAttribute="leading" secondItem="Twz-Sb-7GD" secondAttribute="leading" id="rRk-fP-cxX"/>
+                            <constraint firstItem="lKd-Pt-Gq5" firstAttribute="top" secondItem="ZHg-SG-bcc" secondAttribute="bottom" id="xCx-RI-dBa"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="9bg-Za-AcS"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="vQ6-3H-eEw" id="ia9-Vc-4vG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2ry-mK-MYD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1772" y="718"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="fcF-yI-OlB">

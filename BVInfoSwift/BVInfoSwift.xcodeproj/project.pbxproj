@@ -16,6 +16,7 @@
 		D8BDC9191BF8F20200CB40B4 /* BVInfoSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BDC9181BF8F20200CB40B4 /* BVInfoSwiftUITests.swift */; };
 		D8BDC9271BF8F39F00CB40B4 /* aces.gif in Resources */ = {isa = PBXBuildFile; fileRef = D8BDC9261BF8F39F00CB40B4 /* aces.gif */; settings = {ASSET_TAGS = (); }; };
 		D8BDC9291BF93A4D00CB40B4 /* HomeViewControllerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BDC9281BF93A4C00CB40B4 /* HomeViewControllerCell.swift */; settings = {ASSET_TAGS = (); }; };
+		D8BDC92C1BF978BF00CB40B4 /* WebsiteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BDC92B1BF978BF00CB40B4 /* WebsiteViewController.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		D8BDC91A1BF8F20200CB40B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D8BDC9261BF8F39F00CB40B4 /* aces.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = aces.gif; sourceTree = "<group>"; };
 		D8BDC9281BF93A4C00CB40B4 /* HomeViewControllerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewControllerCell.swift; sourceTree = "<group>"; };
+		D8BDC92B1BF978BF00CB40B4 /* WebsiteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebsiteViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 				D8BDC9011BF8F20100CB40B4 /* LaunchScreen.storyboard */,
 				D8BDC9041BF8F20100CB40B4 /* Info.plist */,
 				D8BDC9281BF93A4C00CB40B4 /* HomeViewControllerCell.swift */,
+				D8BDC92B1BF978BF00CB40B4 /* WebsiteViewController.swift */,
 			);
 			path = BVInfoSwift;
 			sourceTree = "<group>";
@@ -262,6 +265,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8BDC92C1BF978BF00CB40B4 /* WebsiteViewController.swift in Sources */,
 				D8BDC8FB1BF8F20100CB40B4 /* ViewController.swift in Sources */,
 				D8BDC8F91BF8F20100CB40B4 /* AppDelegate.swift in Sources */,
 				D8BDC9291BF93A4D00CB40B4 /* HomeViewControllerCell.swift in Sources */,
