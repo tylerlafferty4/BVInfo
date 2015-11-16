@@ -41,7 +41,6 @@ extension ViewController : UITableViewDelegate {
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if indexPath.row == 0 {
             // Sodexo Menu
-            self.performSegueWithIdentifier("showSodexo", sender: self)
 
         }else if indexPath.row == 1 {
             // ACES
@@ -127,6 +126,9 @@ extension ViewController {
         if segue.identifier == "showSodexo" {
             let destVc = segue.destinationViewController as! WebsiteViewController
             destVc.webUrl = "https://bvudining.sodexomyway.com/dining-choices/index.html"
+        }else if segue.identifier == "showCAE" {
+            let destVc = segue.destinationViewController as! WebsiteViewController
+            destVc.webUrl = "http://web.bvu.edu/accuweb/"
         }
     }
 }

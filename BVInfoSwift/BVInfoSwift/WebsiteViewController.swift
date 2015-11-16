@@ -13,7 +13,7 @@ class WebsiteViewController: UIViewController {
     @IBOutlet var webView : UIWebView!
     @IBOutlet var activity : UIActivityIndicatorView!
 
-    var webUrl : String!
+    var webUrl : String! = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()

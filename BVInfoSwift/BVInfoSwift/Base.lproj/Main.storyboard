@@ -230,6 +230,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <animations/>
+                                        <connections>
+                                            <segue destination="Uvl-wY-i4B" kind="presentation" identifier="showCAE" id="zA5-B9-VFM"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="laundry" rowHeight="75" id="4Aq-bt-SnN" customClass="HomeViewControllerCell" customModule="BVInfoSwift" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="542" width="600" height="75"/>
@@ -626,6 +629,6 @@
         <image name="tack" width="160" height="160"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="TJP-VA-CkO"/>
+        <segue reference="zA5-B9-VFM"/>
     </inferredMetricsTieBreakers>
 </document>
