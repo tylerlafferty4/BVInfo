@@ -19,11 +19,12 @@ class ViewController: UIViewController {
         self.navigationController?.navigationBar.tintColor = UIColor.yellowColor()
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.yellowColor()]
         self.navigationController?.navigationBar.barTintColor = UIColor(red: 0, green: 0, blue: 128/255, alpha: 1)
+        tableView.reloadData()
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        tableView.reloadData()
+       
     }
 
     override func didReceiveMemoryWarning() {
@@ -39,6 +40,7 @@ extension ViewController : UITableViewDelegate {
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: false)
         if indexPath.row == 0 {
             // Sodexo Menu
 
@@ -125,9 +127,11 @@ extension ViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showSodexo" {
             let destVc = segue.destinationViewController as! WebsiteViewController
+            destVc.titleTxt = "Sodexo"
             destVc.webUrl = "https://bvudining.sodexomyway.com/dining-choices/index.html"
         }else if segue.identifier == "showCAE" {
             let destVc = segue.destinationViewController as! WebsiteViewController
+            destVc.titleTxt = "CAE"
             destVc.webUrl = "http://web.bvu.edu/accuweb/"
         }
     }

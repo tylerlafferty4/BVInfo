@@ -383,50 +383,75 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lKd-Pt-Gq5">
                                 <rect key="frame" x="0.0" y="20" width="600" height="50"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VQl-Ss-RWX">
-                                        <rect key="frame" x="15" y="1" width="30" height="49"/>
-                                        <animations/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="31"/>
-                                        <state key="normal" title="X"/>
-                                        <connections>
-                                            <action selector="closeWebView:" destination="Uvl-wY-i4B" eventType="touchUpInside" id="ZMa-t7-bi8"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zUR-Wz-RuP">
-                                        <rect key="frame" x="85" y="10" width="34" height="30"/>
-                                        <animations/>
-                                        <state key="normal" title="Back"/>
-                                        <connections>
-                                            <action selector="goBack:" destination="Uvl-wY-i4B" eventType="touchUpInside" id="WXb-3Y-iEg"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f9Z-6X-wEV">
-                                        <rect key="frame" x="157" y="10" width="56" height="30"/>
-                                        <animations/>
-                                        <state key="normal" title="Forward"/>
-                                        <connections>
-                                            <action selector="goForward:" destination="Uvl-wY-i4B" eventType="touchUpInside" id="hwr-cl-ahW"/>
-                                        </connections>
-                                    </button>
                                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Pte-LO-KP7">
                                         <rect key="frame" x="548" y="7" width="37" height="37"/>
                                         <animations/>
-                                        <color key="color" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="color" red="1" green="0.91868005370000005" blue="0.23778533269999999" alpha="1" colorSpace="calibratedRGB"/>
                                     </activityIndicatorView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="URF-65-nIF">
+                                        <rect key="frame" x="8" y="15" width="20" height="20"/>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="20" id="NyU-Rj-cet"/>
+                                            <constraint firstAttribute="width" constant="20" id="hWy-Co-50Z"/>
+                                            <constraint firstAttribute="height" constant="20" id="u1j-yp-Biu"/>
+                                        </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="NyU-Rj-cet"/>
+                                            </mask>
+                                        </variation>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kki-j8-gmC">
+                                        <rect key="frame" x="366" y="15" width="20" height="20"/>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="20" id="LpK-yx-dQG"/>
+                                            <constraint firstAttribute="height" constant="20" id="QMx-VE-2aK"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BhO-g4-zSo">
+                                        <rect key="frame" x="216" y="15" width="20" height="20"/>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="20" id="HB2-N4-Iqg"/>
+                                            <constraint firstAttribute="height" constant="20" id="PLI-9N-Vj0"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Student Life" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sxA-sJ-TqL">
+                                        <rect key="frame" x="245" y="15" width="110" height="21"/>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="110" id="OSi-af-O75"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <color key="textColor" red="1" green="0.91868005370000005" blue="0.23778533269999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <animations/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstItem="VQl-Ss-RWX" firstAttribute="centerY" secondItem="lKd-Pt-Gq5" secondAttribute="centerY" id="1ce-9t-6lr"/>
+                                    <constraint firstAttribute="bottom" secondItem="URF-65-nIF" secondAttribute="bottom" constant="15" id="7IJ-8A-gcp"/>
                                     <constraint firstAttribute="height" constant="50" id="KFY-EA-jDA"/>
-                                    <constraint firstItem="zUR-Wz-RuP" firstAttribute="leading" secondItem="VQl-Ss-RWX" secondAttribute="trailing" constant="40" id="LLC-OQ-xfB"/>
-                                    <constraint firstItem="zUR-Wz-RuP" firstAttribute="centerY" secondItem="lKd-Pt-Gq5" secondAttribute="centerY" id="LPL-wb-RGQ"/>
-                                    <constraint firstItem="VQl-Ss-RWX" firstAttribute="leading" secondItem="lKd-Pt-Gq5" secondAttribute="leading" constant="15" id="ZRB-q3-UET"/>
-                                    <constraint firstItem="f9Z-6X-wEV" firstAttribute="centerY" secondItem="lKd-Pt-Gq5" secondAttribute="centerY" id="doI-tt-EOD"/>
-                                    <constraint firstItem="f9Z-6X-wEV" firstAttribute="leading" secondItem="zUR-Wz-RuP" secondAttribute="trailing" constant="38" id="i0k-ir-1gD"/>
+                                    <constraint firstItem="Kki-j8-gmC" firstAttribute="leading" secondItem="sxA-sJ-TqL" secondAttribute="trailing" constant="15" id="Rmq-US-5a6"/>
+                                    <constraint firstItem="sxA-sJ-TqL" firstAttribute="centerY" secondItem="lKd-Pt-Gq5" secondAttribute="centerY" id="Y7d-T3-KQK"/>
+                                    <constraint firstItem="sxA-sJ-TqL" firstAttribute="leading" secondItem="BhO-g4-zSo" secondAttribute="trailing" constant="15" id="bGY-A6-ZaR"/>
+                                    <constraint firstItem="URF-65-nIF" firstAttribute="centerY" secondItem="lKd-Pt-Gq5" secondAttribute="centerY" id="h5t-On-1PS"/>
+                                    <constraint firstItem="URF-65-nIF" firstAttribute="top" secondItem="lKd-Pt-Gq5" secondAttribute="top" constant="15" id="k3b-rG-vv7"/>
                                     <constraint firstAttribute="trailing" secondItem="Pte-LO-KP7" secondAttribute="trailing" constant="15" id="m3E-2q-F2n"/>
+                                    <constraint firstItem="Kki-j8-gmC" firstAttribute="centerY" secondItem="lKd-Pt-Gq5" secondAttribute="centerY" id="pNu-0k-hsD"/>
+                                    <constraint firstItem="BhO-g4-zSo" firstAttribute="centerY" secondItem="lKd-Pt-Gq5" secondAttribute="centerY" id="pxJ-Jz-rrj"/>
+                                    <constraint firstItem="URF-65-nIF" firstAttribute="leading" secondItem="lKd-Pt-Gq5" secondAttribute="leading" constant="8" id="tWk-o0-5Iz"/>
+                                    <constraint firstItem="sxA-sJ-TqL" firstAttribute="centerX" secondItem="lKd-Pt-Gq5" secondAttribute="centerX" id="xm5-FU-eMc"/>
                                     <constraint firstItem="Pte-LO-KP7" firstAttribute="centerY" secondItem="lKd-Pt-Gq5" secondAttribute="centerY" id="yJJ-Hu-jwj"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="7IJ-8A-gcp"/>
+                                        <exclude reference="k3b-rG-vv7"/>
+                                    </mask>
+                                </variation>
                             </view>
                         </subviews>
                         <animations/>
@@ -449,12 +474,16 @@
                     </view>
                     <connections>
                         <outlet property="activity" destination="Pte-LO-KP7" id="nKe-rf-Nmn"/>
+                        <outlet property="backBtn" destination="BhO-g4-zSo" id="HBE-Oh-La5"/>
+                        <outlet property="closeBtn" destination="URF-65-nIF" id="YLa-XH-xW0"/>
+                        <outlet property="forwardBtn" destination="Kki-j8-gmC" id="82V-2p-1Ak"/>
+                        <outlet property="titleLbl" destination="sxA-sJ-TqL" id="1nY-n3-zVV"/>
                         <outlet property="webView" destination="vQ6-3H-eEw" id="ia9-Vc-4vG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2ry-mK-MYD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1759" y="493"/>
+            <point key="canvasLocation" x="1749" y="480"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="931-34-jnZ">

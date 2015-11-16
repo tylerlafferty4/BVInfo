@@ -22,7 +22,6 @@ class HomeViewControllerCell: UITableViewCell {
         set (newFrame) {
             var frame = newFrame
             let mainWidth = UIScreen.mainScreen().bounds.width
-            print("Frame Width (frame.width)")
             if frame.width > mainWidth - 16 {
                 frame.origin.y += 8
                 frame.size.height -= 16

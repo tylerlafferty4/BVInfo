@@ -16,11 +16,12 @@ class ACESViewController: UIViewController {
         super.viewDidLoad()
         self.title = "ACES"
         self.view.backgroundColor = UIColor(red: 0.92, green: 0.92, blue: 0.92, alpha: 1.0)
+        tableView.reloadData()
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        tableView.reloadData()
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -33,15 +34,19 @@ class ACESViewController: UIViewController {
         let destVc = segue.destinationViewController as! WebsiteViewController
         
         if segue.identifier == "showCultural" {
+            destVc.titleTxt = "Cultural"
             destVc.webUrl = "http://bvu.edu/bv/aces/cultural-events.dot"
             
         }else if segue.identifier == "showScholarly" {
+            destVc.titleTxt = "Scholarly"
             destVc.webUrl = "http://bvu.edu/bv/aces/scholarly-events.dot"
             
         }else if segue.identifier == "showStudentLife" {
+            destVc.titleTxt = "Student Life"
             destVc.webUrl = "http://bvu.edu/bv/aces/student-life-events.dot"
             
         }else if segue.identifier == "checkStatus" {
+            destVc.titleTxt = "Check Status"
             destVc.webUrl = "http://www2.bvu.edu/departments/academicaffairs/aces/check.asp"
         }
     }
@@ -54,6 +59,7 @@ extension ACESViewController : UITableViewDelegate {
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: false)
         if indexPath.row == 0 {
             // Cultural
             self.performSegueWithIdentifier("showCultural", sender: self)
@@ -69,7 +75,6 @@ extension ACESViewController : UITableViewDelegate {
         }else if indexPath.row == 3 {
             // Check Your Status
             self.performSegueWithIdentifier("checkStatus", sender: self)
-            
         }
     }
 }

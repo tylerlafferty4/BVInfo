@@ -12,7 +12,12 @@ class WebsiteViewController: UIViewController {
 
     @IBOutlet var webView : UIWebView!
     @IBOutlet var activity : UIActivityIndicatorView!
-
+    @IBOutlet var closeBtn : UIImageView!
+    @IBOutlet var backBtn : UIImageView!
+    @IBOutlet var forwardBtn : UIImageView!
+    @IBOutlet var titleLbl : UILabel!
+    
+    var titleTxt : String! = ""
     var webUrl : String! = ""
     
     override func viewDidLoad() {
@@ -20,6 +25,30 @@ class WebsiteViewController: UIViewController {
         let url = NSURL (string: webUrl);
         let requestObj = NSURLRequest(URL: url!);
         webView.loadRequest(requestObj);
+        
+        titleLbl.text = titleTxt
+        
+        // Close Image View
+        closeBtn.image = UIImage(named: "X")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
+        closeBtn.tintColor = UIColor(red: 1.0, green: 234/255, blue: 61/255, alpha: 1.0)
+        closeBtn.userInteractionEnabled = true
+        let close = UITapGestureRecognizer(target: self, action: Selector("closeWebView"))
+        closeBtn.addGestureRecognizer(close)
+        
+        // Back Image View
+        backBtn.image = UIImage(named: "arrow-right")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
+        backBtn.transform = CGAffineTransformMakeRotation(CGFloat(M_PI))
+        backBtn.tintColor = UIColor(red: 1.0, green: 234/255, blue: 61/255, alpha: 1.0)
+        backBtn.userInteractionEnabled = true
+        let back = UITapGestureRecognizer(target: self, action: Selector("goBack"))
+        backBtn.addGestureRecognizer(back)
+        
+        // Forward Image View
+        forwardBtn.image = UIImage(named: "arrow-right")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
+        forwardBtn.tintColor = UIColor(red: 1.0, green: 234/255, blue: 61/255, alpha: 1.0)
+        forwardBtn.userInteractionEnabled = true
+        let forward = UITapGestureRecognizer(target: self, action: Selector("goForward"))
+        forwardBtn.addGestureRecognizer(forward)
     }
 
     override func didReceiveMemoryWarning() {
@@ -44,17 +73,17 @@ extension WebsiteViewController : UIWebViewDelegate {
 // MARK : Button Naviagation
 extension WebsiteViewController {
     
-    @IBAction func closeWebView(sender: AnyObject) {
+    func closeWebView() {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
-    @IBAction func goBack(sender: AnyObject) {
+    func goBack() {
         if webView.canGoBack {
             webView.goBack()
         }
     }
     
-    @IBAction func goForward(sender: AnyObject) {
+    func goForward() {
         if webView.canGoForward {
             webView.goForward()
         }
