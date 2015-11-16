@@ -17,6 +17,8 @@
 		D8BDC9271BF8F39F00CB40B4 /* aces.gif in Resources */ = {isa = PBXBuildFile; fileRef = D8BDC9261BF8F39F00CB40B4 /* aces.gif */; settings = {ASSET_TAGS = (); }; };
 		D8BDC9291BF93A4D00CB40B4 /* HomeViewControllerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BDC9281BF93A4C00CB40B4 /* HomeViewControllerCell.swift */; settings = {ASSET_TAGS = (); }; };
 		D8BDC92C1BF978BF00CB40B4 /* WebsiteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BDC92B1BF978BF00CB40B4 /* WebsiteViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		D8BDC92E1BF9851500CB40B4 /* ACESViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BDC92D1BF9851500CB40B4 /* ACESViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		D8BDC9311BF987F300CB40B4 /* ACESCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BDC9301BF987F300CB40B4 /* ACESCell.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,8 @@
 		D8BDC9261BF8F39F00CB40B4 /* aces.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = aces.gif; sourceTree = "<group>"; };
 		D8BDC9281BF93A4C00CB40B4 /* HomeViewControllerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewControllerCell.swift; sourceTree = "<group>"; };
 		D8BDC92B1BF978BF00CB40B4 /* WebsiteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebsiteViewController.swift; sourceTree = "<group>"; };
+		D8BDC92D1BF9851500CB40B4 /* ACESViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ACESViewController.swift; sourceTree = "<group>"; };
+		D8BDC9301BF987F300CB40B4 /* ACESCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ACESCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,13 +109,13 @@
 			isa = PBXGroup;
 			children = (
 				D8BDC8F81BF8F20100CB40B4 /* AppDelegate.swift */,
-				D8BDC8FA1BF8F20100CB40B4 /* ViewController.swift */,
 				D8BDC8FC1BF8F20100CB40B4 /* Main.storyboard */,
 				D8BDC8FF1BF8F20100CB40B4 /* Assets.xcassets */,
 				D8BDC9011BF8F20100CB40B4 /* LaunchScreen.storyboard */,
 				D8BDC9041BF8F20100CB40B4 /* Info.plist */,
-				D8BDC9281BF93A4C00CB40B4 /* HomeViewControllerCell.swift */,
-				D8BDC92B1BF978BF00CB40B4 /* WebsiteViewController.swift */,
+				D8BDC9331BF9899F00CB40B4 /* HomeScreen */,
+				D8BDC9321BF9899400CB40B4 /* WebSite */,
+				D8BDC92F1BF987DE00CB40B4 /* ACES */,
 			);
 			path = BVInfoSwift;
 			sourceTree = "<group>";
@@ -132,6 +136,32 @@
 				D8BDC91A1BF8F20200CB40B4 /* Info.plist */,
 			);
 			path = BVInfoSwiftUITests;
+			sourceTree = "<group>";
+		};
+		D8BDC92F1BF987DE00CB40B4 /* ACES */ = {
+			isa = PBXGroup;
+			children = (
+				D8BDC92D1BF9851500CB40B4 /* ACESViewController.swift */,
+				D8BDC9301BF987F300CB40B4 /* ACESCell.swift */,
+			);
+			name = ACES;
+			sourceTree = "<group>";
+		};
+		D8BDC9321BF9899400CB40B4 /* WebSite */ = {
+			isa = PBXGroup;
+			children = (
+				D8BDC92B1BF978BF00CB40B4 /* WebsiteViewController.swift */,
+			);
+			name = WebSite;
+			sourceTree = "<group>";
+		};
+		D8BDC9331BF9899F00CB40B4 /* HomeScreen */ = {
+			isa = PBXGroup;
+			children = (
+				D8BDC8FA1BF8F20100CB40B4 /* ViewController.swift */,
+				D8BDC9281BF93A4C00CB40B4 /* HomeViewControllerCell.swift */,
+			);
+			name = HomeScreen;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -266,9 +296,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				D8BDC92C1BF978BF00CB40B4 /* WebsiteViewController.swift in Sources */,
+				D8BDC92E1BF9851500CB40B4 /* ACESViewController.swift in Sources */,
 				D8BDC8FB1BF8F20100CB40B4 /* ViewController.swift in Sources */,
 				D8BDC8F91BF8F20100CB40B4 /* AppDelegate.swift in Sources */,
 				D8BDC9291BF93A4D00CB40B4 /* HomeViewControllerCell.swift in Sources */,
+				D8BDC9311BF987F300CB40B4 /* ACESCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
