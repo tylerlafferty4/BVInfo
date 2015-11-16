@@ -59,9 +59,6 @@
                                             </variation>
                                         </tableViewCellContentView>
                                         <animations/>
-                                        <connections>
-                                            <segue destination="Uvl-wY-i4B" kind="presentation" identifier="showSodexo" id="YOb-mA-ati"/>
-                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="aces" rowHeight="75" id="BDC-7e-nXY" customClass="HomeViewControllerCell" customModule="BVInfoSwift" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="167" width="600" height="75"/>
@@ -95,9 +92,6 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <animations/>
-                                        <connections>
-                                            <segue destination="AQT-PI-Zil" kind="show" identifier="showACES" id="bYz-Wu-QNH"/>
-                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="news" rowHeight="75" id="aex-aV-OOW" customClass="HomeViewControllerCell" customModule="BVInfoSwift" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="242" width="600" height="75"/>
@@ -230,9 +224,6 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <animations/>
-                                        <connections>
-                                            <segue destination="Uvl-wY-i4B" kind="presentation" identifier="showCAE" id="zA5-B9-VFM"/>
-                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="laundry" rowHeight="75" id="4Aq-bt-SnN" customClass="HomeViewControllerCell" customModule="BVInfoSwift" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="542" width="600" height="75"/>
@@ -354,6 +345,8 @@
                     <size key="freeformSize" width="600" height="800"/>
                     <connections>
                         <outlet property="tableView" destination="bH6-Oe-Uk7" id="Tc5-DU-baB"/>
+                        <segue destination="Uvl-wY-i4B" kind="presentation" identifier="showWebpage" id="l73-Nk-9Wu"/>
+                        <segue destination="AQT-PI-Zil" kind="show" identifier="showACES" id="utF-M9-8r9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -616,10 +609,7 @@
                     </view>
                     <connections>
                         <outlet property="tableView" destination="jcX-bf-FH5" id="XrV-8N-g2Q"/>
-                        <segue destination="Uvl-wY-i4B" kind="presentation" identifier="showCultural" id="c3c-ng-qu0"/>
-                        <segue destination="Uvl-wY-i4B" kind="presentation" identifier="showScholarly" id="rWC-Xp-YIW"/>
-                        <segue destination="Uvl-wY-i4B" kind="presentation" identifier="showStudentLife" id="D8C-gz-4Kt"/>
-                        <segue destination="Uvl-wY-i4B" kind="presentation" identifier="checkStatus" id="TJP-VA-CkO"/>
+                        <segue destination="Uvl-wY-i4B" kind="presentation" identifier="showWebpage" id="crN-4m-dM5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kGi-X0-TCZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -658,6 +648,6 @@
         <image name="tack" width="160" height="160"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="zA5-B9-VFM"/>
+        <segue reference="crN-4m-dM5"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -11,6 +11,9 @@ import UIKit
 class ACESViewController: UIViewController {
 
     @IBOutlet var tableView : UITableView!
+    var titleTxt : String = ""
+    var webUrl : String = ""
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,22 +35,9 @@ class ACESViewController: UIViewController {
     // MARK: - Navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let destVc = segue.destinationViewController as! WebsiteViewController
-        
-        if segue.identifier == "showCultural" {
-            destVc.titleTxt = "Cultural"
-            destVc.webUrl = "http://bvu.edu/bv/aces/cultural-events.dot"
-            
-        }else if segue.identifier == "showScholarly" {
-            destVc.titleTxt = "Scholarly"
-            destVc.webUrl = "http://bvu.edu/bv/aces/scholarly-events.dot"
-            
-        }else if segue.identifier == "showStudentLife" {
-            destVc.titleTxt = "Student Life"
-            destVc.webUrl = "http://bvu.edu/bv/aces/student-life-events.dot"
-            
-        }else if segue.identifier == "checkStatus" {
-            destVc.titleTxt = "Check Status"
-            destVc.webUrl = "http://www2.bvu.edu/departments/academicaffairs/aces/check.asp"
+        if segue.identifier == "showWebpage" {
+            destVc.titleTxt = titleTxt
+            destVc.webUrl = webUrl
         }
     }
 }
@@ -62,19 +52,27 @@ extension ACESViewController : UITableViewDelegate {
         tableView.deselectRowAtIndexPath(indexPath, animated: false)
         if indexPath.row == 0 {
             // Cultural
-            self.performSegueWithIdentifier("showCultural", sender: self)
+            titleTxt = "Cultural"
+            webUrl = "http://bvu.edu/bv/aces/cultural-events.dot"
+            self.performSegueWithIdentifier("showWebpage", sender: self)
             
         }else if indexPath.row == 1 {
             // Scholarly
-            self.performSegueWithIdentifier("showScholarly", sender: self)
+            titleTxt = "Scholarly"
+            webUrl = "http://bvu.edu/bv/aces/scholarly-events.dot"
+            self.performSegueWithIdentifier("showWebpage", sender: self)
             
         }else if indexPath.row == 2 {
             // Student Life
-            self.performSegueWithIdentifier("showStudentLife", sender: self)
+            titleTxt = "Student Life"
+            webUrl = "http://bvu.edu/bv/aces/student-life-events.dot"
+            self.performSegueWithIdentifier("showWebpage", sender: self)
             
         }else if indexPath.row == 3 {
             // Check Your Status
-            self.performSegueWithIdentifier("checkStatus", sender: self)
+            titleTxt = "Check Status"
+            webUrl = "http://www2.bvu.edu/departments/academicaffairs/aces/check.asp"
+            self.performSegueWithIdentifier("showWebpage", sender: self)
         }
     }
 }

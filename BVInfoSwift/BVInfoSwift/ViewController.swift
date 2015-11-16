@@ -11,6 +11,8 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet var tableView : UITableView!
+    var webUrl : String = ""
+    var titleTxt : String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,10 +45,12 @@ extension ViewController : UITableViewDelegate {
         tableView.deselectRowAtIndexPath(indexPath, animated: false)
         if indexPath.row == 0 {
             // Sodexo Menu
-
+            webUrl = "https://bvudining.sodexomyway.com/dining-choices/index.html"
+            titleTxt = "Sodexo"
+            self.performSegueWithIdentifier("showWebpage", sender: self)
         }else if indexPath.row == 1 {
             // ACES
-
+            self.performSegueWithIdentifier("showACES", sender: self)
         }else if indexPath.row == 2 {
             // News
 
@@ -58,10 +62,14 @@ extension ViewController : UITableViewDelegate {
 
         }else if indexPath.row == 5 {
             // CAE
-
+            webUrl = "http://web.bvu.edu/accuweb/"
+            titleTxt = "CAE"
+            self.performSegueWithIdentifier("showWebpage", sender: self)
         }else if indexPath.row == 6 {
             // Laundry
-
+            webUrl = "https://www.laundryalert.com/cgi-bin/bvu999/LMPage"
+            titleTxt = "Laundry"
+            self.performSegueWithIdentifier("showWebpage", sender: self)
         }else if indexPath.row == 7 {
             // Academics
 
@@ -125,14 +133,10 @@ extension ViewController : UITableViewDataSource {
 // MARK: Prepare for segue
 extension ViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "showSodexo" {
+        if segue.identifier == "showWebpage" {
             let destVc = segue.destinationViewController as! WebsiteViewController
-            destVc.titleTxt = "Sodexo"
-            destVc.webUrl = "https://bvudining.sodexomyway.com/dining-choices/index.html"
-        }else if segue.identifier == "showCAE" {
-            let destVc = segue.destinationViewController as! WebsiteViewController
-            destVc.titleTxt = "CAE"
-            destVc.webUrl = "http://web.bvu.edu/accuweb/"
+            destVc.titleTxt = titleTxt
+            destVc.webUrl = webUrl
         }
     }
 }
