@@ -19,6 +19,8 @@
 		D8BDC92C1BF978BF00CB40B4 /* WebsiteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BDC92B1BF978BF00CB40B4 /* WebsiteViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		D8BDC92E1BF9851500CB40B4 /* ACESViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BDC92D1BF9851500CB40B4 /* ACESViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		D8BDC9311BF987F300CB40B4 /* ACESCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BDC9301BF987F300CB40B4 /* ACESCell.swift */; settings = {ASSET_TAGS = (); }; };
+		D8BDC9361BFAA96000CB40B4 /* AthleticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BDC9351BFAA96000CB40B4 /* AthleticsViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		D8BDC9381BFAAB8200CB40B4 /* AthleticsPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BDC9371BFAAB8200CB40B4 /* AthleticsPost.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,8 @@
 		D8BDC92B1BF978BF00CB40B4 /* WebsiteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebsiteViewController.swift; sourceTree = "<group>"; };
 		D8BDC92D1BF9851500CB40B4 /* ACESViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ACESViewController.swift; sourceTree = "<group>"; };
 		D8BDC9301BF987F300CB40B4 /* ACESCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ACESCell.swift; sourceTree = "<group>"; };
+		D8BDC9351BFAA96000CB40B4 /* AthleticsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AthleticsViewController.swift; sourceTree = "<group>"; };
+		D8BDC9371BFAAB8200CB40B4 /* AthleticsPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AthleticsPost.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +117,7 @@
 				D8BDC8FF1BF8F20100CB40B4 /* Assets.xcassets */,
 				D8BDC9011BF8F20100CB40B4 /* LaunchScreen.storyboard */,
 				D8BDC9041BF8F20100CB40B4 /* Info.plist */,
+				D8BDC9341BFAA91E00CB40B4 /* Athletics */,
 				D8BDC9331BF9899F00CB40B4 /* HomeScreen */,
 				D8BDC9321BF9899400CB40B4 /* WebSite */,
 				D8BDC92F1BF987DE00CB40B4 /* ACES */,
@@ -162,6 +167,15 @@
 				D8BDC9281BF93A4C00CB40B4 /* HomeViewControllerCell.swift */,
 			);
 			name = HomeScreen;
+			sourceTree = "<group>";
+		};
+		D8BDC9341BFAA91E00CB40B4 /* Athletics */ = {
+			isa = PBXGroup;
+			children = (
+				D8BDC9351BFAA96000CB40B4 /* AthleticsViewController.swift */,
+				D8BDC9371BFAAB8200CB40B4 /* AthleticsPost.swift */,
+			);
+			name = Athletics;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -299,6 +313,8 @@
 				D8BDC92E1BF9851500CB40B4 /* ACESViewController.swift in Sources */,
 				D8BDC8FB1BF8F20100CB40B4 /* ViewController.swift in Sources */,
 				D8BDC8F91BF8F20100CB40B4 /* AppDelegate.swift in Sources */,
+				D8BDC9361BFAA96000CB40B4 /* AthleticsViewController.swift in Sources */,
+				D8BDC9381BFAAB8200CB40B4 /* AthleticsPost.swift in Sources */,
 				D8BDC9291BF93A4D00CB40B4 /* HomeViewControllerCell.swift in Sources */,
 				D8BDC9311BF987F300CB40B4 /* ACESCell.swift in Sources */,
 			);

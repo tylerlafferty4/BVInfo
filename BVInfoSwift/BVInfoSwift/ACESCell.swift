@@ -11,6 +11,8 @@ import UIKit
 
 class ACESCell : UITableViewCell {
     
+    @IBOutlet var titleLbl : UILabel!
+    
     override func awakeFromNib() {
        
     }

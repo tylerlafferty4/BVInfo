@@ -84,25 +84,20 @@ extension ACESViewController : UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        if indexPath.row == 0 {
-            // Cultural
-            let cell = tableView.dequeueReusableCellWithIdentifier("cultural", forIndexPath: indexPath)
-            return cell
-        }else if indexPath.row == 1 {
-            // Scholarly
-            let cell = tableView.dequeueReusableCellWithIdentifier("scholarly", forIndexPath: indexPath)
-            return cell
-        }else if indexPath.row == 2 {
-            // Student Life
-            let cell = tableView.dequeueReusableCellWithIdentifier("studentLife", forIndexPath: indexPath)
-            return cell
-        }else if indexPath.row == 3 {
-            // Check Status
-            let cell = tableView.dequeueReusableCellWithIdentifier("checkStatus", forIndexPath: indexPath)
-            return cell
-        }
+        let cell = tableView.dequeueReusableCellWithIdentifier("ACESCell", forIndexPath: indexPath) as! ACESCell
         
-        let cell = UITableViewCell()
+        switch indexPath.row {
+        case 0:
+            cell.titleLbl.text = "Cultural"
+        case 1:
+            cell.titleLbl.text = "Scholarly"
+        case 2:
+            cell.titleLbl.text = "Student Life"
+        case 3:
+            cell.titleLbl.text = "Check Your Status"
+        default:
+            break
+        }
         return cell
     }
 }

@@ -56,6 +56,7 @@ extension ViewController : UITableViewDelegate {
 
         }else if indexPath.row == 3 {
             // Athletics
+            self.performSegueWithIdentifier("showAthletics", sender: self)
 
         }else if indexPath.row == 4 {
             // The Tack
