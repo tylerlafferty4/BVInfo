@@ -14,7 +14,6 @@
 		D8BDC9031BF8F20100CB40B4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8BDC9011BF8F20100CB40B4 /* LaunchScreen.storyboard */; };
 		D8BDC90E1BF8F20100CB40B4 /* BVInfoSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BDC90D1BF8F20100CB40B4 /* BVInfoSwiftTests.swift */; };
 		D8BDC9191BF8F20200CB40B4 /* BVInfoSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BDC9181BF8F20200CB40B4 /* BVInfoSwiftUITests.swift */; };
-		D8BDC9271BF8F39F00CB40B4 /* aces.gif in Resources */ = {isa = PBXBuildFile; fileRef = D8BDC9261BF8F39F00CB40B4 /* aces.gif */; settings = {ASSET_TAGS = (); }; };
 		D8BDC9291BF93A4D00CB40B4 /* HomeViewControllerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BDC9281BF93A4C00CB40B4 /* HomeViewControllerCell.swift */; settings = {ASSET_TAGS = (); }; };
 		D8BDC92C1BF978BF00CB40B4 /* WebsiteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BDC92B1BF978BF00CB40B4 /* WebsiteViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		D8BDC92E1BF9851500CB40B4 /* ACESViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BDC92D1BF9851500CB40B4 /* ACESViewController.swift */; settings = {ASSET_TAGS = (); }; };
@@ -22,6 +21,7 @@
 		D8BDC9361BFAA96000CB40B4 /* RSSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BDC9351BFAA96000CB40B4 /* RSSViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		D8BDC9381BFAAB8200CB40B4 /* RSSPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BDC9371BFAAB8200CB40B4 /* RSSPost.swift */; settings = {ASSET_TAGS = (); }; };
 		D8BDC93A1BFD725700CB40B4 /* RSSCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BDC9391BFD725700CB40B4 /* RSSCell.swift */; settings = {ASSET_TAGS = (); }; };
+		D8C2678F1BFD8B0C00E0F8F9 /* AcademicsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C2678E1BFD8B0C00E0F8F9 /* AcademicsViewController.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,7 +55,6 @@
 		D8BDC9141BF8F20200CB40B4 /* BVInfoSwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BVInfoSwiftUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8BDC9181BF8F20200CB40B4 /* BVInfoSwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BVInfoSwiftUITests.swift; sourceTree = "<group>"; };
 		D8BDC91A1BF8F20200CB40B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D8BDC9261BF8F39F00CB40B4 /* aces.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = aces.gif; sourceTree = "<group>"; };
 		D8BDC9281BF93A4C00CB40B4 /* HomeViewControllerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewControllerCell.swift; sourceTree = "<group>"; };
 		D8BDC92B1BF978BF00CB40B4 /* WebsiteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebsiteViewController.swift; sourceTree = "<group>"; };
 		D8BDC92D1BF9851500CB40B4 /* ACESViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ACESViewController.swift; sourceTree = "<group>"; };
@@ -63,6 +62,7 @@
 		D8BDC9351BFAA96000CB40B4 /* RSSViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSSViewController.swift; sourceTree = "<group>"; };
 		D8BDC9371BFAAB8200CB40B4 /* RSSPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSSPost.swift; sourceTree = "<group>"; };
 		D8BDC9391BFD725700CB40B4 /* RSSCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSSCell.swift; sourceTree = "<group>"; };
+		D8C2678E1BFD8B0C00E0F8F9 /* AcademicsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AcademicsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,7 +93,6 @@
 		D8BDC8EC1BF8F20100CB40B4 = {
 			isa = PBXGroup;
 			children = (
-				D8BDC9261BF8F39F00CB40B4 /* aces.gif */,
 				D8BDC8F71BF8F20100CB40B4 /* BVInfoSwift */,
 				D8BDC90C1BF8F20100CB40B4 /* BVInfoSwiftTests */,
 				D8BDC9171BF8F20200CB40B4 /* BVInfoSwiftUITests */,
@@ -119,6 +118,7 @@
 				D8BDC8FF1BF8F20100CB40B4 /* Assets.xcassets */,
 				D8BDC9011BF8F20100CB40B4 /* LaunchScreen.storyboard */,
 				D8BDC9041BF8F20100CB40B4 /* Info.plist */,
+				D8C2678D1BFD8AF400E0F8F9 /* Academics */,
 				D8BDC9341BFAA91E00CB40B4 /* RSS */,
 				D8BDC9331BF9899F00CB40B4 /* HomeScreen */,
 				D8BDC9321BF9899400CB40B4 /* WebSite */,
@@ -179,6 +179,14 @@
 				D8BDC9391BFD725700CB40B4 /* RSSCell.swift */,
 			);
 			name = RSS;
+			sourceTree = "<group>";
+		};
+		D8C2678D1BFD8AF400E0F8F9 /* Academics */ = {
+			isa = PBXGroup;
+			children = (
+				D8C2678E1BFD8B0C00E0F8F9 /* AcademicsViewController.swift */,
+			);
+			name = Academics;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -284,7 +292,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D8BDC9271BF8F39F00CB40B4 /* aces.gif in Resources */,
 				D8BDC9031BF8F20100CB40B4 /* LaunchScreen.storyboard in Resources */,
 				D8BDC9001BF8F20100CB40B4 /* Assets.xcassets in Resources */,
 				D8BDC8FE1BF8F20100CB40B4 /* Main.storyboard in Resources */,
@@ -321,6 +328,7 @@
 				D8BDC9381BFAAB8200CB40B4 /* RSSPost.swift in Sources */,
 				D8BDC9291BF93A4D00CB40B4 /* HomeViewControllerCell.swift in Sources */,
 				D8BDC9311BF987F300CB40B4 /* ACESCell.swift in Sources */,
+				D8C2678F1BFD8B0C00E0F8F9 /* AcademicsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -545,6 +553,7 @@
 				D8BDC91F1BF8F20200CB40B4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D8BDC9201BF8F20200CB40B4 /* Build configuration list for PBXNativeTarget "BVInfoSwiftTests" */ = {
 			isa = XCConfigurationList;
@@ -553,6 +562,7 @@
 				D8BDC9221BF8F20200CB40B4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D8BDC9231BF8F20200CB40B4 /* Build configuration list for PBXNativeTarget "BVInfoSwiftUITests" */ = {
 			isa = XCConfigurationList;
@@ -561,6 +571,7 @@
 				D8BDC9251BF8F20200CB40B4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

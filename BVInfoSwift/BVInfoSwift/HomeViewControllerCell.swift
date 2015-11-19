@@ -11,8 +11,12 @@ import UIKit
 
 class HomeViewControllerCell: UITableViewCell {
     
+    @IBOutlet var titleLbl : UILabel!
+    @IBOutlet var imgView : UIImageView!
+    
     override func awakeFromNib() {
         self.backgroundColor = UIColor.whiteColor()
+        imgView.contentMode = .ScaleAspectFill
     }
     
     override var frame: CGRect {

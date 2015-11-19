@@ -78,7 +78,7 @@ extension ViewController : UITableViewDelegate {
             self.performSegueWithIdentifier("showWebpage", sender: self)
         }else if indexPath.row == 7 {
             // Academics
-
+            self.performSegueWithIdentifier("showAcademics", sender: self)
         }else if indexPath.row == 8 {
             // KBVU
 
@@ -93,45 +93,49 @@ extension ViewController : UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCellWithIdentifier("homeCell", forIndexPath: indexPath) as! HomeViewControllerCell
+        
         if indexPath.row == 0 {
             // Sodexo Menu
-            let cell = tableView.dequeueReusableCellWithIdentifier("sodexo", forIndexPath: indexPath)
-            return cell
+            cell.titleLbl.text = "Sodexo"
+            cell.imgView.image = UIImage(named: "meal")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
         }else if indexPath.row == 1 {
             // ACES
-            let cell = tableView.dequeueReusableCellWithIdentifier("aces", forIndexPath: indexPath)
-            return cell
+            cell.titleLbl.text = "ACES"
+            cell.imgView.image = UIImage(named: "aces")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
         }else if indexPath.row == 2 {
             // News
-            let cell = tableView.dequeueReusableCellWithIdentifier("news", forIndexPath: indexPath)
-            return cell
+            cell.titleLbl.text = "Events"
+            cell.imgView.image = UIImage(named: "news")
         }else if indexPath.row == 3 {
             // Athletics
-            let cell = tableView.dequeueReusableCellWithIdentifier("athletics", forIndexPath: indexPath)
-            return cell
+            cell.titleLbl.text = "Athletics"
+            cell.imgView.image = UIImage(named: "beaver")
         }else if indexPath.row == 4 {
             // The Tack
-            let cell = tableView.dequeueReusableCellWithIdentifier("tack", forIndexPath: indexPath)
-            return cell
+            cell.titleLbl.text = "The Tack"
+            cell.imgView.image = UIImage(named: "the-tack")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
         }else if indexPath.row == 5 {
             // CAE
-            let cell = tableView.dequeueReusableCellWithIdentifier("cae", forIndexPath: indexPath)
-            return cell
+            cell.titleLbl.text = "CAE"
+            cell.imgView.image = UIImage(named: "homework")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
+            //cell.imgView.tintColor = UIColor.whiteColor()
         }else if indexPath.row == 6 {
             // Laundry
-            let cell = tableView.dequeueReusableCellWithIdentifier("laundry", forIndexPath: indexPath)
-            return cell
+            cell.titleLbl.text = "Laundry"
+            cell.imgView.image = UIImage(named: "laundry")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
+            //cell.imgView.tintColor = UIColor.whiteColor()
         }else if indexPath.row == 7 {
             // Academics
-            let cell = tableView.dequeueReusableCellWithIdentifier("academics", forIndexPath: indexPath)
-            return cell
+            cell.titleLbl.text = "Academics"
+            cell.imgView.image = UIImage(named: "bookmark")
         }else if indexPath.row == 8 {
             // KBVU
-            let cell = tableView.dequeueReusableCellWithIdentifier("kbvu", forIndexPath: indexPath)
-            return cell
+            cell.titleLbl.text = "KBVU"
+            cell.imgView.image = UIImage(named: "kbvu_newlogo")
         }
         
-        let cell = UITableViewCell()
         return cell
     }
 }

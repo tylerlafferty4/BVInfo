@@ -1,5 +1,5 @@
 //
-//  ACESViewController.swift
+//  AcademicsViewController.swift
 //  BVInfoSwift
 //
 //  Created by Tyler Lafferty on 11/15/15.
@@ -8,8 +8,8 @@
 
 import UIKit
 
-class ACESViewController: UIViewController {
-
+class AcademicsViewController: UIViewController {
+    
     @IBOutlet var tableView : UITableView!
     var titleTxt : String = ""
     var webUrl : String = ""
@@ -17,7 +17,7 @@ class ACESViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "ACES"
+        self.title = "Academics"
         self.tableView.backgroundColor = UIColor(red: 0.92, green: 0.92, blue: 0.92, alpha: 1.0)
         tableView.reloadData()
     }
@@ -26,7 +26,7 @@ class ACESViewController: UIViewController {
         super.viewDidAppear(animated)
         
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -42,8 +42,8 @@ class ACESViewController: UIViewController {
     }
 }
 
-// MARK: Table View Delegate 
-extension ACESViewController : UITableViewDelegate {
+// MARK: Table View Delegate
+extension AcademicsViewController : UITableViewDelegate {
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 70
     }
@@ -52,49 +52,42 @@ extension ACESViewController : UITableViewDelegate {
         tableView.deselectRowAtIndexPath(indexPath, animated: false)
         if indexPath.row == 0 {
             // Cultural
-            titleTxt = "Cultural"
-            webUrl = "http://bvu.edu/bv/aces/cultural-events.dot"
+            titleTxt = "Academic Calendar"
+            webUrl = "http://www.bvu.edu/bv/academic-resources/calendar.dot"
             self.performSegueWithIdentifier("showWebpage", sender: self)
             
         }else if indexPath.row == 1 {
             // Scholarly
-            titleTxt = "Scholarly"
-            webUrl = "http://bvu.edu/bv/aces/scholarly-events.dot"
+            titleTxt = "Majors & Minors"
+            webUrl = "http://www.bvu.edu/academics/programs-majors/"
             self.performSegueWithIdentifier("showWebpage", sender: self)
             
         }else if indexPath.row == 2 {
             // Student Life
-            titleTxt = "Student Life"
-            webUrl = "http://bvu.edu/bv/aces/student-life-events.dot"
+            titleTxt = "Canvas"
+            webUrl = "https://bvu.instructure.com/login/ldap"
             self.performSegueWithIdentifier("showWebpage", sender: self)
             
-        }else if indexPath.row == 3 {
-            // Check Your Status
-            titleTxt = "Check Status"
-            webUrl = "http://www2.bvu.edu/departments/academicaffairs/aces/check.asp"
-            self.performSegueWithIdentifier("showWebpage", sender: self)
         }
     }
 }
 
 // MARK : Table View Datasource
-extension ACESViewController : UITableViewDataSource {
+extension AcademicsViewController : UITableViewDataSource {
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return 3
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("ACESCell", forIndexPath: indexPath) as! ACESCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("academicsCell", forIndexPath: indexPath) as! ACESCell
         
         switch indexPath.row {
         case 0:
-            cell.titleLbl.text = "Cultural"
+            cell.titleLbl.text = "Academic Calendar"
         case 1:
-            cell.titleLbl.text = "Scholarly"
+            cell.titleLbl.text = "Majors & Minors"
         case 2:
-            cell.titleLbl.text = "Student Life"
-        case 3:
-            cell.titleLbl.text = "Check Your Status"
+            cell.titleLbl.text = "Canvas"
         default:
             break
         }
