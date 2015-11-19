@@ -56,10 +56,15 @@ extension ViewController : UITableViewDelegate {
 
         }else if indexPath.row == 3 {
             // Athletics
-            self.performSegueWithIdentifier("showAthletics", sender: self)
+            webUrl = "http://bvuathletics.com/landing/headlines-featured?feed=rss_2.0"
+            titleTxt = "Athletics"
+            self.performSegueWithIdentifier("showRSS", sender: self)
 
         }else if indexPath.row == 4 {
             // The Tack
+            webUrl = "http://www.bvtack.com/feed/"
+            titleTxt = "The Tack"
+            self.performSegueWithIdentifier("showRSS", sender: self)
 
         }else if indexPath.row == 5 {
             // CAE
@@ -138,6 +143,10 @@ extension ViewController {
             let destVc = segue.destinationViewController as! WebsiteViewController
             destVc.titleTxt = titleTxt
             destVc.webUrl = webUrl
+        } else if segue.identifier == "showRSS" {
+            let destVc = segue.destinationViewController as! RSSViewController
+            destVc.titleTxt = titleTxt
+            destVc.rssUrl = webUrl
         }
     }
 }

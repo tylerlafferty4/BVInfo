@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  RSSPost.swift
 //  BVInfoSwift
 //
 //  Created by Tyler Lafferty on 11/16/15.
@@ -8,7 +8,8 @@
 
 import Foundation
 
-class AthleticsPost {
+class RSSPost {
     var postTitle: String = String()
     var postLink: String = String()
+    var postDate: String = String()
 }

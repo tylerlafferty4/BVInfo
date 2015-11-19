@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="D7I-8b-fyD">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -347,17 +348,17 @@
                         <outlet property="tableView" destination="bH6-Oe-Uk7" id="Tc5-DU-baB"/>
                         <segue destination="Uvl-wY-i4B" kind="presentation" identifier="showWebpage" id="l73-Nk-9Wu"/>
                         <segue destination="AQT-PI-Zil" kind="show" identifier="showACES" id="utF-M9-8r9"/>
-                        <segue destination="Thz-sq-RNP" kind="show" identifier="showAthletics" id="bXY-So-0p2"/>
+                        <segue destination="Thz-sq-RNP" kind="show" identifier="showRSS" id="bXY-So-0p2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1034" y="1025"/>
         </scene>
-        <!--Athletics View Controller-->
+        <!--View Controller-->
         <scene sceneID="lt4-G3-SVP">
             <objects>
-                <viewController id="Thz-sq-RNP" customClass="AthleticsViewController" customModule="BVInfoSwift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Thz-sq-RNP" customClass="RSSViewController" customModule="BVInfoSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="5rR-F3-7rg"/>
                         <viewControllerLayoutGuide type="bottom" id="xME-bd-nbr"/>
@@ -366,21 +367,73 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="800"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fIs-oX-1tr">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fIs-oX-1tr">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="800"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="Lf1-eb-7ZR">
-                                        <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="75" id="Lf1-eb-7ZR" customClass="RSSCell" customModule="BVInfoSwift" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="92" width="600" height="75"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Lf1-eb-7ZR" id="RPF-9e-Ftp">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="75"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YIb-jo-sgU">
+                                                    <rect key="frame" x="8" y="12" width="584" height="21"/>
+                                                    <animations/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="kLZ-QX-sBu"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="kLZ-QX-sBu"/>
+                                                        </mask>
+                                                    </variation>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h1b-eN-Jk2">
+                                                    <rect key="frame" x="8" y="36" width="584" height="17"/>
+                                                    <animations/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="17" id="P3L-7V-wxE"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="P3L-7V-wxE"/>
+                                                        </mask>
+                                                    </variation>
+                                                </label>
+                                            </subviews>
                                             <animations/>
+                                            <constraints>
+                                                <constraint firstItem="h1b-eN-Jk2" firstAttribute="top" secondItem="YIb-jo-sgU" secondAttribute="bottom" constant="13" id="01X-cZ-5tS"/>
+                                                <constraint firstItem="h1b-eN-Jk2" firstAttribute="leading" secondItem="RPF-9e-Ftp" secondAttribute="leading" constant="8" id="72K-2G-cs8"/>
+                                                <constraint firstAttribute="trailing" secondItem="YIb-jo-sgU" secondAttribute="trailing" constant="8" id="8Ih-93-V2X"/>
+                                                <constraint firstItem="YIb-jo-sgU" firstAttribute="leading" secondItem="RPF-9e-Ftp" secondAttribute="leading" constant="8" id="GcO-90-mIO"/>
+                                                <constraint firstItem="YIb-jo-sgU" firstAttribute="centerY" secondItem="RPF-9e-Ftp" secondAttribute="centerY" id="SBL-UQ-G3b"/>
+                                                <constraint firstItem="h1b-eN-Jk2" firstAttribute="top" secondItem="YIb-jo-sgU" secondAttribute="bottom" constant="3" id="fGj-Ub-WZM"/>
+                                                <constraint firstAttribute="trailing" secondItem="h1b-eN-Jk2" secondAttribute="trailing" constant="8" id="jE4-NT-jyk"/>
+                                                <constraint firstItem="YIb-jo-sgU" firstAttribute="top" secondItem="RPF-9e-Ftp" secondAttribute="topMargin" constant="4" id="pxs-ip-gZv"/>
+                                                <constraint firstAttribute="bottom" secondItem="h1b-eN-Jk2" secondAttribute="bottom" constant="8" id="vM4-q4-6NT"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="SBL-UQ-G3b"/>
+                                                    <exclude reference="01X-cZ-5tS"/>
+                                                    <exclude reference="vM4-q4-6NT"/>
+                                                </mask>
+                                            </variation>
                                         </tableViewCellContentView>
                                         <animations/>
                                         <connections>
+                                            <outlet property="dateLbl" destination="h1b-eN-Jk2" id="qy3-zZ-FKs"/>
+                                            <outlet property="titleLbl" destination="YIb-jo-sgU" id="5SP-Cj-A9g"/>
                                             <segue destination="Uvl-wY-i4B" kind="presentation" identifier="viewpost" trigger="accessoryAction" id="ZAq-L6-IZf"/>
                                         </connections>
                                     </tableViewCell>
@@ -634,6 +687,6 @@
         <image name="tack" width="160" height="160"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="crN-4m-dM5"/>
+        <segue reference="ZAq-L6-IZf"/>
     </inferredMetricsTieBreakers>
 </document>
