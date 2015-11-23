@@ -52,8 +52,11 @@ extension ViewController : UITableViewDelegate {
             // ACES
             self.performSegueWithIdentifier("showACES", sender: self)
         }else if indexPath.row == 2 {
-            // News
-
+            // Events
+            webUrl = "https://events.bvu.edu/page/rss/?duration=30days"
+            titleTxt = "Events"
+            self.performSegueWithIdentifier("showRSS", sender: self)
+            
         }else if indexPath.row == 3 {
             // Athletics
             webUrl = "http://bvuathletics.com/landing/headlines-featured?feed=rss_2.0"
@@ -105,9 +108,9 @@ extension ViewController : UITableViewDataSource {
             cell.titleLbl.text = "ACES"
             cell.imgView.image = UIImage(named: "aces")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
         }else if indexPath.row == 2 {
-            // News
+            // Events
             cell.titleLbl.text = "Events"
-            cell.imgView.image = UIImage(named: "news")
+            cell.imgView.image = UIImage(named: "events")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
         }else if indexPath.row == 3 {
             // Athletics
             cell.titleLbl.text = "Athletics"
@@ -120,20 +123,18 @@ extension ViewController : UITableViewDataSource {
             // CAE
             cell.titleLbl.text = "CAE"
             cell.imgView.image = UIImage(named: "homework")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
-            //cell.imgView.tintColor = UIColor.whiteColor()
         }else if indexPath.row == 6 {
             // Laundry
             cell.titleLbl.text = "Laundry"
             cell.imgView.image = UIImage(named: "laundry")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
-            //cell.imgView.tintColor = UIColor.whiteColor()
         }else if indexPath.row == 7 {
             // Academics
             cell.titleLbl.text = "Academics"
-            cell.imgView.image = UIImage(named: "bookmark")
+            cell.imgView.image = UIImage(named: "academics")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
         }else if indexPath.row == 8 {
             // KBVU
             cell.titleLbl.text = "KBVU"
-            cell.imgView.image = UIImage(named: "kbvu_newlogo")
+            cell.imgView.image = UIImage(named: "kbvu")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
         }
         
         return cell
