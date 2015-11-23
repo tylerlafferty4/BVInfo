@@ -22,6 +22,8 @@
 		D8BDC9381BFAAB8200CB40B4 /* RSSPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BDC9371BFAAB8200CB40B4 /* RSSPost.swift */; settings = {ASSET_TAGS = (); }; };
 		D8BDC93A1BFD725700CB40B4 /* RSSCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BDC9391BFD725700CB40B4 /* RSSCell.swift */; settings = {ASSET_TAGS = (); }; };
 		D8C2678F1BFD8B0C00E0F8F9 /* AcademicsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C2678E1BFD8B0C00E0F8F9 /* AcademicsViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		D8C267921C02AD8800E0F8F9 /* KBVUViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C267911C02AD8800E0F8F9 /* KBVUViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		D8C267941C02B23A00E0F8F9 /* kbvuAudio.m3u in Resources */ = {isa = PBXBuildFile; fileRef = D8C267931C02B23A00E0F8F9 /* kbvuAudio.m3u */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +65,8 @@
 		D8BDC9371BFAAB8200CB40B4 /* RSSPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSSPost.swift; sourceTree = "<group>"; };
 		D8BDC9391BFD725700CB40B4 /* RSSCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSSCell.swift; sourceTree = "<group>"; };
 		D8C2678E1BFD8B0C00E0F8F9 /* AcademicsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AcademicsViewController.swift; sourceTree = "<group>"; };
+		D8C267911C02AD8800E0F8F9 /* KBVUViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KBVUViewController.swift; sourceTree = "<group>"; };
+		D8C267931C02B23A00E0F8F9 /* kbvuAudio.m3u */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = kbvuAudio.m3u; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +97,7 @@
 		D8BDC8EC1BF8F20100CB40B4 = {
 			isa = PBXGroup;
 			children = (
+				D8C267931C02B23A00E0F8F9 /* kbvuAudio.m3u */,
 				D8BDC8F71BF8F20100CB40B4 /* BVInfoSwift */,
 				D8BDC90C1BF8F20100CB40B4 /* BVInfoSwiftTests */,
 				D8BDC9171BF8F20200CB40B4 /* BVInfoSwiftUITests */,
@@ -118,6 +123,7 @@
 				D8BDC8FF1BF8F20100CB40B4 /* Assets.xcassets */,
 				D8BDC9011BF8F20100CB40B4 /* LaunchScreen.storyboard */,
 				D8BDC9041BF8F20100CB40B4 /* Info.plist */,
+				D8C267901C02AD7A00E0F8F9 /* KBVU */,
 				D8C2678D1BFD8AF400E0F8F9 /* Academics */,
 				D8BDC9341BFAA91E00CB40B4 /* RSS */,
 				D8BDC9331BF9899F00CB40B4 /* HomeScreen */,
@@ -189,6 +195,14 @@
 			name = Academics;
 			sourceTree = "<group>";
 		};
+		D8C267901C02AD7A00E0F8F9 /* KBVU */ = {
+			isa = PBXGroup;
+			children = (
+				D8C267911C02AD8800E0F8F9 /* KBVUViewController.swift */,
+			);
+			name = KBVU;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -256,6 +270,11 @@
 				TargetAttributes = {
 					D8BDC8F41BF8F20100CB40B4 = {
 						CreatedOnToolsVersion = 7.0.1;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					D8BDC9081BF8F20100CB40B4 = {
 						CreatedOnToolsVersion = 7.0.1;
@@ -294,6 +313,7 @@
 			files = (
 				D8BDC9031BF8F20100CB40B4 /* LaunchScreen.storyboard in Resources */,
 				D8BDC9001BF8F20100CB40B4 /* Assets.xcassets in Resources */,
+				D8C267941C02B23A00E0F8F9 /* kbvuAudio.m3u in Resources */,
 				D8BDC8FE1BF8F20100CB40B4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -322,6 +342,7 @@
 				D8BDC92C1BF978BF00CB40B4 /* WebsiteViewController.swift in Sources */,
 				D8BDC92E1BF9851500CB40B4 /* ACESViewController.swift in Sources */,
 				D8BDC8FB1BF8F20100CB40B4 /* ViewController.swift in Sources */,
+				D8C267921C02AD8800E0F8F9 /* KBVUViewController.swift in Sources */,
 				D8BDC93A1BFD725700CB40B4 /* RSSCell.swift in Sources */,
 				D8BDC8F91BF8F20100CB40B4 /* AppDelegate.swift in Sources */,
 				D8BDC9361BFAA96000CB40B4 /* RSSViewController.swift in Sources */,

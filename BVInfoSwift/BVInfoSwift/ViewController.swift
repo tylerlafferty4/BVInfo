@@ -84,7 +84,7 @@ extension ViewController : UITableViewDelegate {
             self.performSegueWithIdentifier("showAcademics", sender: self)
         }else if indexPath.row == 8 {
             // KBVU
-
+            self.performSegueWithIdentifier("showKBVU", sender: self)
         }
     }
 }
