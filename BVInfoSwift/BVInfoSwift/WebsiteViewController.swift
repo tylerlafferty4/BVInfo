@@ -6,6 +6,7 @@
 //  Copyright © 2015 Tyler Lafferty. All rights reserved.
 //
 
+import iAd
 import UIKit
 
 class WebsiteViewController: UIViewController {
@@ -22,6 +23,7 @@ class WebsiteViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.canDisplayBannerAds = true
         let url = NSURL (string: webUrl);
         let requestObj = NSURLRequest(URL: url!);
         webView.loadRequest(requestObj);

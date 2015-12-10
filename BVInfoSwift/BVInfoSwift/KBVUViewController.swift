@@ -10,6 +10,7 @@ import UIKit
 import AVFoundation
 import MediaPlayer
 import AVKit
+import iAd
 
 class KBVUViewController: UIViewController {
 
@@ -28,10 +29,11 @@ class KBVUViewController: UIViewController {
     var isPlaying : Bool! = false
     
     var titleTxt : String! = "97.5 KBVU The Edge"
-    var webUrl : String! = "http://web.bvu.edu/organizations/kbvu/index.html"
+    var webUrl : String! = "https://www.facebook.com/kbvutheedge/?fref=ts"
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.canDisplayBannerAds = true
         let url = NSURL (string: webUrl);
         let requestObj = NSURLRequest(URL: url!);
         webView.loadRequest(requestObj);

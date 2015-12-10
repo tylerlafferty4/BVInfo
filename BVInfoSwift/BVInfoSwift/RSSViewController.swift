@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import iAd
 
 class RSSViewController: UIViewController, NSXMLParserDelegate {
 
@@ -22,6 +23,7 @@ class RSSViewController: UIViewController, NSXMLParserDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.canDisplayBannerAds = true
         self.title = titleTxt
         self.tableView.backgroundColor = UIColor(red: 0.92, green: 0.92, blue: 0.92, alpha: 1.0)
         let url:NSURL = NSURL(string: rssUrl)!

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import iAd
 
 class ACESViewController: UIViewController {
 
@@ -17,6 +18,7 @@ class ACESViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.canDisplayBannerAds = true
         self.title = "ACES"
         self.tableView.backgroundColor = UIColor(red: 0.92, green: 0.92, blue: 0.92, alpha: 1.0)
         tableView.reloadData()

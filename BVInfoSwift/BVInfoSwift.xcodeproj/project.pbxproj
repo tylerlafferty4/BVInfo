@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D820691A1C1925FC00B4E8BB /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D82069191C1925FC00B4E8BB /* iAd.framework */; };
 		D8BDC8F91BF8F20100CB40B4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BDC8F81BF8F20100CB40B4 /* AppDelegate.swift */; };
 		D8BDC8FB1BF8F20100CB40B4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BDC8FA1BF8F20100CB40B4 /* ViewController.swift */; };
 		D8BDC8FE1BF8F20100CB40B4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8BDC8FC1BF8F20100CB40B4 /* Main.storyboard */; };
@@ -14,16 +15,16 @@
 		D8BDC9031BF8F20100CB40B4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8BDC9011BF8F20100CB40B4 /* LaunchScreen.storyboard */; };
 		D8BDC90E1BF8F20100CB40B4 /* BVInfoSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BDC90D1BF8F20100CB40B4 /* BVInfoSwiftTests.swift */; };
 		D8BDC9191BF8F20200CB40B4 /* BVInfoSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BDC9181BF8F20200CB40B4 /* BVInfoSwiftUITests.swift */; };
-		D8BDC9291BF93A4D00CB40B4 /* HomeViewControllerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BDC9281BF93A4C00CB40B4 /* HomeViewControllerCell.swift */; settings = {ASSET_TAGS = (); }; };
-		D8BDC92C1BF978BF00CB40B4 /* WebsiteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BDC92B1BF978BF00CB40B4 /* WebsiteViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		D8BDC92E1BF9851500CB40B4 /* ACESViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BDC92D1BF9851500CB40B4 /* ACESViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		D8BDC9311BF987F300CB40B4 /* ACESCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BDC9301BF987F300CB40B4 /* ACESCell.swift */; settings = {ASSET_TAGS = (); }; };
-		D8BDC9361BFAA96000CB40B4 /* RSSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BDC9351BFAA96000CB40B4 /* RSSViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		D8BDC9381BFAAB8200CB40B4 /* RSSPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BDC9371BFAAB8200CB40B4 /* RSSPost.swift */; settings = {ASSET_TAGS = (); }; };
-		D8BDC93A1BFD725700CB40B4 /* RSSCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BDC9391BFD725700CB40B4 /* RSSCell.swift */; settings = {ASSET_TAGS = (); }; };
-		D8C2678F1BFD8B0C00E0F8F9 /* AcademicsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C2678E1BFD8B0C00E0F8F9 /* AcademicsViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		D8C267921C02AD8800E0F8F9 /* KBVUViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C267911C02AD8800E0F8F9 /* KBVUViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		D8C267941C02B23A00E0F8F9 /* kbvuAudio.m3u in Resources */ = {isa = PBXBuildFile; fileRef = D8C267931C02B23A00E0F8F9 /* kbvuAudio.m3u */; settings = {ASSET_TAGS = (); }; };
+		D8BDC9291BF93A4D00CB40B4 /* HomeViewControllerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BDC9281BF93A4C00CB40B4 /* HomeViewControllerCell.swift */; };
+		D8BDC92C1BF978BF00CB40B4 /* WebsiteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BDC92B1BF978BF00CB40B4 /* WebsiteViewController.swift */; };
+		D8BDC92E1BF9851500CB40B4 /* ACESViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BDC92D1BF9851500CB40B4 /* ACESViewController.swift */; };
+		D8BDC9311BF987F300CB40B4 /* ACESCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BDC9301BF987F300CB40B4 /* ACESCell.swift */; };
+		D8BDC9361BFAA96000CB40B4 /* RSSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BDC9351BFAA96000CB40B4 /* RSSViewController.swift */; };
+		D8BDC9381BFAAB8200CB40B4 /* RSSPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BDC9371BFAAB8200CB40B4 /* RSSPost.swift */; };
+		D8BDC93A1BFD725700CB40B4 /* RSSCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BDC9391BFD725700CB40B4 /* RSSCell.swift */; };
+		D8C2678F1BFD8B0C00E0F8F9 /* AcademicsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C2678E1BFD8B0C00E0F8F9 /* AcademicsViewController.swift */; };
+		D8C267921C02AD8800E0F8F9 /* KBVUViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C267911C02AD8800E0F8F9 /* KBVUViewController.swift */; };
+		D8C267941C02B23A00E0F8F9 /* kbvuAudio.m3u in Resources */ = {isa = PBXBuildFile; fileRef = D8C267931C02B23A00E0F8F9 /* kbvuAudio.m3u */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D82069191C1925FC00B4E8BB /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		D8BDC8F51BF8F20100CB40B4 /* BVInfoSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BVInfoSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8BDC8F81BF8F20100CB40B4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D8BDC8FA1BF8F20100CB40B4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -74,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D820691A1C1925FC00B4E8BB /* iAd.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,6 +100,7 @@
 		D8BDC8EC1BF8F20100CB40B4 = {
 			isa = PBXGroup;
 			children = (
+				D82069191C1925FC00B4E8BB /* iAd.framework */,
 				D8C267931C02B23A00E0F8F9 /* kbvuAudio.m3u */,
 				D8BDC8F71BF8F20100CB40B4 /* BVInfoSwift */,
 				D8BDC90C1BF8F20100CB40B4 /* BVInfoSwiftTests */,
