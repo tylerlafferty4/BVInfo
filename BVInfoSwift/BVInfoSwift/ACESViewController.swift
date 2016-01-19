@@ -20,7 +20,7 @@ class ACESViewController: UIViewController {
         super.viewDidLoad()
         self.canDisplayBannerAds = true
         self.title = "ACES"
-        self.tableView.backgroundColor = UIColor(red: 0.92, green: 0.92, blue: 0.92, alpha: 1.0)
+        self.tableView.backgroundColor = UIColor.lightGrayColor() //UIColor(red: 0.92, green: 0.92, blue: 0.92, alpha: 1.0)
         tableView.reloadData()
     }
     

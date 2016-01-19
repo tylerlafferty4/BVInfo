@@ -25,7 +25,7 @@ class RSSViewController: UIViewController, NSXMLParserDelegate {
         super.viewDidLoad()
         self.canDisplayBannerAds = true
         self.title = titleTxt
-        self.tableView.backgroundColor = UIColor(red: 0.92, green: 0.92, blue: 0.92, alpha: 1.0)
+        self.tableView.backgroundColor = UIColor.lightGrayColor() //UIColor(red: 0.92, green: 0.92, blue: 0.92, alpha: 1.0)
         let url:NSURL = NSURL(string: rssUrl)!
         parser = NSXMLParser(contentsOfURL: url)!
         parser.delegate = self

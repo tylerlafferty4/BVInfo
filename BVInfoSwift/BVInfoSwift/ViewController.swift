@@ -11,7 +11,7 @@ import iAd
 
 class ViewController: UIViewController {
 
-    @IBOutlet var tableView : UITableView!
+    @IBOutlet var collectionView : UICollectionView!
     var webUrl : String = ""
     var titleTxt : String = ""
     
@@ -19,11 +19,11 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         self.canDisplayBannerAds = true
         self.title = "BV Info"
-        self.tableView.backgroundColor = UIColor(red: 0.92, green: 0.92, blue: 0.92, alpha: 1.0)
+        self.collectionView.backgroundColor = UIColor.lightGrayColor() //UIColor(red: 0.92, green: 0.92, blue: 0.92, alpha: 1.0)
         self.navigationController?.navigationBar.tintColor = UIColor.yellowColor()
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.yellowColor()]
         self.navigationController?.navigationBar.barTintColor = UIColor(red: 0, green: 0, blue: 128/255, alpha: 1)
-        tableView.reloadData()
+        collectionView.reloadData()
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -38,13 +38,9 @@ class ViewController: UIViewController {
 }
 
 // MARK: Table View Delegate
-extension ViewController : UITableViewDelegate {
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 75
-    }
-    
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: false)
+extension ViewController : UICollectionViewDelegate {
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        collectionView.deselectItemAtIndexPath(indexPath, animated: true) //deselectRowAtIndexPath(indexPath, animated: false)
         if indexPath.row == 0 {
             // Sodexo Menu
             webUrl = "https://bvudining.sodexomyway.com/dining-choices/index.html"
@@ -64,13 +60,12 @@ extension ViewController : UITableViewDelegate {
             webUrl = "http://bvuathletics.com/landing/headlines-featured?feed=rss_2.0"
             titleTxt = "Athletics"
             self.performSegueWithIdentifier("showRSS", sender: self)
-
+            
         }else if indexPath.row == 4 {
             // The Tack
             webUrl = "http://www.bvtack.com/feed/"
             titleTxt = "The Tack"
             self.performSegueWithIdentifier("showRSS", sender: self)
-
         }else if indexPath.row == 5 {
             // CAE
             webUrl = "http://web.bvu.edu/accuweb/"
@@ -89,17 +84,20 @@ extension ViewController : UITableViewDelegate {
             self.performSegueWithIdentifier("showKBVU", sender: self)
         }
     }
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+        return CGSizeMake((UIScreen.mainScreen().bounds.width/2)-15, 125)
+    }
 }
 
 // MARK: Table View Datasource
-extension ViewController : UITableViewDataSource {
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 9
+extension ViewController : UICollectionViewDataSource {
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 8
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        
-        let cell = tableView.dequeueReusableCellWithIdentifier("homeCell", forIndexPath: indexPath) as! HomeViewControllerCell
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("homeCell", forIndexPath: indexPath) as! HomeViewControllerCell
         
         if indexPath.row == 0 {
             // Sodexo Menu
