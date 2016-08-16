@@ -20,6 +20,8 @@
 		D82069331C1E723200B4E8BB /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D82069321C1E723200B4E8BB /* SystemConfiguration.framework */; };
 		D82069351C1E723900B4E8BB /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D82069341C1E723900B4E8BB /* libz.tbd */; };
 		D82069371C1E724B00B4E8BB /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D82069361C1E724B00B4E8BB /* libsqlite3.tbd */; };
+		D86966651D628EB4007E9E6E /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D86966631D628EB4007E9E6E /* Fabric.framework */; };
+		D86966681D628FCB007E9E6E /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D86966671D628FCB007E9E6E /* Crashlytics.framework */; };
 		D8BDC8F91BF8F20100CB40B4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BDC8F81BF8F20100CB40B4 /* AppDelegate.swift */; };
 		D8BDC8FB1BF8F20100CB40B4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BDC8FA1BF8F20100CB40B4 /* ViewController.swift */; };
 		D8BDC8FE1BF8F20100CB40B4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8BDC8FC1BF8F20100CB40B4 /* Main.storyboard */; };
@@ -72,6 +74,8 @@
 		D82069361C1E724B00B4E8BB /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		D82069411C2251EF00B4E8BB /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = "../../../Downloads/parse-library-1.10.0/Parse.framework"; sourceTree = "<group>"; };
 		D82069431C2251FE00B4E8BB /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseUI.framework; path = "../../../Downloads/parse-library-1.10.0/ParseUI.framework"; sourceTree = "<group>"; };
+		D86966631D628EB4007E9E6E /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
+		D86966671D628FCB007E9E6E /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		D8BDC8F51BF8F20100CB40B4 /* BVInfoSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BVInfoSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8BDC8F81BF8F20100CB40B4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D8BDC8FA1BF8F20100CB40B4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -104,6 +108,7 @@
 			files = (
 				D82069371C1E724B00B4E8BB /* libsqlite3.tbd in Frameworks */,
 				D82069351C1E723900B4E8BB /* libz.tbd in Frameworks */,
+				D86966681D628FCB007E9E6E /* Crashlytics.framework in Frameworks */,
 				D82069331C1E723200B4E8BB /* SystemConfiguration.framework in Frameworks */,
 				D82069311C1E722900B4E8BB /* StoreKit.framework in Frameworks */,
 				D820692F1C1E722400B4E8BB /* Security.framework in Frameworks */,
@@ -113,6 +118,7 @@
 				D82069271C1E720100B4E8BB /* CFNetwork.framework in Frameworks */,
 				D82069251C1E71F900B4E8BB /* AudioToolbox.framework in Frameworks */,
 				D820691A1C1925FC00B4E8BB /* iAd.framework in Frameworks */,
+				D86966651D628EB4007E9E6E /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,6 +153,8 @@
 			children = (
 				D82069361C1E724B00B4E8BB /* libsqlite3.tbd */,
 				D82069341C1E723900B4E8BB /* libz.tbd */,
+				D86966671D628FCB007E9E6E /* Crashlytics.framework */,
+				D86966631D628EB4007E9E6E /* Fabric.framework */,
 				D82069431C2251FE00B4E8BB /* ParseUI.framework */,
 				D82069411C2251EF00B4E8BB /* Parse.framework */,
 				D82069321C1E723200B4E8BB /* SystemConfiguration.framework */,
@@ -283,6 +291,7 @@
 				D8BDC8F11BF8F20100CB40B4 /* Sources */,
 				D8BDC8F21BF8F20100CB40B4 /* Frameworks */,
 				D8BDC8F31BF8F20100CB40B4 /* Resources */,
+				D86966621D628E94007E9E6E /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -404,6 +413,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		D86966621D628E94007E9E6E /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run 3ab296977799a1c95a272d13bc638212ca2ff873 56f0fa9f66fcc4aa21eaf24da89b6880e6f4b38d3acb137e20bdc98ecbf8b627";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D8BDC8F11BF8F20100CB40B4 /* Sources */ = {
@@ -567,6 +592,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)/**",
 					"$(PROJECT_DIR)/**",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = BVInfoSwift/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -585,6 +611,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)/**",
 					"$(PROJECT_DIR)/**",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = BVInfoSwift/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

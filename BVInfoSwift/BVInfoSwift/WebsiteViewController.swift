@@ -34,7 +34,7 @@ class WebsiteViewController: UIViewController {
         closeBtn.image = UIImage(named: "X")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
         closeBtn.tintColor = UIColor(red: 1.0, green: 234/255, blue: 61/255, alpha: 1.0)
         closeBtn.userInteractionEnabled = true
-        let close = UITapGestureRecognizer(target: self, action: Selector("closeWebView"))
+        let close = UITapGestureRecognizer(target: self, action: #selector(WebsiteViewController.closeWebView))
         closeBtn.addGestureRecognizer(close)
         
         // Back Image View
@@ -42,14 +42,14 @@ class WebsiteViewController: UIViewController {
         backBtn.transform = CGAffineTransformMakeRotation(CGFloat(M_PI))
         backBtn.tintColor = UIColor(red: 1.0, green: 234/255, blue: 61/255, alpha: 1.0)
         backBtn.userInteractionEnabled = true
-        let back = UITapGestureRecognizer(target: self, action: Selector("goBack"))
+        let back = UITapGestureRecognizer(target: self, action: #selector(WebsiteViewController.goBack))
         backBtn.addGestureRecognizer(back)
         
         // Forward Image View
         forwardBtn.image = UIImage(named: "arrow-right")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
         forwardBtn.tintColor = UIColor(red: 1.0, green: 234/255, blue: 61/255, alpha: 1.0)
         forwardBtn.userInteractionEnabled = true
-        let forward = UITapGestureRecognizer(target: self, action: Selector("goForward"))
+        let forward = UITapGestureRecognizer(target: self, action: #selector(WebsiteViewController.goForward))
         forwardBtn.addGestureRecognizer(forward)
     }
 
