@@ -25,7 +25,7 @@ class KBVUViewController: UIViewController {
     @IBOutlet var volumeSlider : UISlider!
     
     // Live Stream
-    var player = AVPlayer(URL: NSURL(string: "http://147.92.8.23/kbvu.m3u")!)
+    var player = AVPlayer(url: URL(string: "http://147.92.8.23/kbvu.m3u")!)
     var isPlaying : Bool! = false
     
     var titleTxt : String! = "97.5 KBVU The Edge"
@@ -34,31 +34,31 @@ class KBVUViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.canDisplayBannerAds = true
-        let url = NSURL (string: webUrl);
-        let requestObj = NSURLRequest(URL: url!);
+        let url = URL (string: webUrl);
+        let requestObj = URLRequest(url: url!);
         webView.loadRequest(requestObj);
         
         titleLbl.text = titleTxt
         
         // Close Image View
-        closeBtn.image = UIImage(named: "X")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
+        closeBtn.image = UIImage(named: "X")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
         closeBtn.tintColor = UIColor(red: 1.0, green: 234/255, blue: 61/255, alpha: 1.0)
-        closeBtn.userInteractionEnabled = true
+        closeBtn.isUserInteractionEnabled = true
         let close = UITapGestureRecognizer(target: self, action: #selector(KBVUViewController.closeWebView))
         closeBtn.addGestureRecognizer(close)
         
         // Back Image View
-        backBtn.image = UIImage(named: "arrow-right")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
-        backBtn.transform = CGAffineTransformMakeRotation(CGFloat(M_PI))
+        backBtn.image = UIImage(named: "arrow-right")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
+        backBtn.transform = CGAffineTransform(rotationAngle: CGFloat(M_PI))
         backBtn.tintColor = UIColor(red: 1.0, green: 234/255, blue: 61/255, alpha: 1.0)
-        backBtn.userInteractionEnabled = true
+        backBtn.isUserInteractionEnabled = true
         let back = UITapGestureRecognizer(target: self, action: #selector(KBVUViewController.goBack))
         backBtn.addGestureRecognizer(back)
         
         // Forward Image View
-        forwardBtn.image = UIImage(named: "arrow-right")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
+        forwardBtn.image = UIImage(named: "arrow-right")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
         forwardBtn.tintColor = UIColor(red: 1.0, green: 234/255, blue: 61/255, alpha: 1.0)
-        forwardBtn.userInteractionEnabled = true
+        forwardBtn.isUserInteractionEnabled = true
         let forward = UITapGestureRecognizer(target: self, action: #selector(KBVUViewController.goForward))
         forwardBtn.addGestureRecognizer(forward)
         
@@ -73,18 +73,18 @@ class KBVUViewController: UIViewController {
 // MARK : Play/Pause Button, Volume
 extension KBVUViewController {
     
-    @IBAction func volumeChnaged(sender: AnyObject) {
+    @IBAction func volumeChnaged(_ sender: AnyObject) {
         player.volume = volumeSlider.value
     }
     
-    @IBAction func playPause(sender: AnyObject) {
+    @IBAction func playPause(_ sender: AnyObject) {
         if isPlaying == true {
             player.pause()
-            playBtn.setImage(UIImage(named: "SongControl_Play"), forState: UIControlState.Normal)
+            playBtn.setImage(UIImage(named: "SongControl_Play"), for: UIControlState())
             isPlaying = false
         }else {
             player.play()
-            playBtn.setImage(UIImage(named: "SongControl_Pause"), forState: UIControlState.Normal)
+            playBtn.setImage(UIImage(named: "SongControl_Pause"), for: UIControlState())
             isPlaying = true
         }
     }
@@ -92,13 +92,13 @@ extension KBVUViewController {
 
 // MARK : Web View Delegate
 extension KBVUViewController : UIWebViewDelegate {
-    func webViewDidStartLoad(webView: UIWebView) {
-        activity.hidden = false
+    func webViewDidStartLoad(_ webView: UIWebView) {
+        activity.isHidden = false
         activity.startAnimating()
     }
     
-    func webViewDidFinishLoad(webView: UIWebView) {
-        activity.hidden = true
+    func webViewDidFinishLoad(_ webView: UIWebView) {
+        activity.isHidden = true
         activity.stopAnimating()
     }
 }
@@ -107,7 +107,7 @@ extension KBVUViewController : UIWebViewDelegate {
 extension KBVUViewController {
     
     func closeWebView() {
-        self.dismissViewControllerAnimated(true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
     
     func goBack() {

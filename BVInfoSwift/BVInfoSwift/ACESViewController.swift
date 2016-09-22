@@ -20,11 +20,11 @@ class ACESViewController: UIViewController {
         super.viewDidLoad()
         self.canDisplayBannerAds = true
         self.title = "ACES"
-        self.tableView.backgroundColor = UIColor.lightGrayColor() //UIColor(red: 0.92, green: 0.92, blue: 0.92, alpha: 1.0)
+        self.tableView.backgroundColor = UIColor.lightGray //UIColor(red: 0.92, green: 0.92, blue: 0.92, alpha: 1.0)
         tableView.reloadData()
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
     }
@@ -35,8 +35,8 @@ class ACESViewController: UIViewController {
     }
     
     // MARK: - Navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let destVc = segue.destinationViewController as! WebsiteViewController
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destVc = segue.destination as! WebsiteViewController
         if segue.identifier == "showWebpage" {
             destVc.titleTxt = titleTxt
             destVc.webUrl = webUrl
@@ -46,49 +46,49 @@ class ACESViewController: UIViewController {
 
 // MARK: Table View Delegate 
 extension ACESViewController : UITableViewDelegate {
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 70
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: false)
-        if indexPath.row == 0 {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: false)
+        if (indexPath as NSIndexPath).row == 0 {
             // Cultural
             titleTxt = "Cultural"
             webUrl = "http://bvu.edu/bv/aces/cultural-events.dot"
-            self.performSegueWithIdentifier("showWebpage", sender: self)
+            self.performSegue(withIdentifier: "showWebpage", sender: self)
             
-        }else if indexPath.row == 1 {
+        }else if (indexPath as NSIndexPath).row == 1 {
             // Scholarly
             titleTxt = "Scholarly"
             webUrl = "http://bvu.edu/bv/aces/scholarly-events.dot"
-            self.performSegueWithIdentifier("showWebpage", sender: self)
+            self.performSegue(withIdentifier: "showWebpage", sender: self)
             
-        }else if indexPath.row == 2 {
+        }else if (indexPath as NSIndexPath).row == 2 {
             // Student Life
             titleTxt = "Student Life"
             webUrl = "http://bvu.edu/bv/aces/student-life-events.dot"
-            self.performSegueWithIdentifier("showWebpage", sender: self)
+            self.performSegue(withIdentifier: "showWebpage", sender: self)
             
-        }else if indexPath.row == 3 {
+        }else if (indexPath as NSIndexPath).row == 3 {
             // Check Your Status
             titleTxt = "Check Status"
             webUrl = "http://www2.bvu.edu/departments/academicaffairs/aces/check.asp"
-            self.performSegueWithIdentifier("showWebpage", sender: self)
+            self.performSegue(withIdentifier: "showWebpage", sender: self)
         }
     }
 }
 
 // MARK : Table View Datasource
 extension ACESViewController : UITableViewDataSource {
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 4
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("ACESCell", forIndexPath: indexPath) as! ACESCell
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ACESCell", for: indexPath) as! ACESCell
         
-        switch indexPath.row {
+        switch (indexPath as NSIndexPath).row {
         case 0:
             cell.titleLbl.text = "Cultural"
         case 1:

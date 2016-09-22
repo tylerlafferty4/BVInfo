@@ -20,11 +20,11 @@ class AcademicsViewController: UIViewController {
         super.viewDidLoad()
         self.canDisplayBannerAds = true
         self.title = "Academics"
-        self.tableView.backgroundColor = UIColor.lightGrayColor() //UIColor(red: 0.92, green: 0.92, blue: 0.92, alpha: 1.0)
+        self.tableView.backgroundColor = UIColor.lightGray //UIColor(red: 0.92, green: 0.92, blue: 0.92, alpha: 1.0)
         tableView.reloadData()
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
     }
@@ -35,8 +35,8 @@ class AcademicsViewController: UIViewController {
     }
     
     // MARK: - Navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let destVc = segue.destinationViewController as! WebsiteViewController
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destVc = segue.destination as! WebsiteViewController
         if segue.identifier == "showWebpage" {
             destVc.titleTxt = titleTxt
             destVc.webUrl = webUrl
@@ -46,29 +46,29 @@ class AcademicsViewController: UIViewController {
 
 // MARK: Table View Delegate
 extension AcademicsViewController : UITableViewDelegate {
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 70
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: false)
-        if indexPath.row == 0 {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: false)
+        if (indexPath as NSIndexPath).row == 0 {
             // Cultural
             titleTxt = "Academic Calendar"
             webUrl = "http://www.bvu.edu/bv/academic-resources/calendar.dot"
-            self.performSegueWithIdentifier("showWebpage", sender: self)
+            self.performSegue(withIdentifier: "showWebpage", sender: self)
             
-        }else if indexPath.row == 1 {
+        }else if (indexPath as NSIndexPath).row == 1 {
             // Scholarly
             titleTxt = "Majors & Minors"
             webUrl = "http://www.bvu.edu/academics/programs-majors/"
-            self.performSegueWithIdentifier("showWebpage", sender: self)
+            self.performSegue(withIdentifier: "showWebpage", sender: self)
             
-        }else if indexPath.row == 2 {
+        }else if (indexPath as NSIndexPath).row == 2 {
             // Student Life
             titleTxt = "Canvas"
             webUrl = "https://bvu.instructure.com/login/ldap"
-            self.performSegueWithIdentifier("showWebpage", sender: self)
+            self.performSegue(withIdentifier: "showWebpage", sender: self)
             
         }
     }
@@ -76,14 +76,14 @@ extension AcademicsViewController : UITableViewDelegate {
 
 // MARK : Table View Datasource
 extension AcademicsViewController : UITableViewDataSource {
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 3
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("academicsCell", forIndexPath: indexPath) as! ACESCell
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "academicsCell", for: indexPath) as! ACESCell
         
-        switch indexPath.row {
+        switch (indexPath as NSIndexPath).row {
         case 0:
             cell.titleLbl.text = "Academic Calendar"
         case 1:

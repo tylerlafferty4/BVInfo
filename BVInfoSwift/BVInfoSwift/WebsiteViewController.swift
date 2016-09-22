@@ -24,31 +24,31 @@ class WebsiteViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.canDisplayBannerAds = true
-        let url = NSURL (string: webUrl);
-        let requestObj = NSURLRequest(URL: url!);
+        let url = URL (string: webUrl);
+        let requestObj = URLRequest(url: url!);
         webView.loadRequest(requestObj);
         
         titleLbl.text = titleTxt
         
         // Close Image View
-        closeBtn.image = UIImage(named: "X")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
+        closeBtn.image = UIImage(named: "X")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
         closeBtn.tintColor = UIColor(red: 1.0, green: 234/255, blue: 61/255, alpha: 1.0)
-        closeBtn.userInteractionEnabled = true
+        closeBtn.isUserInteractionEnabled = true
         let close = UITapGestureRecognizer(target: self, action: #selector(WebsiteViewController.closeWebView))
         closeBtn.addGestureRecognizer(close)
         
         // Back Image View
-        backBtn.image = UIImage(named: "arrow-right")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
-        backBtn.transform = CGAffineTransformMakeRotation(CGFloat(M_PI))
+        backBtn.image = UIImage(named: "arrow-right")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
+        backBtn.transform = CGAffineTransform(rotationAngle: CGFloat(M_PI))
         backBtn.tintColor = UIColor(red: 1.0, green: 234/255, blue: 61/255, alpha: 1.0)
-        backBtn.userInteractionEnabled = true
+        backBtn.isUserInteractionEnabled = true
         let back = UITapGestureRecognizer(target: self, action: #selector(WebsiteViewController.goBack))
         backBtn.addGestureRecognizer(back)
         
         // Forward Image View
-        forwardBtn.image = UIImage(named: "arrow-right")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
+        forwardBtn.image = UIImage(named: "arrow-right")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
         forwardBtn.tintColor = UIColor(red: 1.0, green: 234/255, blue: 61/255, alpha: 1.0)
-        forwardBtn.userInteractionEnabled = true
+        forwardBtn.isUserInteractionEnabled = true
         let forward = UITapGestureRecognizer(target: self, action: #selector(WebsiteViewController.goForward))
         forwardBtn.addGestureRecognizer(forward)
     }
@@ -61,13 +61,13 @@ class WebsiteViewController: UIViewController {
 
 // MARK : Web View Delegate
 extension WebsiteViewController : UIWebViewDelegate {
-    func webViewDidStartLoad(webView: UIWebView) {
-        activity.hidden = false
+    func webViewDidStartLoad(_ webView: UIWebView) {
+        activity.isHidden = false
         activity.startAnimating()
     }
     
-    func webViewDidFinishLoad(webView: UIWebView) {
-        activity.hidden = true
+    func webViewDidFinishLoad(_ webView: UIWebView) {
+        activity.isHidden = true
         activity.stopAnimating()
     }
 }
@@ -76,7 +76,7 @@ extension WebsiteViewController : UIWebViewDelegate {
 extension WebsiteViewController {
     
     func closeWebView() {
-        self.dismissViewControllerAnimated(true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
     
     func goBack() {

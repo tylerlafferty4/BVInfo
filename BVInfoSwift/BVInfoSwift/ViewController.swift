@@ -19,14 +19,14 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         self.canDisplayBannerAds = true
         self.title = "BV Info"
-        self.collectionView.backgroundColor = UIColor.lightGrayColor() //UIColor(red: 0.92, green: 0.92, blue: 0.92, alpha: 1.0)
-        self.navigationController?.navigationBar.tintColor = UIColor.yellowColor()
-        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.yellowColor()]
+        self.collectionView.backgroundColor = UIColor.lightGray //UIColor(red: 0.92, green: 0.92, blue: 0.92, alpha: 1.0)
+        self.navigationController?.navigationBar.tintColor = UIColor.yellow
+        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.yellow]
         self.navigationController?.navigationBar.barTintColor = UIColor(red: 0, green: 0, blue: 128/255, alpha: 1)
         collectionView.reloadData()
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
        
     }
@@ -39,102 +39,104 @@ class ViewController: UIViewController {
 
 // MARK: Table View Delegate
 extension ViewController : UICollectionViewDelegate {
-    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        collectionView.deselectItemAtIndexPath(indexPath, animated: true) //deselectRowAtIndexPath(indexPath, animated: false)
-        if indexPath.row == 0 {
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        collectionView.deselectItem(at: indexPath, animated: true) //deselectRowAtIndexPath(indexPath, animated: false)
+        
+        if (indexPath as NSIndexPath).row == 0 {
             // Sodexo Menu
             webUrl = "https://bvudining.sodexomyway.com/dining-choices/index.html"
             titleTxt = "Sodexo"
-            self.performSegueWithIdentifier("showWebpage", sender: self)
-        }else if indexPath.row == 1 {
+            self.performSegue(withIdentifier: "showWebpage", sender: self)
+        }else if (indexPath as NSIndexPath).row == 1 {
             // ACES
-            self.performSegueWithIdentifier("showACES", sender: self)
-        }else if indexPath.row == 2 {
+            self.performSegue(withIdentifier: "showACES", sender: self)
+        }else if (indexPath as NSIndexPath).row == 2 {
             // Events
             webUrl = "https://events.bvu.edu/page/rss/?duration=30days"
             titleTxt = "Events"
-            self.performSegueWithIdentifier("showRSS", sender: self)
+            self.performSegue(withIdentifier: "showRSS", sender: self)
             
-        }else if indexPath.row == 3 {
+        }else if (indexPath as NSIndexPath).row == 3 {
             // Athletics
             webUrl = "http://bvuathletics.com/landing/headlines-featured?feed=rss_2.0"
             titleTxt = "Athletics"
-            self.performSegueWithIdentifier("showRSS", sender: self)
+            self.performSegue(withIdentifier: "showRSS", sender: self)
             
-        }else if indexPath.row == 4 {
+        }else if (indexPath as NSIndexPath).row == 4 {
             // The Tack
             webUrl = "http://www.bvtack.com/feed/"
             titleTxt = "The Tack"
-            self.performSegueWithIdentifier("showRSS", sender: self)
-        }else if indexPath.row == 5 {
+            self.performSegue(withIdentifier: "showRSS", sender: self)
+        }else if (indexPath as NSIndexPath).row == 5 {
             // CAE
             webUrl = "http://web.bvu.edu/accuweb/"
             titleTxt = "CAE"
-            self.performSegueWithIdentifier("showWebpage", sender: self)
-        }else if indexPath.row == 6 {
+            self.performSegue(withIdentifier: "showWebpage", sender: self)
+        }else if (indexPath as NSIndexPath).row == 6 {
             // Laundry
             webUrl = "https://www.laundryalert.com/cgi-bin/bvu999/LMPage"
             titleTxt = "Laundry"
-            self.performSegueWithIdentifier("showWebpage", sender: self)
-        }else if indexPath.row == 7 {
+            self.performSegue(withIdentifier: "showWebpage", sender: self)
+        }else if (indexPath as NSIndexPath).row == 7 {
             // Academics
-            self.performSegueWithIdentifier("showAcademics", sender: self)
-        }else if indexPath.row == 8 {
+            self.performSegue(withIdentifier: "showAcademics", sender: self)
+        }else if (indexPath as NSIndexPath).row == 8 {
             // KBVU
-            self.performSegueWithIdentifier("showKBVU", sender: self)
+            self.performSegue(withIdentifier: "showKBVU", sender: self)
         }
     }
     
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-        return CGSizeMake((UIScreen.mainScreen().bounds.width/2)-15, 125)
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: IndexPath) -> CGSize {
+        return CGSize(width: (UIScreen.main.bounds.width/2)-15, height: 125)
     }
 }
 
 // MARK: Table View Datasource
 extension ViewController : UICollectionViewDataSource {
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 9
     }
     
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("homeCell", forIndexPath: indexPath) as! HomeViewControllerCell
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "homeCell", for: indexPath) as! HomeViewControllerCell
         
-        if indexPath.row == 0 {
+        if (indexPath as NSIndexPath).row == 0 {
             // Sodexo Menu
             cell.titleLbl.text = "Sodexo"
-            cell.imgView.image = UIImage(named: "meal")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
-        }else if indexPath.row == 1 {
+            cell.imgView.image = UIImage(named: "meal")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
+        }else if (indexPath as NSIndexPath).row == 1 {
             // ACES
             cell.titleLbl.text = "ACES"
-            cell.imgView.image = UIImage(named: "aces")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
-        }else if indexPath.row == 2 {
+            cell.imgView.image = UIImage(named: "aces")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
+        }else if (indexPath as NSIndexPath).row == 2 {
             // Events
             cell.titleLbl.text = "Events"
-            cell.imgView.image = UIImage(named: "events")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
-        }else if indexPath.row == 3 {
+            cell.imgView.image = UIImage(named: "events")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
+        }else if (indexPath as NSIndexPath).row == 3 {
             // Athletics
             cell.titleLbl.text = "Athletics"
             cell.imgView.image = UIImage(named: "beaver")
-        }else if indexPath.row == 4 {
+        }else if (indexPath as NSIndexPath).row == 4 {
             // The Tack
             cell.titleLbl.text = "The Tack"
-            cell.imgView.image = UIImage(named: "the-tack")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
-        }else if indexPath.row == 5 {
+            cell.imgView.image = UIImage(named: "the-tack")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
+        }else if (indexPath as NSIndexPath).row == 5 {
             // CAE
             cell.titleLbl.text = "CAE"
-            cell.imgView.image = UIImage(named: "homework")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
-        }else if indexPath.row == 6 {
+            cell.imgView.image = UIImage(named: "homework")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
+        }else if (indexPath as NSIndexPath).row == 6 {
             // Laundry
             cell.titleLbl.text = "Laundry"
-            cell.imgView.image = UIImage(named: "laundry")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
-        }else if indexPath.row == 7 {
+            cell.imgView.image = UIImage(named: "laundry")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
+        }else if (indexPath as NSIndexPath).row == 7 {
             // Academics
             cell.titleLbl.text = "Academics"
-            cell.imgView.image = UIImage(named: "academics")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
-        }else if indexPath.row == 8 {
+            cell.imgView.image = UIImage(named: "academics")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
+        }else if (indexPath as NSIndexPath).row == 8 {
             // KBVU
             cell.titleLbl.text = "KBVU"
-            cell.imgView.image = UIImage(named: "kbvu")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
+            cell.imgView.image = UIImage(named: "kbvu")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
         }
         
         return cell
@@ -143,13 +145,13 @@ extension ViewController : UICollectionViewDataSource {
 
 // MARK: Prepare for segue
 extension ViewController {
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showWebpage" {
-            let destVc = segue.destinationViewController as! WebsiteViewController
+            let destVc = segue.destination as! WebsiteViewController
             destVc.titleTxt = titleTxt
             destVc.webUrl = webUrl
         } else if segue.identifier == "showRSS" {
-            let destVc = segue.destinationViewController as! RSSViewController
+            let destVc = segue.destination as! RSSViewController
             destVc.titleTxt = titleTxt
             destVc.rssUrl = webUrl
         }

@@ -15,7 +15,7 @@ class HomeViewControllerCell: UICollectionViewCell {
     @IBOutlet var imgView : UIImageView!
     
     override func awakeFromNib() {
-        imgView.contentMode = .ScaleAspectFill
+        imgView.contentMode = .scaleAspectFill
     }
     
 }

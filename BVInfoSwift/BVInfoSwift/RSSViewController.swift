@@ -9,10 +9,10 @@
 import UIKit
 import iAd
 
-class RSSViewController: UIViewController, NSXMLParserDelegate {
+class RSSViewController: UIViewController, XMLParserDelegate {
 
     @IBOutlet var tableView : UITableView!
-    var parser: NSXMLParser = NSXMLParser()
+    var parser: XMLParser = XMLParser()
     var blogPosts : [RSSPost] = []
     var postTitle: String = String()
     var postLink: String = String()
@@ -25,9 +25,9 @@ class RSSViewController: UIViewController, NSXMLParserDelegate {
         super.viewDidLoad()
         self.canDisplayBannerAds = true
         self.title = titleTxt
-        self.tableView.backgroundColor = UIColor.lightGrayColor() //UIColor(red: 0.92, green: 0.92, blue: 0.92, alpha: 1.0)
-        let url:NSURL = NSURL(string: rssUrl)!
-        parser = NSXMLParser(contentsOfURL: url)!
+        self.tableView.backgroundColor = UIColor.lightGray //UIColor(red: 0.92, green: 0.92, blue: 0.92, alpha: 1.0)
+        let url:URL = URL(string: rssUrl)!
+        parser = XMLParser(contentsOf: url)!
         parser.delegate = self
         parser.parse()
         
@@ -38,7 +38,7 @@ class RSSViewController: UIViewController, NSXMLParserDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    func parser(parser: NSXMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String]) {
+    func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String]) {
         eName = elementName
         if elementName == "item" {
             postTitle = String()
@@ -47,8 +47,8 @@ class RSSViewController: UIViewController, NSXMLParserDelegate {
         }
     }
     
-    func parser(parser: NSXMLParser, foundCharacters string: String) {
-        let data = string.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
+    func parser(_ parser: XMLParser, foundCharacters string: String) {
+        let data = string.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
         if (!data.isEmpty) {
             if eName == "title" {
                 postTitle += data
@@ -60,7 +60,7 @@ class RSSViewController: UIViewController, NSXMLParserDelegate {
         }
     }
     
-    func parser(parser: NSXMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
+    func parser(_ parser: XMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
         if elementName == "item" {
             let blogPost: RSSPost = RSSPost()
             blogPost.postTitle = postTitle
@@ -72,33 +72,33 @@ class RSSViewController: UIViewController, NSXMLParserDelegate {
 }
 
 extension RSSViewController : UITableViewDelegate {
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        self.performSegueWithIdentifier("viewpost", sender: self)
-        self.tableView.deselectRowAtIndexPath(indexPath, animated: false)
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: "viewpost", sender: self)
+        self.tableView.deselectRow(at: indexPath, animated: false)
     }
     
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 75
     }
 }
 
 extension RSSViewController : UITableViewDataSource {
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return blogPosts.count
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! RSSCell
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! RSSCell
         
-        let blogPost: RSSPost = blogPosts[indexPath.row]
+        let blogPost: RSSPost = blogPosts[(indexPath as NSIndexPath).row]
         cell.titleLbl.text = blogPost.postTitle
-        let dateFormatter = NSDateFormatter()
+        let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "E, dd MMM yyyy HH:mm:ss Z"
-        let date = dateFormatter.dateFromString(blogPost.postDate)
-        let shortDate = NSDateFormatter()
-        shortDate.dateStyle = .MediumStyle
-        shortDate.timeStyle = .NoStyle
-        cell.dateLbl.text = "\(shortDate.stringFromDate(date!))"
+        let date = dateFormatter.date(from: blogPost.postDate)
+        let shortDate = DateFormatter()
+        shortDate.dateStyle = .medium
+        shortDate.timeStyle = .none
+        cell.dateLbl.text = "\(shortDate.string(from: date!))"
         
         return cell
     }
@@ -106,10 +106,10 @@ extension RSSViewController : UITableViewDataSource {
 
 // MARK: Prepare for segue
 extension RSSViewController {
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any!) {
         if segue.identifier == "viewpost" {
-            let blogPost: RSSPost = blogPosts[tableView.indexPathForSelectedRow!.row]
-            let destVc = segue.destinationViewController as! WebsiteViewController
+            let blogPost: RSSPost = blogPosts[(tableView.indexPathForSelectedRow! as NSIndexPath).row]
+            let destVc = segue.destination as! WebsiteViewController
             destVc.webUrl = blogPost.postLink
             destVc.titleTxt = blogPost.postTitle
         }
