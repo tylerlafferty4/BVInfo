@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>gold</key>
+	<string>1,0.92,0.24,1</string>
+	<key>navy</key>
+	<string>0,0,0.5,1</string>
+	<key>navBar</key>
+	<string>0,0,0.5,1</string>
+	<key>mainCell</key>
+	<string>1,1,1,1</string>
+	<key>mainBackground</key>
+	<string>0.88,0.88,0.88,1</string>
+	<key>mainColor</key>
+	<string>0,0,0.5,1</string>
+</dict>
+</plist>

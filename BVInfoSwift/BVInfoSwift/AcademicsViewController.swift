@@ -20,7 +20,7 @@ class AcademicsViewController: UIViewController {
         super.viewDidLoad()
         self.canDisplayBannerAds = true
         self.title = "Academics"
-        self.tableView.backgroundColor = UIColor.lightGray //UIColor(red: 0.92, green: 0.92, blue: 0.92, alpha: 1.0)
+        self.tableView.backgroundColor = ThemeManager.colorForKey(colorStr: "mainBackground")
         tableView.reloadData()
     }
     
@@ -82,7 +82,7 @@ extension AcademicsViewController : UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "academicsCell", for: indexPath) as! ACESCell
-        
+        cell.setupCell()
         switch (indexPath as NSIndexPath).row {
         case 0:
             cell.titleLbl.text = "Academic Calendar"

@@ -1,25 +1,18 @@
 //
-//  ACESCell.swift
+//  CardCell.swift
 //  BVInfoSwift
 //
-//  Created by Tyler Lafferty on 11/15/15.
-//  Copyright © 2015 Tyler Lafferty. All rights reserved.
+//  Created by Tyler Lafferty on 10/21/16.
+//  Copyright © 2016 Tyler Lafferty. All rights reserved.
 //
 
 import Foundation
 import UIKit
 
-class ACESCell : UITableViewCell {
-    
-    @IBOutlet var titleLbl : UILabel!
-    
+class CardCell: UITableViewCell {
+
     override func awakeFromNib() {
-       layer.cornerRadius = 3
-    }
-    
-    func setupCell() {
-        backgroundColor = ThemeManager.colorForKey(colorStr: "mainCell")
-        titleLbl.textColor = ThemeManager.colorForKey(colorStr: "mainColor")
+        layer.cornerRadius = 3
     }
     
     override var frame: CGRect {

@@ -17,12 +17,20 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Setup the Theme Manager
+        if let theme = UserDefaults.standard.object(forKey: "Theme") as? String {
+            ThemeManager.setupThemeManager(themeName: theme)
+        } else {
+            ThemeManager.setupThemeManager(themeName: "Theme")
+        }
+        
         self.canDisplayBannerAds = true
         self.title = "BV Info"
-        self.collectionView.backgroundColor = UIColor.lightGray //UIColor(red: 0.92, green: 0.92, blue: 0.92, alpha: 1.0)
-        self.navigationController?.navigationBar.tintColor = UIColor.yellow
-        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.yellow]
-        self.navigationController?.navigationBar.barTintColor = UIColor(red: 0, green: 0, blue: 128/255, alpha: 1)
+        self.collectionView.backgroundColor = ThemeManager.colorForKey(colorStr: "mainBackground")
+        self.navigationController?.navigationBar.tintColor = ThemeManager.colorForKey(colorStr: "gold")
+        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : ThemeManager.colorForKey(colorStr: "gold")]
+        self.navigationController?.navigationBar.barTintColor = ThemeManager.colorForKey(colorStr: "navBar")
         collectionView.reloadData()
     }
     
@@ -95,11 +103,12 @@ extension ViewController : UICollectionViewDelegate {
 // MARK: Table View Datasource
 extension ViewController : UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 9
+        return 10
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "homeCell", for: indexPath) as! HomeViewControllerCell
+        cell.setupCell()
         
         if (indexPath as NSIndexPath).row == 0 {
             // Sodexo Menu
@@ -137,9 +146,42 @@ extension ViewController : UICollectionViewDataSource {
             // KBVU
             cell.titleLbl.text = "KBVU"
             cell.imgView.image = UIImage(named: "kbvu")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
+        } else if indexPath.row == 9 {
+            // Theme Switch
+            let switchCell = collectionView.dequeueReusableCell(withReuseIdentifier: "switchCell", for: indexPath) as! HomeSwitchCell
+            switchCell.setupCell()
+            switchCell.titleLbl.text = "Dark Theme"
+            switchCell.delegate = self
+            return switchCell
         }
         
         return cell
+    }
+}
+
+// MARK: Switch Cell Delegate
+extension ViewController : SwitchCellDelegate {
+    func switchValueChanged(on: Bool) {
+        if on {
+            ThemeManager.setupThemeManager(themeName: "DarkTheme")
+            UserDefaults.standard.set("DarkTheme", forKey: "Theme")
+            UserDefaults.standard.synchronize()
+        } else {
+            ThemeManager.setupThemeManager(themeName: "Theme")
+            UserDefaults.standard.set("Theme", forKey: "Theme")
+            UserDefaults.standard.synchronize()
+        }
+        resetTheme()
+    }
+}
+
+// MARK: Helpers
+extension ViewController {
+    
+    func resetTheme() {
+        self.navigationController?.navigationBar.barTintColor = ThemeManager.colorForKey(colorStr: "navBar")
+        self.collectionView.backgroundColor = ThemeManager.colorForKey(colorStr: "mainBackground")
+        self.collectionView.reloadData()
     }
 }
 

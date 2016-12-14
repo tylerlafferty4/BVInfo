@@ -20,6 +20,11 @@
 		D82069331C1E723200B4E8BB /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D82069321C1E723200B4E8BB /* SystemConfiguration.framework */; };
 		D82069351C1E723900B4E8BB /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D82069341C1E723900B4E8BB /* libz.tbd */; };
 		D82069371C1E724B00B4E8BB /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D82069361C1E724B00B4E8BB /* libsqlite3.tbd */; };
+		D84F97071DB99D000052E7EA /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84F97061DB99D000052E7EA /* ThemeManager.swift */; };
+		D84F97091DB9A0E80052E7EA /* BVInfoShared.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84F97081DB9A0E80052E7EA /* BVInfoShared.swift */; };
+		D84F970B1DB9A46B0052E7EA /* Theme.plist in Resources */ = {isa = PBXBuildFile; fileRef = D84F970A1DB9A46B0052E7EA /* Theme.plist */; };
+		D84F970D1DBAFDFD0052E7EA /* DarkTheme.plist in Resources */ = {isa = PBXBuildFile; fileRef = D84F970C1DBAFDFD0052E7EA /* DarkTheme.plist */; };
+		D857D12E1DBB073100EFEDD3 /* CardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D857D12D1DBB073100EFEDD3 /* CardCell.swift */; };
 		D86966651D628EB4007E9E6E /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D86966631D628EB4007E9E6E /* Fabric.framework */; };
 		D86966681D628FCB007E9E6E /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D86966671D628FCB007E9E6E /* Crashlytics.framework */; };
 		D8BDC8F91BF8F20100CB40B4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BDC8F81BF8F20100CB40B4 /* AppDelegate.swift */; };
@@ -72,6 +77,11 @@
 		D82069361C1E724B00B4E8BB /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		D82069411C2251EF00B4E8BB /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = "../../../Downloads/parse-library-1.10.0/Parse.framework"; sourceTree = "<group>"; };
 		D82069431C2251FE00B4E8BB /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseUI.framework; path = "../../../Downloads/parse-library-1.10.0/ParseUI.framework"; sourceTree = "<group>"; };
+		D84F97061DB99D000052E7EA /* ThemeManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
+		D84F97081DB9A0E80052E7EA /* BVInfoShared.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BVInfoShared.swift; sourceTree = "<group>"; };
+		D84F970A1DB9A46B0052E7EA /* Theme.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Theme.plist; sourceTree = "<group>"; };
+		D84F970C1DBAFDFD0052E7EA /* DarkTheme.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DarkTheme.plist; sourceTree = "<group>"; };
+		D857D12D1DBB073100EFEDD3 /* CardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardCell.swift; sourceTree = "<group>"; };
 		D86966631D628EB4007E9E6E /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		D86966671D628FCB007E9E6E /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		D8BDC8F51BF8F20100CB40B4 /* BVU Info.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BVU Info.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -164,6 +174,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		D84F97051DB99CED0052E7EA /* Theme Manager */ = {
+			isa = PBXGroup;
+			children = (
+				D84F97061DB99D000052E7EA /* ThemeManager.swift */,
+				D84F970A1DB9A46B0052E7EA /* Theme.plist */,
+				D84F970C1DBAFDFD0052E7EA /* DarkTheme.plist */,
+			);
+			name = "Theme Manager";
+			sourceTree = "<group>";
+		};
 		D8BDC8EC1BF8F20100CB40B4 = {
 			isa = PBXGroup;
 			children = (
@@ -187,6 +207,7 @@
 		D8BDC8F71BF8F20100CB40B4 /* BVInfoSwift */ = {
 			isa = PBXGroup;
 			children = (
+				D84F97051DB99CED0052E7EA /* Theme Manager */,
 				D8BDC8F81BF8F20100CB40B4 /* AppDelegate.swift */,
 				D8BDC8FC1BF8F20100CB40B4 /* Main.storyboard */,
 				D8BDC8FF1BF8F20100CB40B4 /* Assets.xcassets */,
@@ -199,6 +220,8 @@
 				D8BDC9331BF9899F00CB40B4 /* HomeScreen */,
 				D8BDC9321BF9899400CB40B4 /* WebSite */,
 				D8BDC92F1BF987DE00CB40B4 /* ACES */,
+				D84F97081DB9A0E80052E7EA /* BVInfoShared.swift */,
+				D857D12D1DBB073100EFEDD3 /* CardCell.swift */,
 			);
 			path = BVInfoSwift;
 			sourceTree = "<group>";
@@ -368,7 +391,9 @@
 			files = (
 				D8BDC9031BF8F20100CB40B4 /* LaunchScreen.storyboard in Resources */,
 				D8BDC9001BF8F20100CB40B4 /* Assets.xcassets in Resources */,
+				D84F970B1DB9A46B0052E7EA /* Theme.plist in Resources */,
 				D8C267941C02B23A00E0F8F9 /* kbvuAudio.m3u in Resources */,
+				D84F970D1DBAFDFD0052E7EA /* DarkTheme.plist in Resources */,
 				D8BDC8FE1BF8F20100CB40B4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -413,7 +438,9 @@
 				D8BDC92C1BF978BF00CB40B4 /* WebsiteViewController.swift in Sources */,
 				D820691F1C1DE34500B4E8BB /* Building.swift in Sources */,
 				D8BDC92E1BF9851500CB40B4 /* ACESViewController.swift in Sources */,
+				D857D12E1DBB073100EFEDD3 /* CardCell.swift in Sources */,
 				D8BDC8FB1BF8F20100CB40B4 /* ViewController.swift in Sources */,
+				D84F97091DB9A0E80052E7EA /* BVInfoShared.swift in Sources */,
 				D8C267921C02AD8800E0F8F9 /* KBVUViewController.swift in Sources */,
 				D8BDC93A1BFD725700CB40B4 /* RSSCell.swift in Sources */,
 				D8BDC8F91BF8F20100CB40B4 /* AppDelegate.swift in Sources */,
@@ -423,6 +450,7 @@
 				D8BDC9291BF93A4D00CB40B4 /* HomeViewControllerCell.swift in Sources */,
 				D8BDC9311BF987F300CB40B4 /* ACESCell.swift in Sources */,
 				D8C2678F1BFD8B0C00E0F8F9 /* AcademicsViewController.swift in Sources */,
+				D84F97071DB99D000052E7EA /* ThemeManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

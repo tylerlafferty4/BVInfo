@@ -20,13 +20,12 @@ class ACESViewController: UIViewController {
         super.viewDidLoad()
         self.canDisplayBannerAds = true
         self.title = "ACES"
-        self.tableView.backgroundColor = UIColor.lightGray //UIColor(red: 0.92, green: 0.92, blue: 0.92, alpha: 1.0)
+        self.tableView.backgroundColor = ThemeManager.colorForKey(colorStr: "mainBackground")
         tableView.reloadData()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -87,7 +86,7 @@ extension ACESViewController : UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ACESCell", for: indexPath) as! ACESCell
-        
+        cell.setupCell()
         switch (indexPath as NSIndexPath).row {
         case 0:
             cell.titleLbl.text = "Cultural"

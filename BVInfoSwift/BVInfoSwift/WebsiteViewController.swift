@@ -17,6 +17,7 @@ class WebsiteViewController: UIViewController {
     @IBOutlet var backBtn : UIImageView!
     @IBOutlet var forwardBtn : UIImageView!
     @IBOutlet var titleLbl : UILabel!
+    @IBOutlet var navView: UIView!
     
     var titleTxt : String! = ""
     var webUrl : String! = ""
@@ -29,10 +30,11 @@ class WebsiteViewController: UIViewController {
         webView.loadRequest(requestObj);
         
         titleLbl.text = titleTxt
+        navView.backgroundColor = ThemeManager.colorForKey(colorStr: "navBar")
         
         // Close Image View
         closeBtn.image = UIImage(named: "X")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
-        closeBtn.tintColor = UIColor(red: 1.0, green: 234/255, blue: 61/255, alpha: 1.0)
+        closeBtn.tintColor = ThemeManager.colorForKey(colorStr: "gold")
         closeBtn.isUserInteractionEnabled = true
         let close = UITapGestureRecognizer(target: self, action: #selector(WebsiteViewController.closeWebView))
         closeBtn.addGestureRecognizer(close)
@@ -40,14 +42,14 @@ class WebsiteViewController: UIViewController {
         // Back Image View
         backBtn.image = UIImage(named: "arrow-right")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
         backBtn.transform = CGAffineTransform(rotationAngle: CGFloat(M_PI))
-        backBtn.tintColor = UIColor(red: 1.0, green: 234/255, blue: 61/255, alpha: 1.0)
+        backBtn.tintColor = ThemeManager.colorForKey(colorStr: "gold")
         backBtn.isUserInteractionEnabled = true
         let back = UITapGestureRecognizer(target: self, action: #selector(WebsiteViewController.goBack))
         backBtn.addGestureRecognizer(back)
         
         // Forward Image View
         forwardBtn.image = UIImage(named: "arrow-right")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
-        forwardBtn.tintColor = UIColor(red: 1.0, green: 234/255, blue: 61/255, alpha: 1.0)
+        forwardBtn.tintColor = ThemeManager.colorForKey(colorStr: "gold")
         forwardBtn.isUserInteractionEnabled = true
         let forward = UITapGestureRecognizer(target: self, action: #selector(WebsiteViewController.goForward))
         forwardBtn.addGestureRecognizer(forward)

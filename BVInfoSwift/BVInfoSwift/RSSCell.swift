@@ -15,7 +15,13 @@ class RSSCell : UITableViewCell {
     @IBOutlet var dateLbl : UILabel!
     
     override func awakeFromNib() {
-        
+        layer.cornerRadius = 3
+    }
+    
+    func setupCell() {
+        backgroundColor = ThemeManager.colorForKey(colorStr: "mainCell")
+        titleLbl.textColor = ThemeManager.colorForKey(colorStr: "mainColor")
+        dateLbl.textColor = ThemeManager.colorForKey(colorStr: "mainColor")
     }
     
     override var frame: CGRect {

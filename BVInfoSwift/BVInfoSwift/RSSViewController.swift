@@ -25,7 +25,7 @@ class RSSViewController: UIViewController, XMLParserDelegate {
         super.viewDidLoad()
         self.canDisplayBannerAds = true
         self.title = titleTxt
-        self.tableView.backgroundColor = UIColor.lightGray //UIColor(red: 0.92, green: 0.92, blue: 0.92, alpha: 1.0)
+        self.tableView.backgroundColor = ThemeManager.colorForKey(colorStr: "mainBackground")
         let url:URL = URL(string: rssUrl)!
         parser = XMLParser(contentsOf: url)!
         parser.delegate = self
@@ -89,7 +89,7 @@ extension RSSViewController : UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! RSSCell
-        
+        cell.setupCell()
         let blogPost: RSSPost = blogPosts[(indexPath as NSIndexPath).row]
         cell.titleLbl.text = blogPost.postTitle
         let dateFormatter = DateFormatter()
