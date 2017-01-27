@@ -70,7 +70,7 @@ class KBVUViewController: UIViewController {
     }
 }
 
-// MARK : Play/Pause Button, Volume
+// MARK: - Play/Pause Button, Volume
 extension KBVUViewController {
     
     @IBAction func volumeChnaged(_ sender: AnyObject) {
@@ -90,7 +90,7 @@ extension KBVUViewController {
     }
 }
 
-// MARK : Web View Delegate
+// MARK: - Web View Delegate
 extension KBVUViewController : UIWebViewDelegate {
     func webViewDidStartLoad(_ webView: UIWebView) {
         activity.isHidden = false
@@ -103,7 +103,7 @@ extension KBVUViewController : UIWebViewDelegate {
     }
 }
 
-// MARK : Button Naviagation
+// MARK: - Button Naviagation
 extension KBVUViewController {
     
     func closeWebView() {

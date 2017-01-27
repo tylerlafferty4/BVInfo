@@ -33,18 +33,9 @@ class AcademicsViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    // MARK: - Navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let destVc = segue.destination as! WebsiteViewController
-        if segue.identifier == "showWebpage" {
-            destVc.titleTxt = titleTxt
-            destVc.webUrl = webUrl
-        }
-    }
 }
 
-// MARK: Table View Delegate
+// MARK: - Table View Delegate
 extension AcademicsViewController : UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 70
@@ -74,7 +65,7 @@ extension AcademicsViewController : UITableViewDelegate {
     }
 }
 
-// MARK : Table View Datasource
+// MARK: - Table View Datasource
 extension AcademicsViewController : UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 3
@@ -94,5 +85,16 @@ extension AcademicsViewController : UITableViewDataSource {
             break
         }
         return cell
+    }
+}
+
+// MARK: - Prepare for segue
+extension AcademicsViewController {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destVc = segue.destination as! WebsiteViewController
+        if segue.identifier == "showWebpage" {
+            destVc.titleTxt = titleTxt
+            destVc.webUrl = webUrl
+        }
     }
 }

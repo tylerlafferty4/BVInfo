@@ -29,8 +29,14 @@ class RSSViewController: UIViewController, XMLParserDelegate {
         let url:URL = URL(string: rssUrl)!
         parser = XMLParser(contentsOf: url)!
         parser.delegate = self
-        parser.parse()
         
+        // Check if there is a network connection
+        if BVInfoShared.isInternetAvailable() {
+            // Go get updated results
+            parser.parse()
+        } else {
+            // Pull results from Realm
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -71,6 +77,7 @@ class RSSViewController: UIViewController, XMLParserDelegate {
     }
 }
 
+// MARK: - Table View Delegate
 extension RSSViewController : UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.performSegue(withIdentifier: "viewpost", sender: self)
@@ -82,6 +89,7 @@ extension RSSViewController : UITableViewDelegate {
     }
 }
 
+// MARK: - Table View Datasource
 extension RSSViewController : UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return blogPosts.count
@@ -104,7 +112,7 @@ extension RSSViewController : UITableViewDataSource {
     }
 }
 
-// MARK: Prepare for segue
+// MARK: - Prepare for segue
 extension RSSViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any!) {
         if segue.identifier == "viewpost" {

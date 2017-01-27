@@ -36,16 +36,14 @@ class ViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-       
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        
     }
 }
 
-// MARK: Table View Delegate
+// MARK: - Table View Delegate
 extension ViewController : UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -100,7 +98,7 @@ extension ViewController : UICollectionViewDelegate {
     }
 }
 
-// MARK: Table View Datasource
+// MARK: - Table View Datasource
 extension ViewController : UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 10
@@ -159,7 +157,7 @@ extension ViewController : UICollectionViewDataSource {
     }
 }
 
-// MARK: Switch Cell Delegate
+// MARK: - Switch Cell Delegate
 extension ViewController : SwitchCellDelegate {
     func switchValueChanged(on: Bool) {
         if on {
@@ -175,7 +173,7 @@ extension ViewController : SwitchCellDelegate {
     }
 }
 
-// MARK: Helpers
+// MARK: - Helpers
 extension ViewController {
     
     func resetTheme() {
@@ -185,7 +183,7 @@ extension ViewController {
     }
 }
 
-// MARK: Prepare for segue
+// MARK: - Prepare for segue
 extension ViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showWebpage" {

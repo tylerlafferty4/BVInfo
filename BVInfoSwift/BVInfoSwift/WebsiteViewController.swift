@@ -61,7 +61,7 @@ class WebsiteViewController: UIViewController {
     }
 }
 
-// MARK : Web View Delegate
+// MARK: - Web View Delegate
 extension WebsiteViewController : UIWebViewDelegate {
     func webViewDidStartLoad(_ webView: UIWebView) {
         activity.isHidden = false
@@ -74,7 +74,7 @@ extension WebsiteViewController : UIWebViewDelegate {
     }
 }
 
-// MARK : Button Naviagation
+// MARK: - Button Naviagation
 extension WebsiteViewController {
     
     func closeWebView() {

@@ -32,18 +32,9 @@ class ACESViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    // MARK: - Navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let destVc = segue.destination as! WebsiteViewController
-        if segue.identifier == "showWebpage" {
-            destVc.titleTxt = titleTxt
-            destVc.webUrl = webUrl
-        }
-    }
 }
 
-// MARK: Table View Delegate 
+// MARK: - Table View Delegate
 extension ACESViewController : UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 70
@@ -78,7 +69,7 @@ extension ACESViewController : UITableViewDelegate {
     }
 }
 
-// MARK : Table View Datasource
+// MARK: - Table View Datasource
 extension ACESViewController : UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 4
@@ -100,5 +91,16 @@ extension ACESViewController : UITableViewDataSource {
             break
         }
         return cell
+    }
+}
+
+// MARK: - Prepare for Segue
+extension ACESViewController {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destVc = segue.destination as! WebsiteViewController
+        if segue.identifier == "showWebpage" {
+            destVc.titleTxt = titleTxt
+            destVc.webUrl = webUrl
+        }
     }
 }
