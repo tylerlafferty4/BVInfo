@@ -42,6 +42,11 @@
 		D8C2678F1BFD8B0C00E0F8F9 /* AcademicsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C2678E1BFD8B0C00E0F8F9 /* AcademicsViewController.swift */; };
 		D8C267921C02AD8800E0F8F9 /* KBVUViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C267911C02AD8800E0F8F9 /* KBVUViewController.swift */; };
 		D8C267941C02B23A00E0F8F9 /* kbvuAudio.m3u in Resources */ = {isa = PBXBuildFile; fileRef = D8C267931C02B23A00E0F8F9 /* kbvuAudio.m3u */; };
+		D8FB814A1E3E7EEA00F77345 /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8FB81491E3E7EEA00F77345 /* GoogleMobileAds.framework */; };
+		D8FB814D1E3F875F00F77345 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8FB814B1E3F875F00F77345 /* Realm.framework */; };
+		D8FB814E1E3F875F00F77345 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D8FB814B1E3F875F00F77345 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D8FB814F1E3F875F00F77345 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8FB814C1E3F875F00F77345 /* RealmSwift.framework */; };
+		D8FB81501E3F875F00F77345 /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D8FB814C1E3F875F00F77345 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +65,21 @@
 			remoteInfo = BVInfoSwift;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D8FB81511E3F876000F77345 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				D8FB81501E3F875F00F77345 /* RealmSwift.framework in Embed Frameworks */,
+				D8FB814E1E3F875F00F77345 /* Realm.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		D82069191C1925FC00B4E8BB /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
@@ -103,6 +123,9 @@
 		D8C2678E1BFD8B0C00E0F8F9 /* AcademicsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AcademicsViewController.swift; sourceTree = "<group>"; };
 		D8C267911C02AD8800E0F8F9 /* KBVUViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KBVUViewController.swift; sourceTree = "<group>"; };
 		D8C267931C02B23A00E0F8F9 /* kbvuAudio.m3u */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = kbvuAudio.m3u; sourceTree = "<group>"; };
+		D8FB81491E3E7EEA00F77345 /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMobileAds.framework; sourceTree = "<group>"; };
+		D8FB814B1E3F875F00F77345 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
+		D8FB814C1E3F875F00F77345 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,9 +142,12 @@
 				D820692D1C1E721C00B4E8BB /* QuartzCore.framework in Frameworks */,
 				D820692B1C1E721100B4E8BB /* CoreLocation.framework in Frameworks */,
 				D82069291C1E720D00B4E8BB /* CoreGraphics.framework in Frameworks */,
+				D8FB814D1E3F875F00F77345 /* Realm.framework in Frameworks */,
 				D82069271C1E720100B4E8BB /* CFNetwork.framework in Frameworks */,
 				D82069251C1E71F900B4E8BB /* AudioToolbox.framework in Frameworks */,
 				D820691A1C1925FC00B4E8BB /* iAd.framework in Frameworks */,
+				D8FB814A1E3E7EEA00F77345 /* GoogleMobileAds.framework in Frameworks */,
+				D8FB814F1E3F875F00F77345 /* RealmSwift.framework in Frameworks */,
 				D86966651D628EB4007E9E6E /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -155,6 +181,9 @@
 		D82069381C1E725B00B4E8BB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D8FB814B1E3F875F00F77345 /* Realm.framework */,
+				D8FB814C1E3F875F00F77345 /* RealmSwift.framework */,
+				D8FB81491E3E7EEA00F77345 /* GoogleMobileAds.framework */,
 				D82069361C1E724B00B4E8BB /* libsqlite3.tbd */,
 				D82069341C1E723900B4E8BB /* libz.tbd */,
 				D86966671D628FCB007E9E6E /* Crashlytics.framework */,
@@ -289,6 +318,7 @@
 				D8BDC8F21BF8F20100CB40B4 /* Frameworks */,
 				D8BDC8F31BF8F20100CB40B4 /* Resources */,
 				D86966621D628E94007E9E6E /* ShellScript */,
+				D8FB81511E3F876000F77345 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

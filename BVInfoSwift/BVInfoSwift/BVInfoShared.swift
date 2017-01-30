@@ -14,6 +14,8 @@ class BVInfoShared : NSObject {
     static var sharedInstance: BVInfoShared! = BVInfoShared()
     
     var ThemeDict: NSDictionary? = NSDictionary()
+    var googleAdsAppId: String = "ca-app-pub-6103823532663097~9163097561"
+    var googleAdsUnitId: String = "ca-app-pub-6103823532663097/1639830764"
     
     class func isInternetAvailable() -> Bool {
         var zeroAddress = sockaddr_in()

@@ -7,17 +7,19 @@
 //
 
 import UIKit
-import iAd
+import GoogleMobileAds
+import AudioToolbox
 
 class ViewController: UIViewController {
 
     @IBOutlet var collectionView : UICollectionView!
     var webUrl : String = ""
     var titleTxt : String = ""
+    var adMobBannerView = GADBannerView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        initAdMobBanner()
         // Setup the Theme Manager
         if let theme = UserDefaults.standard.object(forKey: "Theme") as? String {
             ThemeManager.setupThemeManager(themeName: theme)
@@ -25,8 +27,8 @@ class ViewController: UIViewController {
             ThemeManager.setupThemeManager(themeName: "Theme")
         }
         
-        self.canDisplayBannerAds = true
         self.title = "BV Info"
+        self.view.backgroundColor = ThemeManager.colorForKey(colorStr: "mainBackground")
         self.collectionView.backgroundColor = ThemeManager.colorForKey(colorStr: "mainBackground")
         self.navigationController?.navigationBar.tintColor = ThemeManager.colorForKey(colorStr: "gold")
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : ThemeManager.colorForKey(colorStr: "gold")]
@@ -177,6 +179,7 @@ extension ViewController : SwitchCellDelegate {
 extension ViewController {
     
     func resetTheme() {
+        self.view.backgroundColor = ThemeManager.colorForKey(colorStr: "mainBackground")
         self.navigationController?.navigationBar.barTintColor = ThemeManager.colorForKey(colorStr: "navBar")
         self.collectionView.backgroundColor = ThemeManager.colorForKey(colorStr: "mainBackground")
         self.collectionView.reloadData()
@@ -195,6 +198,59 @@ extension ViewController {
             destVc.titleTxt = titleTxt
             destVc.rssUrl = webUrl
         }
+    }
+}
+
+// MARK: - Google Ads
+extension ViewController : GADBannerViewDelegate {
+    // MARK: -  ADMOB BANNER
+    func initAdMobBanner() {
+        
+        if UIDevice.current.userInterfaceIdiom == .phone {
+            // iPhone
+            adMobBannerView.adSize =  GADAdSizeFromCGSize(CGSize(width: 320, height: 50))
+            adMobBannerView.frame = CGRect(x: 0, y: view.frame.size.height, width: 320, height: 50)
+        } else  {
+            // iPad
+            adMobBannerView.adSize =  GADAdSizeFromCGSize(CGSize(width: 468, height: 60))
+            adMobBannerView.frame = CGRect(x: 0, y: view.frame.size.height, width: 468, height: 60)
+        }
+        
+        adMobBannerView.adUnitID = BVInfoShared.sharedInstance.googleAdsUnitId
+        adMobBannerView.rootViewController = self
+        adMobBannerView.delegate = self
+        view.addSubview(adMobBannerView)
+        
+        let request = GADRequest()
+        request.testDevices = [kGADSimulatorID]
+        adMobBannerView.load(request)
+    }
+    
+    
+    // Hide the banner
+    func hideBanner(_ banner: UIView) {
+        UIView.beginAnimations("hideBanner", context: nil)
+        banner.frame = CGRect(x: view.frame.size.width/2 - banner.frame.size.width/2, y: view.frame.size.height - banner.frame.size.height, width: banner.frame.size.width, height: banner.frame.size.height)
+        UIView.commitAnimations()
+        banner.isHidden = true
+    }
+    
+    // Show the banner
+    func showBanner(_ banner: UIView) {
+        UIView.beginAnimations("showBanner", context: nil)
+        banner.frame = CGRect(x: view.frame.size.width/2 - banner.frame.size.width/2, y: view.frame.size.height - banner.frame.size.height, width: banner.frame.size.width, height: banner.frame.size.height)
+        UIView.commitAnimations()
+        banner.isHidden = false
+    }
+    
+    // AdMob banner available
+    func adViewDidReceiveAd(_ view: GADBannerView) {
+        showBanner(adMobBannerView)
+    }
+    
+    // NO AdMob banner available
+    func adView(_ view: GADBannerView, didFailToReceiveAdWithError error: GADRequestError) {
+        hideBanner(adMobBannerView)
     }
 }
 
