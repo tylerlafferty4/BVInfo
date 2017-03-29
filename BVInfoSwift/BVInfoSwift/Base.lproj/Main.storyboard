@@ -147,16 +147,17 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="750"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="75" id="Lf1-eb-7ZR" customClass="RSSCell" customModule="BVU_Info" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="600" height="75"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="85" id="Lf1-eb-7ZR" customClass="RSSCell" customModule="BVU_Info" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="600" height="85"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Lf1-eb-7ZR" id="RPF-9e-Ftp">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="75"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="85"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YIb-jo-sgU">
-                                                    <rect key="frame" x="8" y="12" width="584" height="20.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YIb-jo-sgU">
+                                                    <rect key="frame" x="8" y="12" width="584" height="35"/>
                                                     <constraints>
+                                                        <constraint firstAttribute="height" constant="35" id="0Vn-7y-gVI"/>
                                                         <constraint firstAttribute="height" constant="21" id="kLZ-QX-sBu"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
@@ -169,7 +170,7 @@
                                                     </variation>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h1b-eN-Jk2">
-                                                    <rect key="frame" x="8" y="35.5" width="584" height="17"/>
+                                                    <rect key="frame" x="8" y="50" width="584" height="17"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="17" id="P3L-7V-wxE"/>
                                                     </constraints>

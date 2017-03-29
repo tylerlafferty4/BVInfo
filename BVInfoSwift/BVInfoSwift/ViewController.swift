@@ -9,7 +9,7 @@
 import UIKit
 import GoogleMobileAds
 import AudioToolbox
-import TwitterKit
+//import TwitterKit
 
 class ViewController: UIViewController {
 
@@ -17,6 +17,8 @@ class ViewController: UIViewController {
     var webUrl : String = ""
     var titleTxt : String = ""
     var adMobBannerView = GADBannerView()
+    
+    var shouldShowDesc = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,47 +63,50 @@ class ViewController: UIViewController {
 extension ViewController : UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        collectionView.deselectItem(at: indexPath, animated: true) //deselectRowAtIndexPath(indexPath, animated: false)
+        collectionView.deselectItem(at: indexPath, animated: true)
+        
+        shouldShowDesc = false
         
         if (indexPath as NSIndexPath).row == 0 {
             // Sodexo Menu
             webUrl = "https://bvudining.sodexomyway.com/dining-choices/index.html"
             titleTxt = "Sodexo"
             self.performSegue(withIdentifier: "showWebpage", sender: self)
-        }else if (indexPath as NSIndexPath).row == 1 {
+        } else if (indexPath as NSIndexPath).row == 1 {
             // ACES
             self.performSegue(withIdentifier: "showACES", sender: self)
-        }else if (indexPath as NSIndexPath).row == 2 {
+        } else if (indexPath as NSIndexPath).row == 2 {
             // Events
             webUrl = "https://events.bvu.edu/page/rss/?duration=30days"
             titleTxt = "Events"
             self.performSegue(withIdentifier: "showRSS", sender: self)
             
-        }else if (indexPath as NSIndexPath).row == 3 {
+        } else if (indexPath as NSIndexPath).row == 3 {
             // Athletics
             webUrl = "http://bvuathletics.com/landing/headlines-featured?feed=rss_2.0"
             titleTxt = "Athletics"
             self.performSegue(withIdentifier: "showRSS", sender: self)
             
-        }else if (indexPath as NSIndexPath).row == 4 {
+        } else if (indexPath as NSIndexPath).row == 4 {
             // The Tack
             webUrl = "http://www.bvtack.com/feed/"
             titleTxt = "The Tack"
+            shouldShowDesc = true
             self.performSegue(withIdentifier: "showRSS", sender: self)
-        }else if (indexPath as NSIndexPath).row == 5 {
+        } else if (indexPath as NSIndexPath).row == 5 {
             // CAE
             webUrl = "http://web.bvu.edu/accuweb/"
             titleTxt = "CAE"
             self.performSegue(withIdentifier: "showWebpage", sender: self)
-        }else if (indexPath as NSIndexPath).row == 6 {
+        } else if (indexPath as NSIndexPath).row == 6 {
             // Laundry
             webUrl = "https://www.laundryalert.com/cgi-bin/bvu999/LMPage"
             titleTxt = "Laundry"
             self.performSegue(withIdentifier: "showWebpage", sender: self)
-        }else if (indexPath as NSIndexPath).row == 7 {
+        } else if (indexPath as NSIndexPath).row == 7 {
             // Academics
             self.performSegue(withIdentifier: "showAcademics", sender: self)
-        }else if (indexPath as NSIndexPath).row == 8 {
+        } else if (indexPath as NSIndexPath).row == 8 {
             // KBVU
             self.performSegue(withIdentifier: "showKBVU", sender: self)
         }
@@ -209,6 +214,7 @@ extension ViewController {
             let destVc = segue.destination as! RSSViewController
             destVc.titleTxt = titleTxt
             destVc.rssUrl = webUrl
+            destVc.shouldShowDescription = shouldShowDesc
         }
     }
 }
@@ -232,6 +238,7 @@ extension ViewController : GADBannerViewDelegate {
         adMobBannerView.rootViewController = self
         adMobBannerView.delegate = self
         view.addSubview(adMobBannerView)
+        
         
         let request = GADRequest()
         request.testDevices = [kGADSimulatorID]

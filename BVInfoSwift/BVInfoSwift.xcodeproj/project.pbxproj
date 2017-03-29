@@ -43,10 +43,6 @@
 		D8C267921C02AD8800E0F8F9 /* KBVUViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C267911C02AD8800E0F8F9 /* KBVUViewController.swift */; };
 		D8C267941C02B23A00E0F8F9 /* kbvuAudio.m3u in Resources */ = {isa = PBXBuildFile; fileRef = D8C267931C02B23A00E0F8F9 /* kbvuAudio.m3u */; };
 		D8FB814A1E3E7EEA00F77345 /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8FB81491E3E7EEA00F77345 /* GoogleMobileAds.framework */; };
-		D8FB814D1E3F875F00F77345 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8FB814B1E3F875F00F77345 /* Realm.framework */; };
-		D8FB814E1E3F875F00F77345 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D8FB814B1E3F875F00F77345 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		D8FB814F1E3F875F00F77345 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8FB814C1E3F875F00F77345 /* RealmSwift.framework */; };
-		D8FB81501E3F875F00F77345 /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D8FB814C1E3F875F00F77345 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,21 +62,6 @@
 		};
 /* End PBXContainerItemProxy section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		D8FB81511E3F876000F77345 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				D8FB81501E3F875F00F77345 /* RealmSwift.framework in Embed Frameworks */,
-				D8FB814E1E3F875F00F77345 /* Realm.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
 		D82069191C1925FC00B4E8BB /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		D820691C1C1DE0C100B4E8BB /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -95,8 +76,6 @@
 		D82069321C1E723200B4E8BB /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		D82069341C1E723900B4E8BB /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		D82069361C1E724B00B4E8BB /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
-		D82069411C2251EF00B4E8BB /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = "../../../Downloads/parse-library-1.10.0/Parse.framework"; sourceTree = "<group>"; };
-		D82069431C2251FE00B4E8BB /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseUI.framework; path = "../../../Downloads/parse-library-1.10.0/ParseUI.framework"; sourceTree = "<group>"; };
 		D84F97061DB99D000052E7EA /* ThemeManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
 		D84F97081DB9A0E80052E7EA /* BVInfoShared.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BVInfoShared.swift; sourceTree = "<group>"; };
 		D84F970A1DB9A46B0052E7EA /* Theme.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Theme.plist; sourceTree = "<group>"; };
@@ -124,8 +103,6 @@
 		D8C267911C02AD8800E0F8F9 /* KBVUViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KBVUViewController.swift; sourceTree = "<group>"; };
 		D8C267931C02B23A00E0F8F9 /* kbvuAudio.m3u */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = kbvuAudio.m3u; sourceTree = "<group>"; };
 		D8FB81491E3E7EEA00F77345 /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMobileAds.framework; sourceTree = "<group>"; };
-		D8FB814B1E3F875F00F77345 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
-		D8FB814C1E3F875F00F77345 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,12 +119,10 @@
 				D820692D1C1E721C00B4E8BB /* QuartzCore.framework in Frameworks */,
 				D820692B1C1E721100B4E8BB /* CoreLocation.framework in Frameworks */,
 				D82069291C1E720D00B4E8BB /* CoreGraphics.framework in Frameworks */,
-				D8FB814D1E3F875F00F77345 /* Realm.framework in Frameworks */,
 				D82069271C1E720100B4E8BB /* CFNetwork.framework in Frameworks */,
 				D82069251C1E71F900B4E8BB /* AudioToolbox.framework in Frameworks */,
 				D820691A1C1925FC00B4E8BB /* iAd.framework in Frameworks */,
 				D8FB814A1E3E7EEA00F77345 /* GoogleMobileAds.framework in Frameworks */,
-				D8FB814F1E3F875F00F77345 /* RealmSwift.framework in Frameworks */,
 				D86966651D628EB4007E9E6E /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -181,15 +156,11 @@
 		D82069381C1E725B00B4E8BB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D8FB814B1E3F875F00F77345 /* Realm.framework */,
-				D8FB814C1E3F875F00F77345 /* RealmSwift.framework */,
 				D8FB81491E3E7EEA00F77345 /* GoogleMobileAds.framework */,
 				D82069361C1E724B00B4E8BB /* libsqlite3.tbd */,
 				D82069341C1E723900B4E8BB /* libz.tbd */,
 				D86966671D628FCB007E9E6E /* Crashlytics.framework */,
 				D86966631D628EB4007E9E6E /* Fabric.framework */,
-				D82069431C2251FE00B4E8BB /* ParseUI.framework */,
-				D82069411C2251EF00B4E8BB /* Parse.framework */,
 				D82069321C1E723200B4E8BB /* SystemConfiguration.framework */,
 				D82069301C1E722900B4E8BB /* StoreKit.framework */,
 				D820692E1C1E722400B4E8BB /* Security.framework */,
@@ -318,7 +289,6 @@
 				D8BDC8F21BF8F20100CB40B4 /* Frameworks */,
 				D8BDC8F31BF8F20100CB40B4 /* Resources */,
 				D86966621D628E94007E9E6E /* ShellScript */,
-				D8FB81511E3F876000F77345 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -376,8 +346,9 @@
 				TargetAttributes = {
 					D8BDC8F41BF8F20100CB40B4 = {
 						CreatedOnToolsVersion = 7.0.1;
-						DevelopmentTeam = 7FQDNVV9B5;
+						DevelopmentTeam = 34M84A79JV;
 						LastSwiftMigration = 0800;
+						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -620,8 +591,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 7FQDNVV9B5;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				DEVELOPMENT_TEAM = 34M84A79JV;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)/**",
 					"$(PROJECT_DIR)/**",
@@ -629,9 +600,10 @@
 				);
 				INFOPLIST_FILE = BVInfoSwift/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.lafftyl.BVInfoSwift;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lafftyl.BVUInfo;
 				PRODUCT_NAME = "BVU Info";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "5039d7be-05a9-49fb-b15c-ec75ba2f2a58";
+				PROVISIONING_PROFILE_SPECIFIER = "BVU Info Distribution";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -642,8 +614,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 7FQDNVV9B5;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				DEVELOPMENT_TEAM = 34M84A79JV;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)/**",
 					"$(PROJECT_DIR)/**",
@@ -651,9 +623,10 @@
 				);
 				INFOPLIST_FILE = BVInfoSwift/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.lafftyl.BVInfoSwift;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lafftyl.BVUInfo;
 				PRODUCT_NAME = "BVU Info";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "5039d7be-05a9-49fb-b15c-ec75ba2f2a58";
+				PROVISIONING_PROFILE_SPECIFIER = "BVU Info Distribution";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

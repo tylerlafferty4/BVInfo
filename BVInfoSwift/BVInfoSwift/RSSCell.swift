@@ -16,12 +16,21 @@ class RSSCell : UITableViewCell {
     
     override func awakeFromNib() {
         layer.cornerRadius = 3
-    }
-    
-    func setupCell() {
         backgroundColor = ThemeManager.colorForKey(colorStr: "mainCell")
         titleLbl.textColor = ThemeManager.colorForKey(colorStr: "mainColor")
         dateLbl.textColor = ThemeManager.colorForKey(colorStr: "mainColor")
+    }
+    
+    func setupCell(blogPost : RSSPost) {
+        titleLbl.text = blogPost.postTitle
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "E, dd MMM yyyy HH:mm:ss Z"
+        let date = dateFormatter.date(from: blogPost.postDate)
+        let shortDate = DateFormatter()
+        shortDate.dateStyle = .medium
+        shortDate.timeStyle = .none
+        dateLbl.text = "\(shortDate.string(from: date!))"
+        titleLbl.adjustsFontSizeToFitWidth = true
     }
     
     override var frame: CGRect {

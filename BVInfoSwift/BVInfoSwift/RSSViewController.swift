@@ -18,10 +18,13 @@ class RSSViewController: UIViewController, XMLParserDelegate {
     var postTitle: String = String()
     var postLink: String = String()
     var postDate: String = String()
+    var postDesc: String = String()
     var eName: String = String()
     var rssUrl : String! = ""
     var titleTxt : String! = ""
     var adMobBannerView = GADBannerView()
+    
+    var shouldShowDescription = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,6 +68,8 @@ class RSSViewController: UIViewController, XMLParserDelegate {
                 postLink += data
             } else if eName == "pubDate" {
                 postDate += data
+            } else if eName == "description" {
+                postDesc += data
             }
         }
     }
@@ -75,6 +80,7 @@ class RSSViewController: UIViewController, XMLParserDelegate {
             blogPost.postTitle = postTitle
             blogPost.postLink = postLink
             blogPost.postDate = postDate
+            blogPost.postDesc = postDesc
             blogPosts.append(blogPost)
         }
     }
@@ -83,12 +89,16 @@ class RSSViewController: UIViewController, XMLParserDelegate {
 // MARK: - Table View Delegate
 extension RSSViewController : UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.performSegue(withIdentifier: "viewpost", sender: self)
-        self.tableView.deselectRow(at: indexPath, animated: false)
+        if shouldShowDescription {
+            
+        } else {
+            self.performSegue(withIdentifier: "viewpost", sender: self)
+            self.tableView.deselectRow(at: indexPath, animated: false)
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 75
+        return 85
     }
 }
 
@@ -100,17 +110,8 @@ extension RSSViewController : UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! RSSCell
-        cell.setupCell()
-        let blogPost: RSSPost = blogPosts[(indexPath as NSIndexPath).row]
-        cell.titleLbl.text = blogPost.postTitle
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "E, dd MMM yyyy HH:mm:ss Z"
-        let date = dateFormatter.date(from: blogPost.postDate)
-        let shortDate = DateFormatter()
-        shortDate.dateStyle = .medium
-        shortDate.timeStyle = .none
-        cell.dateLbl.text = "\(shortDate.string(from: date!))"
-        
+        let blogPost: RSSPost = blogPosts[indexPath.row]
+        cell.setupCell(blogPost: blogPost)
         return cell
     }
 }

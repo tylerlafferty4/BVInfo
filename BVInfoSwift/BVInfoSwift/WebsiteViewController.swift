@@ -45,22 +45,36 @@ class WebsiteViewController: UIViewController {
         // Back Image View
         backBtn.image = UIImage(named: "arrow-right")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
         backBtn.transform = CGAffineTransform(rotationAngle: CGFloat(M_PI))
-        backBtn.tintColor = ThemeManager.colorForKey(colorStr: "gold")
         backBtn.isUserInteractionEnabled = true
         let back = UITapGestureRecognizer(target: self, action: #selector(WebsiteViewController.goBack))
         backBtn.addGestureRecognizer(back)
         
         // Forward Image View
         forwardBtn.image = UIImage(named: "arrow-right")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
-        forwardBtn.tintColor = ThemeManager.colorForKey(colorStr: "gold")
         forwardBtn.isUserInteractionEnabled = true
         let forward = UITapGestureRecognizer(target: self, action: #selector(WebsiteViewController.goForward))
         forwardBtn.addGestureRecognizer(forward)
+        
+        setButtonColors()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func setButtonColors() {
+        if webView.canGoBack {
+            backBtn.tintColor = ThemeManager.colorForKey(colorStr: "gold")
+        } else {
+            backBtn.tintColor = UIColor.lightGray
+        }
+        
+        if webView.canGoForward {
+            forwardBtn.tintColor = ThemeManager.colorForKey(colorStr: "gold")
+        } else {
+            forwardBtn.tintColor = UIColor.lightGray
+        }
     }
 }
 
@@ -72,6 +86,7 @@ extension WebsiteViewController : UIWebViewDelegate {
     }
     
     func webViewDidFinishLoad(_ webView: UIWebView) {
+        setButtonColors()
         activity.isHidden = true
         activity.stopAnimating()
     }

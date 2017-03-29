@@ -12,4 +12,5 @@ class RSSPost {
     var postTitle: String = String()
     var postLink: String = String()
     var postDate: String = String()
+    var postDesc: String = String()
 }
