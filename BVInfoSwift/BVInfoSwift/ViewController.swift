@@ -241,7 +241,7 @@ extension ViewController : GADBannerViewDelegate {
         
         
         let request = GADRequest()
-        request.testDevices = [kGADSimulatorID]
+//        request.testDevices = [kGADSimulatorID]
         adMobBannerView.load(request)
     }
     

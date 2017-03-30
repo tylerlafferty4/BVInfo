@@ -127,7 +127,7 @@ extension ACESViewController : GADBannerViewDelegate {
         view.addSubview(adMobBannerView)
         
         let request = GADRequest()
-        request.testDevices = [kGADSimulatorID]
+//        request.testDevices = [kGADSimulatorID]
         adMobBannerView.load(request)
     }
     

@@ -90,7 +90,8 @@ class RSSViewController: UIViewController, XMLParserDelegate {
 extension RSSViewController : UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if shouldShowDescription {
-            
+            self.performSegue(withIdentifier: "viewpost", sender: self)
+            self.tableView.deselectRow(at: indexPath, animated: false)
         } else {
             self.performSegue(withIdentifier: "viewpost", sender: self)
             self.tableView.deselectRow(at: indexPath, animated: false)
@@ -149,7 +150,7 @@ extension RSSViewController : GADBannerViewDelegate {
         view.addSubview(adMobBannerView)
         
         let request = GADRequest()
-        request.testDevices = [kGADSimulatorID]
+//        request.testDevices = [kGADSimulatorID]
         adMobBannerView.load(request)
     }
     

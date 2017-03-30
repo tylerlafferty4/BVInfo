@@ -10,7 +10,6 @@ import UIKit
 import AVFoundation
 import MediaPlayer
 import AVKit
-import iAd
 
 class KBVUViewController: UIViewController {
 
@@ -23,6 +22,7 @@ class KBVUViewController: UIViewController {
     @IBOutlet var audioView : UIView!
     @IBOutlet var playBtn : UIButton!
     @IBOutlet var volumeSlider : UISlider!
+    @IBOutlet var navView : UIView!
     
     // Live Stream
     var player = AVPlayer(url: URL(string: "http://147.92.8.23/kbvu.m3u")!)
@@ -33,7 +33,10 @@ class KBVUViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.canDisplayBannerAds = true
+        self.view.backgroundColor = ThemeManager.colorForKey(colorStr: "mainBackground")
+        navView.backgroundColor = ThemeManager.colorForKey(colorStr: "navBar")
+        audioView.backgroundColor = ThemeManager.colorForKey(colorStr: "navBar")
+        
         let url = URL (string: webUrl);
         let requestObj = URLRequest(url: url!);
         webView.loadRequest(requestObj);
@@ -42,7 +45,7 @@ class KBVUViewController: UIViewController {
         
         // Close Image View
         closeBtn.image = UIImage(named: "X")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
-        closeBtn.tintColor = UIColor(red: 1.0, green: 234/255, blue: 61/255, alpha: 1.0)
+        closeBtn.tintColor = ThemeManager.colorForKey(colorStr: "gold")
         closeBtn.isUserInteractionEnabled = true
         let close = UITapGestureRecognizer(target: self, action: #selector(KBVUViewController.closeWebView))
         closeBtn.addGestureRecognizer(close)
@@ -50,23 +53,37 @@ class KBVUViewController: UIViewController {
         // Back Image View
         backBtn.image = UIImage(named: "arrow-right")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
         backBtn.transform = CGAffineTransform(rotationAngle: CGFloat(M_PI))
-        backBtn.tintColor = UIColor(red: 1.0, green: 234/255, blue: 61/255, alpha: 1.0)
         backBtn.isUserInteractionEnabled = true
         let back = UITapGestureRecognizer(target: self, action: #selector(KBVUViewController.goBack))
         backBtn.addGestureRecognizer(back)
         
         // Forward Image View
         forwardBtn.image = UIImage(named: "arrow-right")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
-        forwardBtn.tintColor = UIColor(red: 1.0, green: 234/255, blue: 61/255, alpha: 1.0)
         forwardBtn.isUserInteractionEnabled = true
         let forward = UITapGestureRecognizer(target: self, action: #selector(KBVUViewController.goForward))
         forwardBtn.addGestureRecognizer(forward)
+        
+        setButtonColors()
         
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func setButtonColors() {
+        if webView.canGoBack {
+            backBtn.tintColor = ThemeManager.colorForKey(colorStr: "gold")
+        } else {
+            backBtn.tintColor = UIColor.lightGray
+        }
+        
+        if webView.canGoForward {
+            forwardBtn.tintColor = ThemeManager.colorForKey(colorStr: "gold")
+        } else {
+            forwardBtn.tintColor = UIColor.lightGray
+        }
     }
 }
 
@@ -100,6 +117,7 @@ extension KBVUViewController : UIWebViewDelegate {
     func webViewDidFinishLoad(_ webView: UIWebView) {
         activity.isHidden = true
         activity.stopAnimating()
+        setButtonColors()
     }
 }
 
