@@ -30,6 +30,10 @@ class RSSViewController: UIViewController, XMLParserDelegate {
         super.viewDidLoad()
         initAdMobBanner()
         self.title = titleTxt
+        
+        // Log to Answers
+        BVInfoShared.logAnswersEvent(title: titleTxt, attributes: [:])
+        
         self.view.backgroundColor = ThemeManager.colorForKey(colorStr: "mainBackground")
         self.tableView.backgroundColor = ThemeManager.colorForKey(colorStr: "mainBackground")
         let url:URL = URL(string: rssUrl)!
@@ -89,6 +93,8 @@ class RSSViewController: UIViewController, XMLParserDelegate {
 // MARK: - Table View Delegate
 extension RSSViewController : UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // Log to Answers
+        BVInfoShared.logAnswersEvent(title: titleTxt + " Item Clicked", attributes: [:])
         if shouldShowDescription {
             self.performSegue(withIdentifier: "viewpost", sender: self)
             self.tableView.deselectRow(at: indexPath, animated: false)

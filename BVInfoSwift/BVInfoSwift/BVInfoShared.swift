@@ -8,6 +8,7 @@
 
 import Foundation
 import SystemConfiguration
+import Answers
 
 class BVInfoShared : NSObject {
     
@@ -35,5 +36,13 @@ class BVInfoShared : NSObject {
         let isReachable = (flags.rawValue & UInt32(kSCNetworkFlagsReachable)) != 0
         let needsConnection = (flags.rawValue & UInt32(kSCNetworkFlagsConnectionRequired)) != 0
         return (isReachable && !needsConnection)
+    }
+}
+
+// MARK: - Fabric Answers
+extension BVInfoShared {
+    
+    class func logAnswersEvent(title : String, attributes : [String:String]) {
+        Answers.logCustomEvent(withName: title, customAttributes: attributes)
     }
 }
