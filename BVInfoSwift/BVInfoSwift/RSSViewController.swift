@@ -100,7 +100,7 @@ class RSSViewController: UIViewController, XMLParserDelegate {
     
     func parserDidEndDocument(_ parser: XMLParser) {
         SwiftSpinner.hide()
-        self.tableView.reloadData()
+        BVInfoShared.animateTable(tableView: self.tableView)
     }
 }
 

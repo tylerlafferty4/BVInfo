@@ -75,7 +75,7 @@ extension ViewController : UICollectionViewDelegate {
             self.performSegue(withIdentifier: "showWebpage", sender: self)
         } else if (indexPath as NSIndexPath).row == 1 {
             // ACES
-            BVInfoShared.logAnswersEvent(title: "Sodexo", attributes: [:])
+            BVInfoShared.logAnswersEvent(title: "ACES", attributes: [:])
             self.performSegue(withIdentifier: "showACES", sender: self)
         } else if (indexPath as NSIndexPath).row == 2 {
             // Events
