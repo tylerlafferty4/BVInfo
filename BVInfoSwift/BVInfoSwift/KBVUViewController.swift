@@ -96,10 +96,12 @@ extension KBVUViewController {
     
     @IBAction func playPause(_ sender: AnyObject) {
         if isPlaying == true {
+            BVInfoShared.logAnswersEvent(title: "Paused KBVU", attributes: [:])
             player.pause()
             playBtn.setImage(UIImage(named: "SongControl_Play"), for: UIControlState())
             isPlaying = false
         }else {
+            BVInfoShared.logAnswersEvent(title: "Played KBVU", attributes: [:])
             player.play()
             playBtn.setImage(UIImage(named: "SongControl_Pause"), for: UIControlState())
             isPlaying = true

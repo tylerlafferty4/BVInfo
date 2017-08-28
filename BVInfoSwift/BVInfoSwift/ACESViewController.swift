@@ -46,24 +46,28 @@ extension ACESViewController : UITableViewDelegate {
         if (indexPath as NSIndexPath).row == 0 {
             // Cultural
             titleTxt = "Cultural"
+            BVInfoShared.logAnswersEvent(title: "Cultural ACES", attributes: [:])
             webUrl = "http://bvu.edu/bv/aces/cultural-events.dot"
             self.performSegue(withIdentifier: "showWebpage", sender: self)
             
         }else if (indexPath as NSIndexPath).row == 1 {
             // Scholarly
             titleTxt = "Scholarly"
+            BVInfoShared.logAnswersEvent(title: "Scholarly ACES", attributes: [:])
             webUrl = "http://bvu.edu/bv/aces/scholarly-events.dot"
             self.performSegue(withIdentifier: "showWebpage", sender: self)
             
         }else if (indexPath as NSIndexPath).row == 2 {
             // Student Life
             titleTxt = "Student Life"
+            BVInfoShared.logAnswersEvent(title: "Student Life ACES", attributes: [:])
             webUrl = "http://bvu.edu/bv/aces/student-life-events.dot"
             self.performSegue(withIdentifier: "showWebpage", sender: self)
             
         }else if (indexPath as NSIndexPath).row == 3 {
             // Check Your Status
             titleTxt = "Check Status"
+            BVInfoShared.logAnswersEvent(title: "Check Status", attributes: [:])
             webUrl = "http://web1-15.bvu.edu/aces/check.asp"
             self.performSegue(withIdentifier: "showWebpage", sender: self)
         }

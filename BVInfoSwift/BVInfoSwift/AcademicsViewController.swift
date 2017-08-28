@@ -47,12 +47,14 @@ extension AcademicsViewController : UITableViewDelegate {
         if (indexPath as NSIndexPath).row == 0 {
             // Cultural
             titleTxt = "Academic Calendar"
+            BVInfoShared.logAnswersEvent(title: "Academic Calendar", attributes: [:])
             webUrl = "http://www.bvu.edu/bv/academic-resources/calendar.dot"
             self.performSegue(withIdentifier: "showWebpage", sender: self)
             
         }else if (indexPath as NSIndexPath).row == 1 {
             // Scholarly
             titleTxt = "Majors & Minors"
+            BVInfoShared.logAnswersEvent(title: "Majors & Minors", attributes: [:])
             webUrl = "http://www.bvu.edu/academics/programs-majors/"
             self.performSegue(withIdentifier: "showWebpage", sender: self)
             
@@ -60,6 +62,7 @@ extension AcademicsViewController : UITableViewDelegate {
             // Student Life
             titleTxt = "Canvas"
             webUrl = "https://bvu.instructure.com/login/ldap"
+            BVInfoShared.logAnswersEvent(title: "Canvas", attributes: [:])
             self.performSegue(withIdentifier: "showWebpage", sender: self)
             
         }

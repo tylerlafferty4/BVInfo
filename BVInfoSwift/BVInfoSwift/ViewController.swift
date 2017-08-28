@@ -71,9 +71,11 @@ extension ViewController : UICollectionViewDelegate {
             // Sodexo Menu
             webUrl = "https://bvudining.sodexomyway.com/dining-choices/index.html"
             titleTxt = "Sodexo"
+            BVInfoShared.logAnswersEvent(title: "Sodexo", attributes: [:])
             self.performSegue(withIdentifier: "showWebpage", sender: self)
         } else if (indexPath as NSIndexPath).row == 1 {
             // ACES
+            BVInfoShared.logAnswersEvent(title: "Sodexo", attributes: [:])
             self.performSegue(withIdentifier: "showACES", sender: self)
         } else if (indexPath as NSIndexPath).row == 2 {
             // Events
@@ -97,17 +99,21 @@ extension ViewController : UICollectionViewDelegate {
             // CAE
             webUrl = "https://www.bvu.edu/cae/"
             titleTxt = "CAE"
+            BVInfoShared.logAnswersEvent(title: "CAE", attributes: [:])
             self.performSegue(withIdentifier: "showWebpage", sender: self)
         } else if (indexPath as NSIndexPath).row == 6 {
             // Laundry
             webUrl = "https://www.laundryalert.com/cgi-bin/bvu999/LMPage"
             titleTxt = "Laundry"
+            BVInfoShared.logAnswersEvent(title: "Laundry", attributes: [:])
             self.performSegue(withIdentifier: "showWebpage", sender: self)
         } else if (indexPath as NSIndexPath).row == 7 {
             // Academics
+            BVInfoShared.logAnswersEvent(title: "Academics", attributes: [:])
             self.performSegue(withIdentifier: "showAcademics", sender: self)
         } else if (indexPath as NSIndexPath).row == 8 {
             // KBVU
+            BVInfoShared.logAnswersEvent(title: "KBVU", attributes: [:])
             self.performSegue(withIdentifier: "showKBVU", sender: self)
         }
     }
