@@ -30,23 +30,32 @@ class RSSViewController: UIViewController, XMLParserDelegate {
         super.viewDidLoad()
         initAdMobBanner()
         self.title = titleTxt
-        
+        SwiftSpinner.show("Loading \(titleTxt!) News")
         // Log to Answers
         BVInfoShared.logAnswersEvent(title: titleTxt, attributes: [:])
         
         self.view.backgroundColor = ThemeManager.colorForKey(colorStr: "mainBackground")
         self.tableView.backgroundColor = ThemeManager.colorForKey(colorStr: "mainBackground")
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         let url:URL = URL(string: rssUrl)!
         parser = XMLParser(contentsOf: url)!
         parser.delegate = self
+        parser.parse()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
-        // Check if there is a network connection
-        if BVInfoShared.isInternetAvailable() {
-            // Go get updated results
-            parser.parse()
-        } else {
-            // Pull results from Realm
-        }
+//        // Check if there is a network connection
+//        if BVInfoShared.isInternetAvailable() {
+//            // Go get updated results
+//            parser.parse()
+//        } else {
+//            // Pull results from Realm
+//        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -87,6 +96,11 @@ class RSSViewController: UIViewController, XMLParserDelegate {
             blogPost.postDesc = postDesc
             blogPosts.append(blogPost)
         }
+    }
+    
+    func parserDidEndDocument(_ parser: XMLParser) {
+        SwiftSpinner.hide()
+        self.tableView.reloadData()
     }
 }
 

@@ -42,6 +42,7 @@
 		D8C2678F1BFD8B0C00E0F8F9 /* AcademicsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C2678E1BFD8B0C00E0F8F9 /* AcademicsViewController.swift */; };
 		D8C267921C02AD8800E0F8F9 /* KBVUViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C267911C02AD8800E0F8F9 /* KBVUViewController.swift */; };
 		D8C267941C02B23A00E0F8F9 /* kbvuAudio.m3u in Resources */ = {isa = PBXBuildFile; fileRef = D8C267931C02B23A00E0F8F9 /* kbvuAudio.m3u */; };
+		D8D058CE1F548CCE00F59697 /* SwiftSpinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D058CD1F548CCE00F59697 /* SwiftSpinner.swift */; };
 		D8FB814A1E3E7EEA00F77345 /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8FB81491E3E7EEA00F77345 /* GoogleMobileAds.framework */; };
 /* End PBXBuildFile section */
 
@@ -102,6 +103,7 @@
 		D8C2678E1BFD8B0C00E0F8F9 /* AcademicsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AcademicsViewController.swift; sourceTree = "<group>"; };
 		D8C267911C02AD8800E0F8F9 /* KBVUViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KBVUViewController.swift; sourceTree = "<group>"; };
 		D8C267931C02B23A00E0F8F9 /* kbvuAudio.m3u */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = kbvuAudio.m3u; sourceTree = "<group>"; };
+		D8D058CD1F548CCE00F59697 /* SwiftSpinner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftSpinner.swift; sourceTree = "<group>"; };
 		D8FB81491E3E7EEA00F77345 /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMobileAds.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -207,6 +209,7 @@
 		D8BDC8F71BF8F20100CB40B4 /* BVInfoSwift */ = {
 			isa = PBXGroup;
 			children = (
+				D8D058CD1F548CCE00F59697 /* SwiftSpinner.swift */,
 				D84F97051DB99CED0052E7EA /* Theme Manager */,
 				D8BDC8F81BF8F20100CB40B4 /* AppDelegate.swift */,
 				D8BDC8FC1BF8F20100CB40B4 /* Main.storyboard */,
@@ -442,6 +445,7 @@
 				D857D12E1DBB073100EFEDD3 /* CardCell.swift in Sources */,
 				D8BDC8FB1BF8F20100CB40B4 /* ViewController.swift in Sources */,
 				D84F97091DB9A0E80052E7EA /* BVInfoShared.swift in Sources */,
+				D8D058CE1F548CCE00F59697 /* SwiftSpinner.swift in Sources */,
 				D8C267921C02AD8800E0F8F9 /* KBVUViewController.swift in Sources */,
 				D8BDC93A1BFD725700CB40B4 /* RSSCell.swift in Sources */,
 				D8BDC8F91BF8F20100CB40B4 /* AppDelegate.swift in Sources */,
