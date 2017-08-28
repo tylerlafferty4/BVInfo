@@ -95,7 +95,7 @@ extension ViewController : UICollectionViewDelegate {
             self.performSegue(withIdentifier: "showRSS", sender: self)
         } else if (indexPath as NSIndexPath).row == 5 {
             // CAE
-            webUrl = "http://web.bvu.edu/accuweb/"
+            webUrl = "https://www.bvu.edu/cae/"
             titleTxt = "CAE"
             self.performSegue(withIdentifier: "showWebpage", sender: self)
         } else if (indexPath as NSIndexPath).row == 6 {

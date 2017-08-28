@@ -64,7 +64,7 @@ extension ACESViewController : UITableViewDelegate {
         }else if (indexPath as NSIndexPath).row == 3 {
             // Check Your Status
             titleTxt = "Check Status"
-            webUrl = "http://www2.bvu.edu/departments/academicaffairs/aces/check.asp"
+            webUrl = "http://web1-15.bvu.edu/aces/check.asp"
             self.performSegue(withIdentifier: "showWebpage", sender: self)
         }
     }
