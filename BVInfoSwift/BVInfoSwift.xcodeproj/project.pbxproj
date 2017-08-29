@@ -27,6 +27,7 @@
 		D857D12E1DBB073100EFEDD3 /* CardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D857D12D1DBB073100EFEDD3 /* CardCell.swift */; };
 		D86966651D628EB4007E9E6E /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D86966631D628EB4007E9E6E /* Fabric.framework */; };
 		D86966681D628FCB007E9E6E /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D86966671D628FCB007E9E6E /* Crashlytics.framework */; };
+		D8B38AD11F55F958008018E4 /* LaunchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B38AD01F55F957008018E4 /* LaunchScreenViewController.swift */; };
 		D8BDC8F91BF8F20100CB40B4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BDC8F81BF8F20100CB40B4 /* AppDelegate.swift */; };
 		D8BDC8FB1BF8F20100CB40B4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BDC8FA1BF8F20100CB40B4 /* ViewController.swift */; };
 		D8BDC8FE1BF8F20100CB40B4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8BDC8FC1BF8F20100CB40B4 /* Main.storyboard */; };
@@ -84,6 +85,7 @@
 		D857D12D1DBB073100EFEDD3 /* CardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardCell.swift; sourceTree = "<group>"; };
 		D86966631D628EB4007E9E6E /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		D86966671D628FCB007E9E6E /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
+		D8B38AD01F55F957008018E4 /* LaunchScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchScreenViewController.swift; sourceTree = "<group>"; };
 		D8BDC8F51BF8F20100CB40B4 /* BVU Info.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BVU Info.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8BDC8F81BF8F20100CB40B4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D8BDC8FA1BF8F20100CB40B4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -215,6 +217,7 @@
 				D8BDC8FC1BF8F20100CB40B4 /* Main.storyboard */,
 				D8BDC8FF1BF8F20100CB40B4 /* Assets.xcassets */,
 				D8BDC9011BF8F20100CB40B4 /* LaunchScreen.storyboard */,
+				D8B38AD01F55F957008018E4 /* LaunchScreenViewController.swift */,
 				D8BDC9041BF8F20100CB40B4 /* Info.plist */,
 				D820691B1C1DE0A300B4E8BB /* Map */,
 				D8C267901C02AD7A00E0F8F9 /* KBVU */,
@@ -455,6 +458,7 @@
 				D8BDC9291BF93A4D00CB40B4 /* HomeViewControllerCell.swift in Sources */,
 				D8BDC9311BF987F300CB40B4 /* ACESCell.swift in Sources */,
 				D8C2678F1BFD8B0C00E0F8F9 /* AcademicsViewController.swift in Sources */,
+				D8B38AD11F55F958008018E4 /* LaunchScreenViewController.swift in Sources */,
 				D84F97071DB99D000052E7EA /* ThemeManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
