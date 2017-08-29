@@ -22,6 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         Fabric.with([Answers.self, Crashlytics.self]) //, Twitter.self])
         GADMobileAds.configure(withApplicationID: BVInfoShared.sharedInstance.googleAdsAppId)
+        UIApplication.shared.statusBarStyle = .lightContent
         return true
     }
 

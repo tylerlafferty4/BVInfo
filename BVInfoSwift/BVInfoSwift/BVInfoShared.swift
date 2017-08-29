@@ -74,3 +74,11 @@ extension BVInfoShared {
         Answers.logCustomEvent(withName: title, customAttributes: attributes)
     }
 }
+
+
+
+
+
+
+
+

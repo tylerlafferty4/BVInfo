@@ -64,7 +64,6 @@ class KBVUViewController: UIViewController {
         forwardBtn.addGestureRecognizer(forward)
         
         setButtonColors()
-        
     }
     
     override func didReceiveMemoryWarning() {
