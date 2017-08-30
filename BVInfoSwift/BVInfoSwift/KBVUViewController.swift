@@ -23,6 +23,7 @@ class KBVUViewController: UIViewController {
     @IBOutlet var playBtn : UIButton!
     @IBOutlet var volumeSlider : UISlider!
     @IBOutlet var navView : UIView!
+    @IBOutlet var statusBarView: UIView!
     
     // Live Stream
     var player = AVPlayer(url: URL(string: "http://147.92.8.23/kbvu.m3u")!)
@@ -36,6 +37,7 @@ class KBVUViewController: UIViewController {
         self.view.backgroundColor = ThemeManager.colorForKey(colorStr: "mainBackground")
         navView.backgroundColor = ThemeManager.colorForKey(colorStr: "navBar")
         audioView.backgroundColor = ThemeManager.colorForKey(colorStr: "navBar")
+        statusBarView.backgroundColor = ThemeManager.colorForKey(colorStr: "navBar")
         
         let url = URL (string: webUrl);
         let requestObj = URLRequest(url: url!);

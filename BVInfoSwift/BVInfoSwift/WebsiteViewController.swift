@@ -19,6 +19,7 @@ class WebsiteViewController: UIViewController {
     @IBOutlet var forwardBtn : UIImageView!
     @IBOutlet var titleLbl : UILabel!
     @IBOutlet var navView: UIView!
+    @IBOutlet var statusBarView: UIView!
     
     var titleTxt : String! = ""
     var webUrl : String! = ""
@@ -34,6 +35,7 @@ class WebsiteViewController: UIViewController {
         
         titleLbl.text = titleTxt
         navView.backgroundColor = ThemeManager.colorForKey(colorStr: "navBar")
+        statusBarView.backgroundColor = ThemeManager.colorForKey(colorStr: "navBar")
         
         // Close Image View
         closeBtn.image = UIImage(named: "X")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate)

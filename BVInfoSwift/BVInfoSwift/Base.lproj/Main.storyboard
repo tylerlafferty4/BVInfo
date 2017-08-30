@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16B2548a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="D7I-8b-fyD">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16B2548a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="D7I-8b-fyD">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -129,7 +129,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="944" y="1025"/>
+            <point key="canvasLocation" x="742" y="683"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="lt4-G3-SVP">
@@ -382,6 +382,13 @@
                                     </mask>
                                 </variation>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FdJ-bS-Pya">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="20"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="p0O-PB-y8x"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -389,6 +396,9 @@
                             <constraint firstItem="vQ6-3H-eEw" firstAttribute="leading" secondItem="Twz-Sb-7GD" secondAttribute="leading" id="3cJ-UR-9vL"/>
                             <constraint firstItem="vQ6-3H-eEw" firstAttribute="top" secondItem="ZHg-SG-bcc" secondAttribute="bottom" id="9bg-Za-AcS"/>
                             <constraint firstAttribute="trailing" secondItem="lKd-Pt-Gq5" secondAttribute="trailing" id="BtZ-2O-zR3"/>
+                            <constraint firstItem="FdJ-bS-Pya" firstAttribute="leading" secondItem="Twz-Sb-7GD" secondAttribute="leading" id="PaN-VY-iby"/>
+                            <constraint firstAttribute="trailing" secondItem="FdJ-bS-Pya" secondAttribute="trailing" id="SaT-VM-4Se"/>
+                            <constraint firstItem="FdJ-bS-Pya" firstAttribute="top" secondItem="Twz-Sb-7GD" secondAttribute="top" id="Xq8-w3-JIj"/>
                             <constraint firstItem="vQ6-3H-eEw" firstAttribute="top" secondItem="lKd-Pt-Gq5" secondAttribute="bottom" id="ji6-TI-0O9"/>
                             <constraint firstItem="IGB-Yp-dpN" firstAttribute="top" secondItem="vQ6-3H-eEw" secondAttribute="bottom" constant="50" id="jil-W5-fD8"/>
                             <constraint firstItem="lKd-Pt-Gq5" firstAttribute="leading" secondItem="Twz-Sb-7GD" secondAttribute="leading" id="rRk-fP-cxX"/>
@@ -406,13 +416,14 @@
                         <outlet property="closeBtn" destination="URF-65-nIF" id="YLa-XH-xW0"/>
                         <outlet property="forwardBtn" destination="Kki-j8-gmC" id="82V-2p-1Ak"/>
                         <outlet property="navView" destination="lKd-Pt-Gq5" id="nwI-bC-UD6"/>
+                        <outlet property="statusBarView" destination="FdJ-bS-Pya" id="Elu-yq-L1B"/>
                         <outlet property="titleLbl" destination="sxA-sJ-TqL" id="1nY-n3-zVV"/>
                         <outlet property="webView" destination="vQ6-3H-eEw" id="ia9-Vc-4vG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2ry-mK-MYD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1749" y="-188"/>
+            <point key="canvasLocation" x="1750" y="-291"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="931-34-jnZ">
@@ -476,7 +487,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kGi-X0-TCZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2383" y="353"/>
+            <point key="canvasLocation" x="2621" y="24"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="fcF-yI-OlB">
@@ -494,7 +505,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TYj-DF-3If" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="336" y="1025"/>
+            <point key="canvasLocation" x="31" y="1025"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="eEG-Ev-VbX">
@@ -630,11 +641,20 @@
                                     <constraint firstAttribute="bottom" secondItem="ig7-rD-chU" secondAttribute="bottom" constant="15" id="x2j-F7-Dev"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7YX-xk-3VW">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="20"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="7Fs-Yi-0Np"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Jlb-Hf-JkK" firstAttribute="leading" secondItem="3u5-LX-VlC" secondAttribute="leading" id="BFA-rm-gBe"/>
+                            <constraint firstItem="7YX-xk-3VW" firstAttribute="top" secondItem="3u5-LX-VlC" secondAttribute="top" id="G3l-v4-RLo"/>
                             <constraint firstItem="wc4-gX-CcS" firstAttribute="top" secondItem="l7S-AJ-MSR" secondAttribute="bottom" id="LSN-af-bwF"/>
+                            <constraint firstItem="7YX-xk-3VW" firstAttribute="leading" secondItem="3u5-LX-VlC" secondAttribute="leading" id="NC0-sB-HcS"/>
                             <constraint firstItem="O95-aH-vbu" firstAttribute="top" secondItem="wc4-gX-CcS" secondAttribute="bottom" constant="100" id="Qwp-rn-zvs"/>
                             <constraint firstItem="wc4-gX-CcS" firstAttribute="top" secondItem="fNl-Wa-fDa" secondAttribute="bottom" id="fLF-aG-96a"/>
                             <constraint firstAttribute="bottom" secondItem="Jlb-Hf-JkK" secondAttribute="bottom" id="hgs-VV-MoF"/>
@@ -642,6 +662,7 @@
                             <constraint firstAttribute="trailing" secondItem="fNl-Wa-fDa" secondAttribute="trailing" id="iHJ-QG-vnx"/>
                             <constraint firstAttribute="trailing" secondItem="wc4-gX-CcS" secondAttribute="trailing" id="kG2-Ah-GBM"/>
                             <constraint firstItem="fNl-Wa-fDa" firstAttribute="top" secondItem="l7S-AJ-MSR" secondAttribute="bottom" id="mhT-Xz-bmw"/>
+                            <constraint firstAttribute="trailing" secondItem="7YX-xk-3VW" secondAttribute="trailing" id="nfk-ay-dzt"/>
                             <constraint firstAttribute="trailing" secondItem="Jlb-Hf-JkK" secondAttribute="trailing" id="rcr-wW-ibZ"/>
                             <constraint firstItem="Jlb-Hf-JkK" firstAttribute="top" secondItem="wc4-gX-CcS" secondAttribute="bottom" id="sWB-5C-8fc"/>
                             <constraint firstItem="wc4-gX-CcS" firstAttribute="leading" secondItem="3u5-LX-VlC" secondAttribute="leading" id="ulB-b7-Kof"/>
@@ -660,6 +681,7 @@
                         <outlet property="forwardBtn" destination="TWu-89-wUd" id="l63-sP-5pA"/>
                         <outlet property="navView" destination="fNl-Wa-fDa" id="Lb8-Fj-X85"/>
                         <outlet property="playBtn" destination="eCN-P4-J0P" id="ufE-Gd-ZC1"/>
+                        <outlet property="statusBarView" destination="7YX-xk-3VW" id="bDv-MX-91s"/>
                         <outlet property="titleLbl" destination="Qge-Ba-uRN" id="HCZ-mU-5rP"/>
                         <outlet property="volumeSlider" destination="A87-Ck-wSw" id="msA-ed-Bcx"/>
                         <outlet property="webView" destination="wc4-gX-CcS" id="KMN-OD-pgs"/>
@@ -667,7 +689,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FOc-fX-YBm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1034" y="1915"/>
+            <point key="canvasLocation" x="1032.8" y="1914.6926536731635"/>
         </scene>
         <!--Map View Controller-->
         <scene sceneID="NUh-3d-gFT">

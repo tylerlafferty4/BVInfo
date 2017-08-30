@@ -9,10 +9,22 @@
 import UIKit
 import MapKit
 
+class MapPoint {
+    
+    var lat: CLLocationDegrees!
+    var long: CLLocationDegrees!
+    
+    init(lat : CLLocationDegrees, long : CLLocationDegrees) {
+        self.lat = lat
+        self.long = long
+    }
+}
 class MapViewController: UIViewController {
 
     @IBOutlet var mapView : MKMapView!
     let regionRadius: CLLocationDistance = 1000
+    
+    var SSA = MapPoint(lat: 42.641378, long: -95.210377)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,8 +35,10 @@ class MapViewController: UIViewController {
         
         // show artwork on map
         let artwork = Building(title: "Test", subtitle: "Test", coordinate: CLLocationCoordinate2D(latitude: 42.641942, longitude: -95.207359))
+        let ssa = Building(title: "Social Science and Art", subtitle: "SSA", coordinate: CLLocationCoordinate2D(latitude: SSA.lat, longitude: SSA.long))
         
         mapView.addAnnotation(artwork)
+        mapView.addAnnotation(ssa)
     }
     
     func centerMapOnLocation(_ location: CLLocation) {

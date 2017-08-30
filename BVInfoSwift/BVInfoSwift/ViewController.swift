@@ -137,35 +137,35 @@ extension ViewController : UICollectionViewDataSource {
             // Sodexo Menu
             cell.titleLbl.text = "Sodexo"
             cell.imgView.image = UIImage(named: "meal")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
-        }else if (indexPath as NSIndexPath).row == 1 {
+        } else if (indexPath as NSIndexPath).row == 1 {
             // ACES
             cell.titleLbl.text = "ACES"
             cell.imgView.image = UIImage(named: "aces")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
-        }else if (indexPath as NSIndexPath).row == 2 {
+        } else if (indexPath as NSIndexPath).row == 2 {
             // Events
             cell.titleLbl.text = "Events"
             cell.imgView.image = UIImage(named: "events")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
-        }else if (indexPath as NSIndexPath).row == 3 {
+        } else if (indexPath as NSIndexPath).row == 3 {
             // Athletics
             cell.titleLbl.text = "Athletics"
             cell.imgView.image = UIImage(named: "beaver")
-        }else if (indexPath as NSIndexPath).row == 4 {
+        } else if (indexPath as NSIndexPath).row == 4 {
             // The Tack
             cell.titleLbl.text = "The Tack"
             cell.imgView.image = UIImage(named: "the-tack")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
-        }else if (indexPath as NSIndexPath).row == 5 {
+        } else if (indexPath as NSIndexPath).row == 5 {
             // CAE
             cell.titleLbl.text = "CAE"
             cell.imgView.image = UIImage(named: "homework")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
-        }else if (indexPath as NSIndexPath).row == 6 {
+        } else if (indexPath as NSIndexPath).row == 6 {
             // Laundry
             cell.titleLbl.text = "Laundry"
             cell.imgView.image = UIImage(named: "laundry")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
-        }else if (indexPath as NSIndexPath).row == 7 {
+        } else if (indexPath as NSIndexPath).row == 7 {
             // Academics
             cell.titleLbl.text = "Academics"
             cell.imgView.image = UIImage(named: "academics")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
-        }else if (indexPath as NSIndexPath).row == 8 {
+        } else if (indexPath as NSIndexPath).row == 8 {
             // KBVU
             cell.titleLbl.text = "KBVU"
             cell.imgView.image = UIImage(named: "kbvu")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
