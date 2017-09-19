@@ -27,6 +27,11 @@ class RSSViewController: UIViewController, XMLParserDelegate {
     var shouldShowDescription = false
     
     override func viewDidLoad() {
+        if #available(iOS 11.0, *) {
+            self.navigationController?.navigationItem.largeTitleDisplayMode = .never
+        } else {
+            // Fallback on earlier versions
+        }
         super.viewDidLoad()
         initAdMobBanner()
         self.title = titleTxt

@@ -127,17 +127,17 @@ extension KBVUViewController : UIWebViewDelegate {
 // MARK: - Button Naviagation
 extension KBVUViewController {
     
-    func closeWebView() {
+    @objc func closeWebView() {
         self.dismiss(animated: true, completion: nil)
     }
     
-    func goBack() {
+    @objc func goBack() {
         if webView.canGoBack {
             webView.goBack()
         }
     }
     
-    func goForward() {
+    @objc func goForward() {
         if webView.canGoForward {
             webView.goForward()
         }

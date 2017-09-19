@@ -28,7 +28,6 @@ class HomeViewControllerCell: UICollectionViewCell {
         titleLbl.textColor = ThemeManager.colorForKey(colorStr: "mainColor")
         imgView.tintColor = ThemeManager.colorForKey(colorStr: "mainColor")
     }
-    
 }
 
 class HomeSwitchCell: UICollectionViewCell {

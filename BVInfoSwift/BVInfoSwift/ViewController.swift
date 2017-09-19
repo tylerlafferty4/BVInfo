@@ -30,11 +30,19 @@ class ViewController: UIViewController {
             ThemeManager.setupThemeManager(themeName: "Theme")
         }
         
+        if #available(iOS 11.0, *) {
+            self.navigationController?.navigationBar.prefersLargeTitles = true
+            self.navigationController?.navigationBar.largeTitleTextAttributes =
+                [NSAttributedStringKey.foregroundColor: ThemeManager.colorForKey(colorStr: "gold")]
+        } else {
+            // Fallback on earlier versions
+        }
+        
         self.title = "BV Info"
         self.view.backgroundColor = ThemeManager.colorForKey(colorStr: "mainBackground")
         self.collectionView.backgroundColor = ThemeManager.colorForKey(colorStr: "mainBackground")
         self.navigationController?.navigationBar.tintColor = ThemeManager.colorForKey(colorStr: "gold")
-        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : ThemeManager.colorForKey(colorStr: "gold")]
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor : ThemeManager.colorForKey(colorStr: "gold")]
         self.navigationController?.navigationBar.barTintColor = ThemeManager.colorForKey(colorStr: "navBar")
         collectionView.reloadData()
         
@@ -263,7 +271,7 @@ extension ViewController : GADBannerViewDelegate {
     // Show the banner
     func showBanner(_ banner: UIView) {
         UIView.beginAnimations("showBanner", context: nil)
-        banner.frame = CGRect(x: view.frame.size.width/2 - banner.frame.size.width/2, y: view.frame.size.height - banner.frame.size.height, width: banner.frame.size.width, height: banner.frame.size.height)
+        banner.frame = CGRect(x: view.frame.size.width/2 - banner.frame.size.width/2, y: (view.frame.size.height - 40) - banner.frame.size.height, width: banner.frame.size.width, height: banner.frame.size.height)
         UIView.commitAnimations()
         banner.isHidden = false
     }
