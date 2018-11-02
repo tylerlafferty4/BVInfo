@@ -19,6 +19,12 @@ class RSSCell : UITableViewCell {
         backgroundColor = ThemeManager.colorForKey(colorStr: "mainCell")
         titleLbl.textColor = ThemeManager.colorForKey(colorStr: "mainColor")
         dateLbl.textColor = ThemeManager.colorForKey(colorStr: "mainColor")
+        let shadowPath2 = UIBezierPath(rect: self.bounds)
+        layer.masksToBounds = false
+        layer.shadowColor = UIColor.black.cgColor
+        layer.shadowOffset = CGSize(width: CGFloat(1.0), height: CGFloat(3.0))
+        layer.shadowOpacity = 0.5
+        layer.shadowPath = shadowPath2.cgPath
     }
     
     func setupCell(blogPost : RSSPost) {

@@ -11,6 +11,29 @@ import SystemConfiguration
 import Answers
 import UIKit
 
+class HomeCard {
+    
+    var title: String!
+    var link: String!
+    var segueId: String!
+    
+    init(title: String, link: String, segueId: String) {
+        self.title = title
+        self.link = link
+        self.segueId = segueId
+    }
+}
+
+var SODEXO = HomeCard(title: "Sodexo", link: "https://menus.sodexomyway.com/BiteMenu/Menu?menuId=313&locationId=10510001&whereami=https://bvudining.sodexomyway.com/dining-near-me/buena-vista-food-court", segueId: "showWebpage")
+var ACES = HomeCard(title: "ACES", link: "", segueId: "showACES")
+var EVENTS = HomeCard(title: "Events", link: "https://events.bvu.edu/page/rss/?duration=30days", segueId: "showRSS")
+var ATHLETICS = HomeCard(title: "Athletics", link: "http://bvuathletics.com/landing/headlines-featured?feed=rss_2.0", segueId: "showRSS")
+var TACK = HomeCard(title: "The Tack", link: "http://www.bvtack.com/feed/", segueId: "showRSS")
+var CAE = HomeCard(title: "CAE", link: "https://www.bvu.edu/cae/", segueId: "showWebpage")
+var LAUNDRY = HomeCard(title: "Laundry", link: "https://www.laundryalert.com/cgi-bin/bvu999/LMPage", segueId: "showWebpage")
+var ACADEMICS = HomeCard(title: "Academics", link: "", segueId: "showAcademics")
+var KBVU = HomeCard(title: "KBVU", link: "", segueId: "showKBVU")
+
 class BVInfoShared : NSObject {
     
     static var sharedInstance: BVInfoShared! = BVInfoShared()

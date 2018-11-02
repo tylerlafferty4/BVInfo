@@ -353,7 +353,7 @@
 					D8BDC8F41BF8F20100CB40B4 = {
 						CreatedOnToolsVersion = 7.0.1;
 						DevelopmentTeam = 34M84A79JV;
-						LastSwiftMigration = 0900;
+						LastSwiftMigration = "";
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {

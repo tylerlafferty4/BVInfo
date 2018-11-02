@@ -17,7 +17,6 @@ class ViewController: UIViewController {
     var webUrl : String = ""
     var titleTxt : String = ""
     var adMobBannerView = GADBannerView()
-    
     var shouldShowDesc = false
     
     override func viewDidLoad() {
@@ -77,52 +76,52 @@ extension ViewController : UICollectionViewDelegate {
         
         if (indexPath as NSIndexPath).row == 0 {
             // Sodexo Menu
-            webUrl = "https://bvudining.sodexomyway.com/dining-choices/index.html"
-            titleTxt = "Sodexo"
-            BVInfoShared.logAnswersEvent(title: "Sodexo", attributes: [:])
-            self.performSegue(withIdentifier: "showWebpage", sender: self)
+            webUrl = SODEXO.link
+            titleTxt = SODEXO.title
+            BVInfoShared.logAnswersEvent(title: SODEXO.title, attributes: [:])
+            self.performSegue(withIdentifier: SODEXO.segueId, sender: self)
         } else if (indexPath as NSIndexPath).row == 1 {
             // ACES
-            BVInfoShared.logAnswersEvent(title: "ACES", attributes: [:])
-            self.performSegue(withIdentifier: "showACES", sender: self)
+            BVInfoShared.logAnswersEvent(title: ACES.title, attributes: [:])
+            self.performSegue(withIdentifier: ACES.segueId, sender: self)
         } else if (indexPath as NSIndexPath).row == 2 {
             // Events
-            webUrl = "https://events.bvu.edu/page/rss/?duration=30days"
-            titleTxt = "Events"
-            self.performSegue(withIdentifier: "showRSS", sender: self)
+            webUrl = EVENTS.link
+            titleTxt = EVENTS.title
+            self.performSegue(withIdentifier: EVENTS.segueId, sender: self)
             
         } else if (indexPath as NSIndexPath).row == 3 {
             // Athletics
-            webUrl = "http://bvuathletics.com/landing/headlines-featured?feed=rss_2.0"
-            titleTxt = "Athletics"
-            self.performSegue(withIdentifier: "showRSS", sender: self)
+            webUrl = ATHLETICS.link
+            titleTxt = ATHLETICS.title
+            self.performSegue(withIdentifier: ATHLETICS.segueId, sender: self)
             
         } else if (indexPath as NSIndexPath).row == 4 {
             // The Tack
-            webUrl = "http://www.bvtack.com/feed/"
-            titleTxt = "The Tack"
+            webUrl = TACK.link
+            titleTxt = TACK.title
             shouldShowDesc = true
-            self.performSegue(withIdentifier: "showRSS", sender: self)
+            self.performSegue(withIdentifier: TACK.segueId, sender: self)
         } else if (indexPath as NSIndexPath).row == 5 {
             // CAE
-            webUrl = "https://www.bvu.edu/cae/"
-            titleTxt = "CAE"
-            BVInfoShared.logAnswersEvent(title: "CAE", attributes: [:])
-            self.performSegue(withIdentifier: "showWebpage", sender: self)
+            webUrl = CAE.link
+            titleTxt = CAE.title
+            BVInfoShared.logAnswersEvent(title: CAE.title, attributes: [:])
+            self.performSegue(withIdentifier: CAE.segueId, sender: self)
         } else if (indexPath as NSIndexPath).row == 6 {
             // Laundry
-            webUrl = "https://www.laundryalert.com/cgi-bin/bvu999/LMPage"
-            titleTxt = "Laundry"
-            BVInfoShared.logAnswersEvent(title: "Laundry", attributes: [:])
-            self.performSegue(withIdentifier: "showWebpage", sender: self)
+            webUrl = LAUNDRY.link
+            titleTxt = LAUNDRY.title
+            BVInfoShared.logAnswersEvent(title: LAUNDRY.title, attributes: [:])
+            self.performSegue(withIdentifier: LAUNDRY.segueId, sender: self)
         } else if (indexPath as NSIndexPath).row == 7 {
             // Academics
-            BVInfoShared.logAnswersEvent(title: "Academics", attributes: [:])
-            self.performSegue(withIdentifier: "showAcademics", sender: self)
+            BVInfoShared.logAnswersEvent(title: ACADEMICS.title, attributes: [:])
+            self.performSegue(withIdentifier: ACADEMICS.segueId, sender: self)
         } else if (indexPath as NSIndexPath).row == 8 {
             // KBVU
-            BVInfoShared.logAnswersEvent(title: "KBVU", attributes: [:])
-            self.performSegue(withIdentifier: "showKBVU", sender: self)
+            BVInfoShared.logAnswersEvent(title: KBVU.title, attributes: [:])
+            self.performSegue(withIdentifier: KBVU.segueId, sender: self)
         }
     }
     
