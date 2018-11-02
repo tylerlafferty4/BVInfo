@@ -29,13 +29,7 @@ class RSSCell : UITableViewCell {
     
     func setupCell(blogPost : RSSPost) {
         titleLbl.text = blogPost.postTitle
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "E, dd MMM yyyy HH:mm:ss Z"
-        let date = dateFormatter.date(from: blogPost.postDate)
-        let shortDate = DateFormatter()
-        shortDate.dateStyle = .medium
-        shortDate.timeStyle = .none
-        dateLbl.text = "\(shortDate.string(from: date!))"
+        dateLbl.text = BVInfoShared.formatDate(date: blogPost.postDate)
         titleLbl.adjustsFontSizeToFitWidth = true
     }
     

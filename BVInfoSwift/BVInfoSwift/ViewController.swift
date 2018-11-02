@@ -74,51 +74,51 @@ extension ViewController : UICollectionViewDelegate {
         
         shouldShowDesc = false
         
-        if (indexPath as NSIndexPath).row == 0 {
+        if indexPath.row == 0 {
             // Sodexo Menu
             webUrl = SODEXO.link
             titleTxt = SODEXO.title
             BVInfoShared.logAnswersEvent(title: SODEXO.title, attributes: [:])
             self.performSegue(withIdentifier: SODEXO.segueId, sender: self)
-        } else if (indexPath as NSIndexPath).row == 1 {
+        } else if indexPath.row == 1 {
             // ACES
             BVInfoShared.logAnswersEvent(title: ACES.title, attributes: [:])
             self.performSegue(withIdentifier: ACES.segueId, sender: self)
-        } else if (indexPath as NSIndexPath).row == 2 {
+        } else if indexPath.row == 2 {
             // Events
             webUrl = EVENTS.link
             titleTxt = EVENTS.title
             self.performSegue(withIdentifier: EVENTS.segueId, sender: self)
             
-        } else if (indexPath as NSIndexPath).row == 3 {
+        } else if indexPath.row == 3 {
             // Athletics
             webUrl = ATHLETICS.link
             titleTxt = ATHLETICS.title
             self.performSegue(withIdentifier: ATHLETICS.segueId, sender: self)
             
-        } else if (indexPath as NSIndexPath).row == 4 {
+        } else if indexPath.row == 4 {
             // The Tack
             webUrl = TACK.link
             titleTxt = TACK.title
             shouldShowDesc = true
             self.performSegue(withIdentifier: TACK.segueId, sender: self)
-        } else if (indexPath as NSIndexPath).row == 5 {
+        } else if indexPath.row == 5 {
             // CAE
             webUrl = CAE.link
             titleTxt = CAE.title
             BVInfoShared.logAnswersEvent(title: CAE.title, attributes: [:])
             self.performSegue(withIdentifier: CAE.segueId, sender: self)
-        } else if (indexPath as NSIndexPath).row == 6 {
+        } else if indexPath.row == 6 {
             // Laundry
             webUrl = LAUNDRY.link
             titleTxt = LAUNDRY.title
             BVInfoShared.logAnswersEvent(title: LAUNDRY.title, attributes: [:])
             self.performSegue(withIdentifier: LAUNDRY.segueId, sender: self)
-        } else if (indexPath as NSIndexPath).row == 7 {
+        } else if indexPath.row == 7 {
             // Academics
             BVInfoShared.logAnswersEvent(title: ACADEMICS.title, attributes: [:])
             self.performSegue(withIdentifier: ACADEMICS.segueId, sender: self)
-        } else if (indexPath as NSIndexPath).row == 8 {
+        } else if indexPath.row == 8 {
             // KBVU
             BVInfoShared.logAnswersEvent(title: KBVU.title, attributes: [:])
             self.performSegue(withIdentifier: KBVU.segueId, sender: self)
@@ -140,39 +140,39 @@ extension ViewController : UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "homeCell", for: indexPath) as! HomeViewControllerCell
         cell.setupCell()
         
-        if (indexPath as NSIndexPath).row == 0 {
+        if indexPath.row == 0 {
             // Sodexo Menu
             cell.titleLbl.text = "Sodexo"
             cell.imgView.image = UIImage(named: "meal")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
-        } else if (indexPath as NSIndexPath).row == 1 {
+        } else if indexPath.row == 1 {
             // ACES
             cell.titleLbl.text = "ACES"
             cell.imgView.image = UIImage(named: "aces")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
-        } else if (indexPath as NSIndexPath).row == 2 {
+        } else if indexPath.row == 2 {
             // Events
             cell.titleLbl.text = "Events"
             cell.imgView.image = UIImage(named: "events")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
-        } else if (indexPath as NSIndexPath).row == 3 {
+        } else if indexPath.row == 3 {
             // Athletics
             cell.titleLbl.text = "Athletics"
             cell.imgView.image = UIImage(named: "beaver")
-        } else if (indexPath as NSIndexPath).row == 4 {
+        } else if indexPath.row == 4 {
             // The Tack
             cell.titleLbl.text = "The Tack"
             cell.imgView.image = UIImage(named: "the-tack")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
-        } else if (indexPath as NSIndexPath).row == 5 {
+        } else if indexPath.row == 5 {
             // CAE
             cell.titleLbl.text = "CAE"
             cell.imgView.image = UIImage(named: "homework")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
-        } else if (indexPath as NSIndexPath).row == 6 {
+        } else if indexPath.row == 6 {
             // Laundry
             cell.titleLbl.text = "Laundry"
             cell.imgView.image = UIImage(named: "laundry")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
-        } else if (indexPath as NSIndexPath).row == 7 {
+        } else if indexPath.row == 7 {
             // Academics
             cell.titleLbl.text = "Academics"
             cell.imgView.image = UIImage(named: "academics")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
-        } else if (indexPath as NSIndexPath).row == 8 {
+        } else if indexPath.row == 8 {
             // KBVU
             cell.titleLbl.text = "KBVU"
             cell.imgView.image = UIImage(named: "kbvu")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate)

@@ -44,21 +44,21 @@ extension AcademicsViewController : UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)
-        if (indexPath as NSIndexPath).row == 0 {
+        if indexPath.row == 0 {
             // Cultural
             titleTxt = "Academic Calendar"
             BVInfoShared.logAnswersEvent(title: "Academic Calendar", attributes: [:])
             webUrl = "http://www.bvu.edu/bv/academic-resources/calendar.dot"
             self.performSegue(withIdentifier: "showWebpage", sender: self)
             
-        }else if (indexPath as NSIndexPath).row == 1 {
+        }else if indexPath.row == 1 {
             // Scholarly
             titleTxt = "Majors & Minors"
             BVInfoShared.logAnswersEvent(title: "Majors & Minors", attributes: [:])
             webUrl = "http://www.bvu.edu/academics/programs-majors/"
             self.performSegue(withIdentifier: "showWebpage", sender: self)
             
-        }else if (indexPath as NSIndexPath).row == 2 {
+        }else if indexPath.row == 2 {
             // Student Life
             titleTxt = "Canvas"
             webUrl = "https://bvu.instructure.com/login/ldap"

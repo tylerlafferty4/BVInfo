@@ -43,28 +43,28 @@ extension ACESViewController : UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)
-        if (indexPath as NSIndexPath).row == 0 {
+        if indexPath.row == 0 {
             // Cultural
             titleTxt = "Cultural"
             BVInfoShared.logAnswersEvent(title: "Cultural ACES", attributes: [:])
             webUrl = "http://bvu.edu/bv/aces/cultural-events.dot"
             self.performSegue(withIdentifier: "showWebpage", sender: self)
             
-        }else if (indexPath as NSIndexPath).row == 1 {
+        }else if indexPath.row == 1 {
             // Scholarly
             titleTxt = "Scholarly"
             BVInfoShared.logAnswersEvent(title: "Scholarly ACES", attributes: [:])
             webUrl = "http://bvu.edu/bv/aces/scholarly-events.dot"
             self.performSegue(withIdentifier: "showWebpage", sender: self)
             
-        }else if (indexPath as NSIndexPath).row == 2 {
+        }else if indexPath.row == 2 {
             // Student Life
             titleTxt = "Student Life"
             BVInfoShared.logAnswersEvent(title: "Student Life ACES", attributes: [:])
             webUrl = "http://bvu.edu/bv/aces/student-life-events.dot"
             self.performSegue(withIdentifier: "showWebpage", sender: self)
             
-        }else if (indexPath as NSIndexPath).row == 3 {
+        }else if indexPath.row == 3 {
             // Check Your Status
             titleTxt = "Check Status"
             BVInfoShared.logAnswersEvent(title: "Check Status", attributes: [:])
@@ -83,7 +83,7 @@ extension ACESViewController : UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ACESCell", for: indexPath) as! ACESCell
         cell.setupCell()
-        switch (indexPath as NSIndexPath).row {
+        switch indexPath.row {
         case 0:
             cell.titleLbl.text = "Cultural"
         case 1:

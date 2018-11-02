@@ -88,6 +88,16 @@ class BVInfoShared : NSObject {
             index += 1
         }
     }
+    
+    class func formatDate(date: String) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "E, dd MMM yyyy HH:mm:ss Z"
+        let date = dateFormatter.date(from: date)
+        let shortDate = DateFormatter()
+        shortDate.dateStyle = .medium
+        shortDate.timeStyle = .none
+        return "\(shortDate.string(from: date!))"
+    }
 }
 
 // MARK: - Fabric Answers

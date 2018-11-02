@@ -15,6 +15,7 @@ class RSSViewController: UIViewController, XMLParserDelegate {
     @IBOutlet var tableView : UITableView!
     var parser: XMLParser = XMLParser()
     var blogPosts : [RSSPost] = []
+    var selectedBlogPost: RSSPost!
     var postTitle: String = String()
     var postLink: String = String()
     var postDate: String = String()
@@ -114,8 +115,9 @@ extension RSSViewController : UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // Log to Answers
         BVInfoShared.logAnswersEvent(title: titleTxt + " Item Clicked", attributes: [:])
+        selectedBlogPost = blogPosts[indexPath.row]
         if shouldShowDescription {
-            self.performSegue(withIdentifier: "viewpost", sender: self)
+            self.performSegue(withIdentifier: "viewDetail", sender: self)
             self.tableView.deselectRow(at: indexPath, animated: false)
         } else {
             self.performSegue(withIdentifier: "viewpost", sender: self)
@@ -146,10 +148,12 @@ extension RSSViewController : UITableViewDataSource {
 extension RSSViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any!) {
         if segue.identifier == "viewpost" {
-            let blogPost: RSSPost = blogPosts[(tableView.indexPathForSelectedRow! as NSIndexPath).row]
             let destVc = segue.destination as! WebsiteViewController
-            destVc.webUrl = blogPost.postLink
-            destVc.titleTxt = blogPost.postTitle
+            destVc.webUrl = selectedBlogPost.postLink
+            destVc.titleTxt = selectedBlogPost.postTitle
+        } else if segue.identifier == "viewDetail" {
+            let destVc = segue.destination as! RSSDetailViewController
+            destVc.blogPost = selectedBlogPost
         }
     }
 }
