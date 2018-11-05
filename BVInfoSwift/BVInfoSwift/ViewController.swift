@@ -88,12 +88,14 @@ extension ViewController : UICollectionViewDelegate {
             // Events
             webUrl = EVENTS.link
             titleTxt = EVENTS.title
+            shouldShowDesc = true
             self.performSegue(withIdentifier: EVENTS.segueId, sender: self)
             
         } else if indexPath.row == 3 {
             // Athletics
             webUrl = ATHLETICS.link
             titleTxt = ATHLETICS.title
+            shouldShowDesc = true
             self.performSegue(withIdentifier: ATHLETICS.segueId, sender: self)
             
         } else if indexPath.row == 4 {

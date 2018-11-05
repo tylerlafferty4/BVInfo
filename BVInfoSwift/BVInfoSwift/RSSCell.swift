@@ -21,7 +21,7 @@ class RSSCell : UITableViewCell {
         dateLbl.textColor = ThemeManager.colorForKey(colorStr: "mainColor")
         let shadowPath2 = UIBezierPath(rect: self.bounds)
         layer.masksToBounds = false
-        layer.shadowColor = UIColor.black.cgColor
+        layer.shadowColor = UIColor.clear.cgColor
         layer.shadowOffset = CGSize(width: CGFloat(1.0), height: CGFloat(3.0))
         layer.shadowOpacity = 0.5
         layer.shadowPath = shadowPath2.cgPath
